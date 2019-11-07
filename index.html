@@ -18,7 +18,7 @@
         <div class="weather-container">
             <div class="row">
                 <div id="weather-description"class="inline"></div>
-                <div class="inline">潘勇个人主页</div>
+                <div class="inline">子在川上曰：逝者如斯夫，不舍昼夜！</div>
                 <div id="temp" class="inline"></div>
             </div>
         </div>
@@ -67,6 +67,9 @@
                 min = date.getMinutes(),
                 sec = date.getSeconds(),
                 hour = date.getHours();
+                day  = date.getDay();
+                month = date.getMonth();
+                year  = date.getFullYear();
 
             return "" + 
                 (hour < 10 ? ("0" + hour) : hour) + ":" + 
