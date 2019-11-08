@@ -26,41 +26,32 @@
             <div class="bookmark-set">
                 <div class="bookmark-title">18计2班</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://shimo.im/docs/QYWkGD8ttCPH8Pch/" target="_blank">C语言作业（week10)</a>
+                    <a class="bookmark" href="https://shimo.im/docs/jYvjtG93kprv8vqw/" target="_blank">班级动态（第十周）</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">C语言（中职对口升学）</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://shimo.im/docs/QYWkGD8ttCPH8Pch/" target="_blank">if语句（第十周)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">网络（中职对口升学）</div>
+                <div class="bookmark-inner-container">
                     <a class="bookmark" href="https://shimo.im/docs/gPWjtcwTd6cHxcPg/" target="_blank">网络作业 （week10)</a>
-                    <a class="bookmark" href="https://shimo.im/docs/jYvjtG93kprv8vqw/" target="_blank">班级动态</a>
                 </div>
             </div>
-        <!--    
-            <div class="bookmark-set">
-                <div class="bookmark-title">自我教育</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="" target="_blank">学习方法</a>
-                    <a class="bookmark" href="" target="_blank">编程训练</a>
-                    <a class="bookmark" href="" target="_blank">写作训练</a>
-                    <a class="bookmark" href="" target="_blank">英语训练</a>
-                </div>
-            </div>
-        
-            <div class="bookmark-set">
-                <div class="bookmark-title">关于我</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="" target="_blank">简历</a>
-                    <a class="bookmark" href="" target="_blank">微信公众号</a>
-                </div>
-            </div>
-        -->
         </div>
     </div>
 
     <script>
-        // Search on enter key event
-        function search(e) {
-            if (e.keyCode == 13) {
-                var val = document.getElementById("search-field").value;
-                window.open("https://google.com/search?q=" + val);
-            }
-        }
+      
         // Get current time and format
         function getTime() {
             let date = new Date(),
@@ -78,23 +69,7 @@
         }
 
         window.onload = () => {
-            let xhr = new XMLHttpRequest();
-            // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=1799846&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece');
-            /*xhr.onload = () => {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        let json = JSON.parse(xhr.responseText);
-                        console.log(json);
-                        document.getElementById("temp").innerHTML = "";//json.main.temp.toFixed(0) + " F";
-                        document.getElementById("weather-description").innerHTML = "";//json.weather[0].description;
-                    } else {
-                        console.log('error msg: ' + xhr.status);
-                    }
-                }
-            }
-            */
-            xhr.send();
+           
             // Set up the clock
             document.getElementById("clock").innerHTML = getTime();
             // Set clock interval to tick clock
@@ -102,17 +77,6 @@
                 document.getElementById("clock").innerHTML = getTime();
             },100);
         }
-
-        document.addEventListener("keydown", event => {
-            if (event.keyCode == 32) {          // Spacebar code to open search
-                document.getElementById('search').style.display = 'flex';
-                document.getElementById('search-field').focus();
-            } else if (event.keyCode == 27) {   // Esc to close search
-                document.getElementById('search-field').value = '';
-                document.getElementById('search-field').blur();
-                document.getElementById('search').style.display = 'none';
-            }
-        });
     </script>
 </body>
 </html>
