@@ -98,22 +98,23 @@ body {
     border-radius: 3px;
     font-family: "Roboto Mono";
     font-size: .85rem;
-    width: 75%;
-    height: 10em;
+    width: 85%;
+    height: 17em;
     margin: 0em .5em;
 }
 .bookmark-inner-container {
-    //overflow-y: scroll;
+    /*overflow-y: scroll;*/
     height: 80%;
     vertical-align: top;
 }
 .bookmark-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #fff;
     margin: 0em 0em .35em 0em;
 }
 .bookmark {
+    font-size:1.1rem;
     text-decoration: none;
     color: #8c8c8b;
     display:block;
