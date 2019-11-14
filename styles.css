@@ -71,7 +71,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 50%;
+    width: 80%;
     margin: 1em 0em;
 }
 
@@ -104,7 +104,7 @@ body {
 }
 .bookmark-inner-container {
     /*overflow-y: scroll;*/
-    height: 80%;
+    height: 60%;
     vertical-align: top;
 }
 .bookmark-title {
@@ -114,7 +114,7 @@ body {
     margin: 0em 0em .35em 0em;
 }
 .bookmark {
-    font-size:1.1rem;
+    font-size:1.0rem;
     text-decoration: none;
     color: #8c8c8b;
     display:block;
