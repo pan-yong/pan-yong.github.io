@@ -62,8 +62,9 @@
                 day  = date.getDate();
                 month = date.getMonth()+1;
                 year  = date.getFullYear() ;
+                wk  = date.getday();
 
-            return year+"年"+month+"月"+day+"日";
+            return year+"年"+month+"月"+day+"日 星期"+wk;
         }
 
         window.onload = () => {
