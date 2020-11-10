@@ -59,9 +59,9 @@
         
         function getYear() {
             let date = new Date();
-                day  = date.getDay();
-                month = date.getMonth();
-                year  = date.getFullYear();
+                day  = date.getDate();
+                month = date.getMonth()+1;
+                year  = date.getFullYear() ;
 
             return year+"年"+month+"月"+day+"日";
         }
