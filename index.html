@@ -18,7 +18,7 @@
         <div class="weather-container">
             <div class="row">
                 <div id="weather-description"class="inline"></div>
-                <div class="inline">子在川上曰：逝者如斯夫，不舍昼夜！</div>
+                <div id="year" class="inline">子在川上曰：逝者如斯夫，不舍昼夜！</div>
                 <div id="temp" class="inline"></div>
             </div>
         </div>
@@ -49,20 +49,29 @@
                 min = date.getMinutes(),
                 sec = date.getSeconds(),
                 hour = date.getHours();
+
+            return ""+ 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
+        
+        
+        function getYear() {
+            let date = new Date();
                 day  = date.getDay();
                 month = date.getMonth();
                 year  = date.getFullYear();
 
-            return year + "年" + month + "月" + day +"日 " + 
-                (hour < 10 ? ("0" + hour) : hour) + ":" + 
-                (min < 10 ? ("0" + min) : min) + ":" + 
-                (sec < 10 ? ("0" + sec) : sec);
+            return year+"年"+month+"月"+day+"日";
         }
 
         window.onload = () => {
            
             // Set up the clock
             document.getElementById("clock").innerHTML = getTime();
+            document.getElementById("year").innerHTML = getYear();
+            
             // Set clock interval to tick clock
             setInterval( () => {
                 document.getElementById("clock").innerHTML = getTime();
