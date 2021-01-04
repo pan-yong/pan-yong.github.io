@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-
+/*
 html,body{ overflow:scroll; min-height:100%;}
 html{ overflow:-moz-scrollbars-vertical;}
-
+*/
 body {
     background-color: #5F4B8B;
     margin: 0px;
