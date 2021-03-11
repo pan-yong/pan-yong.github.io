@@ -1,4 +1,26 @@
+## 文件
+
 ### 一、库函数
+
+- #### FILE *fopen( const char * filename, const char * mode );
+
+- #### int fclose( FILE *fp );
+
+- #### int fgetc(FILE \*fp);
+
+- #### int fputc( int c, FILE *fp );
+
+- #### char *fgets( char *buf, int n, FILE *fp );
+
+- #### int fputs( const char *s, FILE *fp );
+
+- #### int fscanf(FILE *stream, const char *format, ...);
+
+- #### int fprintf(FILE *stream, const char *format, ...);
+
+- #### size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+- #### size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
 
 ### 二、常见错误
 
@@ -209,4 +231,145 @@
        return j;
    }
    ```
+
+6. （2015年高考）下面程序运行结果是（        ）
+
+   ```c
+   #include<stdio.h>
+   int main()
+   {    
+       FILE *fp;
+       int x[6]={0,1,2,3,4,5},i;
+       fp=fopen("test.dat","wb");
+       fwrite(x,sizeof(int),3,fp);
+       rewind(fp);
+       fread(x,sizeof(int),3,fp);
+       for(i=0; i<6; i++)
+            printf("%d",x[i]);
+       fclose(fp);
+       return 0;
+   }
+   ```
+
+7. （2013年高考）下面程序从文本文件test.txt逐个读入字符，并显示在屏幕上。
+
+   ```c
+   #include<stdio.h>
+   int main()
+   {
+       FILE *fp;
+       char ch, *filename = "test.txt";
+       if((fp=_______(filename,"r"))==NULL)
+       {
+           printf("cannot open file\n");
+           exit(0);
+       }
+       while(!______(fp))
+       {
+           ch = fgetc(fp);
+           if(ch != EOF) putchar(ch);
+       }
+       fclose(fp);
+       return 0;
+   }
+   ```
+
+8. (2011年高考)随着信息化进程的不断推进，数据的安全性越来越受到人们的重视，数据加密技术是保证数据安全的重要手段。编程实现对C盘根目录下名为“new.dat”文件的数据进行加密，加密方式是将“new.dat”文件中每个字符与字符A进行异或运算，运算后的加密数据存储到“new.dat”文件中。
+
+   ```c
+   #include<stdio.h>
+   int main()
+   {
+       char ch;
+       FILE *fp;
+       fp = fopen("C:\\new.dat", "r+");
+       if(fp == NULL){
+           printf("Cannot open new.dat file.\n");
+           return ;
+       }
+       while((ch=fgetc(fp)) != EOF)
+       {
+       	ch = ch ^ 'A';
+       	fseek(fp,-1,1);
+       	fputc(ch,fp);
+       	fflush(fp);  //  当fputc和fgetc交叉的时候，要首先使用fseek或者fflush
+       }
+       fclose(fp);
+       return 0;
+   }
+   ```
+
+9. （2010年高考）设文件studs.dat中存放着学生的基本信息，其基本信息用结构体来描述。以下程序的功能是：输入要读取的学生人数，利用malloc动态分配内存来存储从文件中读取的学生信息（以方便进一步管理），并输出读取的学号，姓名，专业。请将正确的内容填入答题卡的相应位置上，使程序完整。
+
+   ```c
+   #include<stdio.h>
+   #include<stdlib.h>
+   struct student{
+       long int num;
+       char name[10];
+       char major[10];
+   };
+   FILE *fp;
+   int main()
+   {
+       struct student st, *pst;
+       int i, num, realnum;
+       printf("请输入读取的学生数：");
+       scanf("%d", &num);
+       pst = (struct student*)malloc(____________);
+       if(!pst) return ;
+       fp = fopen("studs.dat", "rb");
+       if(NULL == fp){
+           ______________________;
+           return ;
+       }
+       realnum = 0;
+       printf("%s\t%s\t%s\n", "number", "name", "major");
+       /*文件包含的学生数量可能少于输入的人数*/
+       for(i = 0; i < ___________; i++)
+       {
+           fread(pst+i, sizeof(struct student), 1, fp);
+           realnum++;
+           ______________________;
+           printf("%d\t%ld\t%s\t%s\n", realnum, st.num, st.name, st.major);
+       }
+       free(pst);
+       fclose(fp);
+   }
+   ```
+
+10. (2009高考)以下程序的功能是：输入某公司50名职员的工号、姓名和地址并存入名为“company.txt”的磁盘文件。请将正确的内容填入答题卡相应位置中，使程序完整。
+
+    ```c
+    #include<stdio.h>
+    struct Employee
+    {
+        int EmpId;
+        char EmpName[10];
+        char EmpAdd[30];
+    }Emp[50];
+    void save()
+    {
+        ________________;
+        int i;
+        if((fp = fopen("company.txt", "wb"))==NULL){
+            printf("cannot open file\n");
+            return ;
+        }
+        for(i = 0; i < 50; i++)
+        {
+            if( fwrite(_______________) != 1)
+                printf("file write error\n");
+        }
+        fclose(fp);
+    }
+    int main()
+    {
+        int i;
+        for(i = 0; i < 50; i++)
+            scanf("%d,%s,%s",__________,Emp[i].EmpName,Emp[i].EmpAdd);
+        save();
+        return 0;
+    }
+    ```
 
