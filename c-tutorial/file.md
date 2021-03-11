@@ -8,11 +8,37 @@
 
 ##### FILE *fopen( const char * filename, const char * mode );
 
+filename是文件名，mode是打开模式。文件打开成功返回文件指针，打开失败返回NULL。
+
+```c
+模式		描述
+"r"		打开一个已有的文本文件，允许读文件
+"w"		打开一个文本文件，允许写文件。若文件不存在创建一个新的。如果文件存在，清除原内容，重写入。
+"a"		打开一个文本文件，以追加模式写入文件。如果文件不存在，创建一个新的。
+"r+"	打开一个已有的文本文件，允许读写。
+"w+"    打开一个文本文件，允许读写。若文件不存在创建一个新的。如果文件存在，清除原内容，重写入。
+"a+"    打开一个文本文件，允许读写。若文件不存在创建一个新的。如果文件存在，读取从文件头开始，写入只能是追加模式写入。
+```
+
+如果处理的是二进制文件，则需使用下面的访问模式来取代上面的访问模式：
+
+```c
+"rb", "wb", "ab", "rb+", "wb+", "ab+"
+```
+
 ##### int fclose( FILE *fp );
 
-##### int fgetc(FILE \*stream);
+关闭文件，并释放用于该文件的所有内存。成功关闭文件，**fclose( )** 函数返回零，如果关闭文件时发生错误，函数返回 **EOF**。
 
-C 库函数 **int fgetc(FILE \*stream)** 从指定的流 stream 获取下一个字符（一个无符号字符），并把位置标识符往前移动。该函数以无符号 char 强制转换为 int 的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。示例：
+##### int fgetc(FILE \*fp);
+
+从文件的当前位置读一个字符，并把位置标识符往前移动。函数以无符号 char 强制转换为 int 的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。
+
+##### int fputc( int c, FILE *fp );
+
+把参数 c 的字符值写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回 **EOF**。
+
+示例：
 
 ``` c
 #include<stdio.h>
@@ -32,10 +58,6 @@ int main()
 } 
 ```
 
-##### int fputc( int c, FILE *fp );
-
-把参数 c 的字符值写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回 **EOF**。
-
 ##### char *fgets( char *buf, int n, FILE *fp );
 
 ##### int fputs( const char *s, FILE *fp );
@@ -51,6 +73,20 @@ int main()
 
 
 #### 二、常见错误
+
+##### fopen错误
+
+```c
+if(fp=fopen("file.txt", "r")==NULL)
+```
+
+这行代码，运算符==优先于=，出现先比较再赋值给fp，这时fp的值要么是0要么是1，出错。所以fp=fopen("file.txt", "r")必须加上小括号后，再跟NULL比较。应改为：
+
+```c
+if( (fp = fopen("file.txt", "r")) == NULL)
+```
+
+
 
 #### 三、历年高考题
 
@@ -266,7 +302,7 @@ int main()
     	ch = ch ^ 'A';
     	fseek(fp,-1,1);
     	fputc(ch,fp);
-    	fseek(fp,0,1);  //  当fputc和fgetc交叉的时候要首先使用fseek确定操作的位置
+    	fflush(fp);  //  当fputc和fgetc交叉的时候，要首先使用fseek或者fflush
     }
     fclose(fp);
     return 0;
