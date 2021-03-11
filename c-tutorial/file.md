@@ -4,9 +4,13 @@
 
 
 
-#### 一、常用函数
+#### 一、库函数
 
-##### int fgetc(FILE \*stream)
+##### FILE *fopen( const char * filename, const char * mode );
+
+##### int fclose( FILE *fp );
+
+##### int fgetc(FILE \*stream);
 
 C 库函数 **int fgetc(FILE \*stream)** 从指定的流 stream 获取下一个字符（一个无符号字符），并把位置标识符往前移动。该函数以无符号 char 强制转换为 int 的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。示例：
 
@@ -27,6 +31,24 @@ int main()
 	return 0;
 } 
 ```
+
+##### int fputc( int c, FILE *fp );
+
+把参数 c 的字符值写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回 **EOF**。
+
+##### char *fgets( char *buf, int n, FILE *fp );
+
+##### int fputs( const char *s, FILE *fp );
+
+##### int fscanf(FILE *stream, const char *format, ...);
+
+##### int fprintf(FILE *stream, const char *format, ...);
+
+##### size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+##### size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+
 
 #### 二、常见错误
 
