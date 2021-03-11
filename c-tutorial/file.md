@@ -171,7 +171,25 @@
    	int result;	/* low、heigh分别用來存放分数范围的下界与上界*/
        
        result=creat(s); /* result表示文件写入操作是否成功*/
-       
+       if(result)
+       {
+           printf("\n low=");scanf("%d",&low);
+           printf("\n heigh=");scanf("%d",&heigh);
+       }
+   }
+   int f(SREC *a, SREC *b, int l, int h)
+   {
+       int i, j = 0, n;/*l、h分别用来存放分数范围的下界与上界*/
+       for(i = 0; i < N; i++)
+       {
+           if(a[i].score>=l && a[i].score<=h)
+           {
+               ____________________________;
+               b[j].score=a[i].score;
+               j++;
+           }
+       }
+       return j;
    }
    ```
 
