@@ -1,272 +1,280 @@
 ## 文件
 
-### 一、库函数
+[TOC]
 
-- #### FILE *fopen( const char * filename, const char * mode );
 
-  打开文件函数，filename是文件名，mode是打开模式。文件打开成功返回文件指针，打开失败返回NULL。
 
-  ```text
-  模式		描述
-  "r"	打开一个文件，只读，文件必须先存在。
-  "w"	创建一个新的文件，只能写。如果文件存在，清除原内容。
-  "a"	以追加写模式打开一个文件。如果文件不存在，创建一个新的。
-  "r+"	打开一个文件，可读可写。文件必须先存在。
-  "w+"	创建一个新文件，可读可写。
-  "a+"	打开一个文件，允许读和追加写。若文件不存在创建一个新的。
-      
-  如果处理的是二进制文件，则需使用下面的访问模式来取代上面的访问模式：
-  "rb", "wb", "ab", "rb+", "wb+", "ab+"
-  ```
+### （一）库函数
 
-- #### int fclose( FILE *fp );
+#### FILE *fopen( const char * filename, const char * mode );
 
-  关闭文件，并释放用于该文件的所有内存。成功关闭文件，**fclose( )** 函数返回零，如果关闭文件时发生错误，函数返回 **EOF**。
+打开文件函数，filename是文件名，mode是打开模式。文件打开成功返回文件指针，打开失败返回NULL。
 
-- #### int fgetc(FILE \*fp);
-
-  从文件的当前位置读一个字符，并把文件标识符移动一个字节。函数以无符号 char 强制转换为 int 的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。
-
-  ```c
-  #include <stdio.h>
-  
-  int main () 
-  {
-     FILE *fp;
-     int c;
-     int n = 0;
+```text
+模式		描述
+"r"	打开一个文件，只读，文件必须先存在。
+"w"	创建一个新的文件，只能写。如果文件存在，清除原内容。
+"a"	以追加写模式打开一个文件。如果文件不存在，创建一个新的。
+"r+"	打开一个文件，可读可写。文件必须先存在。
+"w+"	创建一个新文件，可读可写。
+"a+"	打开一个文件，允许读和追加写。若文件不存在创建一个新的。
     
-     fp = fopen("file.txt","r");
-     if(fp == NULL) {
-        perror("Error in opening file");
-        return(-1);
-     } 
-     do {
-        c = fgetc(fp);
-        if( feof(fp) ) {
-           break ;
-        }
-        printf("%c", c);
-     } while(1);
-     fclose(fp);
-     return(0);
-  }
-  ```
+如果处理的是二进制文件，则需使用下面的访问模式来取代上面的访问模式：
+"rb", "wb", "ab", "rb+", "wb+", "ab+"
+```
 
-- #### int fputc( int c, FILE *fp );
+#### int fclose( FILE *fp );
 
-  把参数 c 的字符值写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回 **EOF**。示例：
+关闭文件，并释放用于该文件的所有内存。成功关闭文件，**fclose( )** 函数返回零，如果关闭文件时发生错误，函数返回 **EOF**。
 
-  ```c
-  #include <stdio.h>
+#### int fgetc(FILE \*fp);
+
+从文件的当前位置读一个字符，并把文件标识符移动一个字节。函数以无符号 char 强制转换为 int 的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。
+
+```c
+#include <stdio.h>
+
+int main () 
+{
+   FILE *fp;
+   int c;
+   int n = 0;
   
-  int main () 
-  {
-     FILE *fp;
-     int ch;
+   fp = fopen("file.txt","r");
+   if(fp == NULL) {
+      perror("Error in opening file");
+      return(-1);
+   } 
+   do {
+      c = fgetc(fp);
+      if( feof(fp) ) {
+         break ;
+      }
+      printf("%c", c);
+   } while(1);
+   fclose(fp);
+   return(0);
+}
+```
+
+#### int fputc( int c, FILE *fp );
+
+把参数 c 的字符值写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回 **EOF**。示例：
+
+```c
+#include <stdio.h>
+
+int main () 
+{
+   FILE *fp;
+   int ch;
+
+   fp = fopen("file.txt", "w+");
+   for( ch = 33 ; ch <= 100; ch++ ) {
+      fputc(ch, fp);
+   }
+   fclose(fp);
+
+   return(0);
+}
+```
+
+#### char *fgets( char *buf, int n, FILE *fp );
+
+从文件读一行字符串到buf，最多读n-1个字符，文件少于n-1个字符或提前遇到换行，读字符结束。n一般传字符数组buf的长度。读取成功，返回buf。读取失败，返回NULL。
+
+```c
+#include <stdio.h>
+int main () 
+{
+   FILE *fp;
+   char str[60];
+
+   /* opening file for reading */
+   fp = fopen("file.txt" , "r");
+   if(fp == NULL) {
+      perror("Error opening file");
+      return(-1);
+   }
+   if( fgets (str, 60, fp)!=NULL ) {
+      /* writing content to stdout */
+      puts(str);
+   }
+   fclose(fp);
+   
+   return(0);
+}
+```
+
+#### int fputs( const char *s, FILE *fp );
+
+把字符串写入到文件，不包含\0。写文件成功返回非负数，错误返回EOF。
+
+```c
+#include <stdio.h>
+int main () 
+{
+   FILE *fp;
+   fp = fopen("file.txt", "w+");
+   fputs("This is c programming.", fp);
+   fputs("This is a system programming language.", fp);
+   fclose(fp);
+   return(0);
+}
+```
+
+#### int fscanf(FILE *stream, const char *format, ...);
+
+从文件格式化读取数据。函数返回，成功读取内容的个数。
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+int main () 
+{
+   char str1[10], str2[10], str3[10];
+   int year;
+   FILE * fp;
+
+   fp = fopen ("file.txt", "w+");
+   fputs("We are in 2021", fp);
+   
+   rewind(fp);
+   fscanf(fp, "%s %s %s %d", str1, str2, str3, &year);
+   
+   printf("Read String1 |%s|\n", str1 );
+   printf("Read String2 |%s|\n", str2 );
+   printf("Read String3 |%s|\n", str3 );
+   printf("Read Integer |%d|\n", year );
+
+   fclose(fp);
+   
+   return(0);
+}
+```
+
+#### int fprintf(FILE *stream, const char *format, ...);
+
+格式化数据写文件。如果写文件成功，返回写入字符的个数。否则返回一个负数。
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () 
+{
+   FILE * fp;
+
+   fp = fopen ("file.txt", "w+");
+   int n = fprintf(fp, "%s %s %s %d", "We", "are", "in", 2021);
+   printf("%d", n);
+   fclose(fp);
+   
+   return(0);
+}
+```
+
+#### size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+从文件读取数据到ptr所指的内存中，size是每个元素的大小，nmemb是元素的个数。返回值是成功读取元素的个数。如果，成功读取元素个数和nmemb不相等，则读到文件尾，可通过feof函数检测。
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main () 
+{
+   FILE *fp;
+   char c[] = "this is 18jsj1";
+   char buffer[100];
+
+   /* Open file for both reading and writing */
+   fp = fopen("file.txt", "w+");
+
+   /* Write data to the file */
+   fwrite(c, strlen(c) + 1, 1, fp);
+
+   /* Seek to the beginning of the file */
+   fseek(fp, 0, SEEK_SET);
+	
+	int n;
+   /* Read and display data */
+   n = fread(buffer, strlen(c)+1, 1, fp);
+   //n = fread(buffer, sizeof(char), strlen(c)+1, fp);
+   //n = fread(buffer, sizeof(char), strlen(c)+100, fp); 
+   printf("%s\n", buffer);
+   printf("n = %d\n", n);
+   printf("feof=%d\n",feof(fp));
+   fclose(fp);
+   
+   return(0);
+}
+```
+
+#### size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+把ptr指向内存里的数据写入到文件，size是每个元素的大小，nmemb是元素的个数。写文件成功，返回成功写入元素的个数。如果成功写入元素个数，和nmemb不相等
+
+```c
+#include<stdio.h>
+
+int main () 
+{
+   FILE *fp;
+   char str[] = "This is 18jsj";
+
+   fp = fopen( "file.txt" , "w" );
+   
+   int n;
+   //n = fwrite(str , 1 , sizeof(str) , fp );
+   n = fwrite(str ,sizeof(str) , 1 , fp );
+   printf("%d\n",n);
+   fclose(fp);
   
-     fp = fopen("file.txt", "w+");
-     for( ch = 33 ; ch <= 100; ch++ ) {
-        fputc(ch, fp);
-     }
-     fclose(fp);
+   return(0);
+}
+```
+
+#### int fseek(FILE *stream, long int offset, int whence)
+
+设置文件指针位置，whence偏移开始的地方，**SEEK_SET** 表示从文件头开始，**SEEK_CUR** 表示从文件当前位置开始，**SEEK_END** 表示从文件尾开始，offset是偏移量。移动成功返回0，移动失败返回非零值。
+
+```c
+#include <stdio.h>
+
+int main () 
+{
+   FILE *fp;
+
+   fp = fopen("file.txt","w+");
+   fputs("This is 18jsj1.", fp);
   
-     return(0);
-  }
-  ```
+   fseek( fp, 7, SEEK_SET );
+   fputs(" C Programming Language", fp);
 
-- #### char *fgets( char *buf, int n, FILE *fp );
+   fclose(fp);
+   
+   return(0);
+}
+```
 
-  从文件读一行字符串到buf，最多读n-1个字符，文件少于n-1个字符或提前遇到换行，读字符结束。n一般传字符数组buf的长度。读取成功，返回buf。读取失败，返回NULL。
+#### void rewind(FILE *stream)
 
-  ```c
-  #include <stdio.h>
-  int main () 
-  {
-     FILE *fp;
-     char str[60];
-  
-     /* opening file for reading */
-     fp = fopen("file.txt" , "r");
-     if(fp == NULL) {
-        perror("Error opening file");
-        return(-1);
-     }
-     if( fgets (str, 60, fp)!=NULL ) {
-        /* writing content to stdout */
-        puts(str);
-     }
-     fclose(fp);
-     
-     return(0);
-  }
-  ```
+设置文件指针指向文件最开始的地方。
 
-- #### int fputs( const char *s, FILE *fp );
+#### int feof(FILE *stream);
 
-  把字符串写入到文件，不包含\0。写文件成功返回非负数，错误返回EOF。
+检测是否读到文件尾。如果是返回非零，如果不是返回0。
 
-  ```c
-  #include <stdio.h>
-  int main () 
-  {
-     FILE *fp;
-     fp = fopen("file.txt", "w+");
-     fputs("This is c programming.", fp);
-     fputs("This is a system programming language.", fp);
-     fclose(fp);
-     return(0);
-  }
-  ```
+#### 参考资料
 
-- #### int fscanf(FILE *stream, const char *format, ...);
+> https://www.tutorialspoint.com/c_standard_library/stdio_h.htm
 
-  从文件格式化读取数据。函数返回，成功读取内容的个数。
-
-  ```c
-  #include <stdio.h>
-  #include <stdlib.h>
-  int main () 
-  {
-     char str1[10], str2[10], str3[10];
-     int year;
-     FILE * fp;
-  
-     fp = fopen ("file.txt", "w+");
-     fputs("We are in 2021", fp);
-     
-     rewind(fp);
-     fscanf(fp, "%s %s %s %d", str1, str2, str3, &year);
-     
-     printf("Read String1 |%s|\n", str1 );
-     printf("Read String2 |%s|\n", str2 );
-     printf("Read String3 |%s|\n", str3 );
-     printf("Read Integer |%d|\n", year );
-  
-     fclose(fp);
-     
-     return(0);
-  }
-  ```
-
-- #### int fprintf(FILE *stream, const char *format, ...);
-
-  格式化数据写文件。如果写文件成功，返回写入字符的个数。否则返回一个负数。
-
-  ```c
-  #include <stdio.h>
-  #include <stdlib.h>
-  
-  int main () 
-  {
-     FILE * fp;
-  
-     fp = fopen ("file.txt", "w+");
-     int n = fprintf(fp, "%s %s %s %d", "We", "are", "in", 2021);
-     printf("%d", n);
-     fclose(fp);
-     
-     return(0);
-  }
-  ```
-
-- #### size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
-
-  从文件读取数据到ptr所指的内存中，size是每个元素的大小，nmemb是元素的个数。返回值是成功读取元素的个数。如果，成功读取元素个数和nmemb不相等，则读到文件尾，可通过feof函数检测。
-
-  ```c
-  #include <stdio.h>
-  #include <string.h>
-  
-  int main () 
-  {
-     FILE *fp;
-     char c[] = "this is 18jsj1";
-     char buffer[100];
-  
-     /* Open file for both reading and writing */
-     fp = fopen("file.txt", "w+");
-  
-     /* Write data to the file */
-     fwrite(c, strlen(c) + 1, 1, fp);
-  
-     /* Seek to the beginning of the file */
-     fseek(fp, 0, SEEK_SET);
-  	
-  	int n;
-     /* Read and display data */
-     n = fread(buffer, strlen(c)+1, 1, fp);
-     //n = fread(buffer, sizeof(char), strlen(c)+1, fp);
-     //n = fread(buffer, sizeof(char), strlen(c)+100, fp); 
-     printf("%s\n", buffer);
-     printf("n = %d\n", n);
-     printf("feof=%d\n",feof(fp));
-     fclose(fp);
-     
-     return(0);
-  }
-  ```
-
-- #### size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
-
-  把ptr指向内存里的数据写入到文件，size是每个元素的大小，nmemb是元素的个数。写文件成功，返回成功写入元素的个数。如果成功写入元素个数，和nmemb不相等
-
-  ```c
-  #include<stdio.h>
-  
-  int main () 
-  {
-     FILE *fp;
-     char str[] = "This is 18jsj";
-  
-     fp = fopen( "file.txt" , "w" );
-     
-     int n;
-     //n = fwrite(str , 1 , sizeof(str) , fp );
-     n = fwrite(str ,sizeof(str) , 1 , fp );
-     printf("%d\n",n);
-     fclose(fp);
-    
-     return(0);
-  }
-  ```
-
-- #### int fseek(FILE *stream, long int offset, int whence)
-
-  设置文件指针位置，whence偏移开始的地方，**SEEK_SET** 表示从文件头开始，**SEEK_CUR** 表示从文件当前位置开始，**SEEK_END** 表示从文件尾开始，offset是偏移量。移动成功返回0，移动失败返回非零值。
-
-  ```c
-  #include <stdio.h>
-  
-  int main () 
-  {
-     FILE *fp;
-  
-     fp = fopen("file.txt","w+");
-     fputs("This is 18jsj1.", fp);
-    
-     fseek( fp, 7, SEEK_SET );
-     fputs(" C Programming Language", fp);
-  
-     fclose(fp);
-     
-     return(0);
-  }
-  ```
-
-- #### void rewind(FILE *stream)
-
-  设置文件指针指向文件最开始的地方。
-
-- #### int feof(FILE *stream);
-
-  检测是否读到文件尾。如果是返回非零，如果不是返回0。
-
-### 二、常见错误
+### （二）常见错误
 
 
 
-### 三、历年高考题
+### （三）历年高考题
 
 1. （2020高考）下面程序的功能是把一个文件的内容拷贝到另一个文件，如果拷贝成功，则提示"File Copy Success!"。以下程序只允许修改两行。
 
