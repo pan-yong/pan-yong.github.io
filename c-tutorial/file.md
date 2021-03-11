@@ -213,21 +213,3 @@
    }
    ```
 
-6. （2015年高考）下面程序运行结果是
-
-   ```c
-   #include<stdio.h>
-   int main()
-   {    
-       FILE *fp;
-       int x[6]={0,1,2,3,4,5},i;
-       fp=fopen("test.dat","wb");
-       fwrite(x,sizeof(int),3,fp);
-       rewind(fp);
-       fread(x,sizeof(int),3,fp);
-       for(i=0; i<6; i++)
-            printf("%d",x[i]);
-       fclose(fp);
-       return 0;
-   }
-   ```
