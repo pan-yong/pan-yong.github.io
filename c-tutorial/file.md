@@ -175,7 +175,24 @@
        {
            printf("\n low=");scanf("%d",&low);
            printf("\n heigh=");scanf("%d",&heigh);
+           if(heigh < low){
+               t = height;height=low;low=t;
+           }
+           n = ________________________________;
+           if(n == 0)
+               printf("here are no scores between %d—%d:\n", low, heigh);
+           else
+           {
+               printf("the scores between %d—%d:\n",low,heigh);
+               for(i = 0; i < n; i++)
+                   printf("%s %4d \n",h[i].num,h[i].score);
+               printf("\n");
+           }
        }
+       else{
+           printf("Fail!\n");
+       }
+       return 0;
    }
    int f(SREC *a, SREC *b, int l, int h)
    {
