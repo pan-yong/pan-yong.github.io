@@ -107,9 +107,9 @@ int main()
     for(i = 0; i < n; i++)
         b[a[i]]++;
     for(i = 1; i < 100; i++)
-        if(a[i] > a[max_i])
+        if(b[i] > b[max_i])
             max_i = i;
-    printf("出现次数最多的是：%d 出现次数：%d", a[max_i], max_i);
+    printf("出现次数最多的是：%d 出现次数：%d", max_i, b[max_i]);
 }
 ```
 
