@@ -1,4 +1,4 @@
-## 2021湖南对口招生二轮联考
+## 2021湖南对口招生二轮联考计算机专业试题
 
 ###### 一、选择题
 
@@ -19,8 +19,6 @@ A. ?:			B. ~				C. &&			   D. +
 ```c
 A. 自动(auto)			B.静态(static)		C.外部(extern)	D. 寄存器(register)
 ```
-
-
 
 ###### 三、综合应用题
 
@@ -298,14 +296,15 @@ int main()
         }
         p->next = q->next;//当前成绩插入到链表中比其小的成绩前面
         q->next = p;
-        
-        __________________; //p = head->next
-        while(p!=NULL)
-        {
-            printf("%d ",p->score);
-            p = p->next;
-        }
     }
+   
+    __________________; //p = head->next
+    while(p!=NULL)
+    {
+        printf("%d ",p->score);
+        p = p->next;
+    }
+    
     p = head;
     while(p->next != NULL)	//释放链表
     {
