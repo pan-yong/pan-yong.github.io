@@ -244,7 +244,7 @@ int main()
 
             ```c
             L7	改为	{t = -t*x/(i++);
-            L3	改为	}while(fabs(t) >= eps);
+            L9	改为	}while(fabs(t) >= eps);
             ```
 
             （2）找最大值和次最大值交换放到最前面

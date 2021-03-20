@@ -142,7 +142,7 @@ int main()
     _______________________;
     float sum, ave;
     
-    for(i = 0; i < N; i)
+    for(i = 0; i < N; i++)
         scanf("%f", ___________);  
     
     for(sum = 0, i = 0; i < N; i++)
