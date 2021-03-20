@@ -120,7 +120,7 @@ int main()
     for(i = 0; i < 12; i++)
         ________________ ;						
     for(i = 1; i<5; i++)
-        printf("%d 出现的次数：%d",i, c[i]);
+        printf("数字%d 出现的次数是：%d次",i, c[i]);
     return 0;
 }
 ```
@@ -153,9 +153,10 @@ int main()
 {
     int a[] = {3, 1, 4, 7, 2, 1, 1, 2, 2};
     int n = sizeof(a) / sizeof(int), i;
-    int b[100] = {0}, max_i = 0;
+    int b[100] = {0};	// b[i] 存放的是数字 i出现的次数。
+    int max_i = 0;
     for(i = 0; i < n; i++)
-        _____________;			// b[a[i]]++  b数组，存放每个数字出现的次数
+        _____________;			
     for(i = 1; i < 100; i++)
         if(b[i] > b[max_i])		// 找b数组中最大值，对应的下标
             max_i = i;
@@ -163,7 +164,7 @@ int main()
 }
 ```
 
-###### dotcpp网站习题
+###### 上机练习题
 
 1. [题目 1025: [编程入门]数组插入处理](https://www.dotcpp.com/oj/problem1025.html)
 2. [题目 1026: [编程入门]数字逆序输出](https://www.dotcpp.com/oj/problem1026.html)
