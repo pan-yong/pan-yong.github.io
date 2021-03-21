@@ -182,6 +182,24 @@ int main()
 #include<stdio.h>
 int main()
 {
+    int a[20] = {3,7,10,12,18,20}, i, j;
+    int x = 15, pos = 4;// 把15插入到数组下标为4的位置
+    for(j = 5; j >= pos; j--)// 数据后移空出pos位置
+        a[j+1] = a[j];
+    a[pos] = x;				// 把数据插入到pos的位置
+    
+    for(i = 0; i < 7; i++)
+        printf("%4d", a[i]);
+    return 0;
+}
+```
+
+3. 在一个升序数组中，插入一个数，使其依然保持升序。
+
+```c
+#include<stdio.h>
+int main()
+{
     int a[20] = {3,7,10,12,18,20}, x = 15, i, j, n;
     i = 6;	    // 初始元素个数
     j = i - 1;	// 从后往前找插入点
