@@ -103,16 +103,16 @@ int main()
 }
 ```
 
-3. 下面程序输出结果是（        ）
+3. 下面程序输出结果是（          ）
 
 ```c
 int main()
 {
     int a[] = {89,88,76,70,68,58};
-    int x = 70, min, pos = -1, find = 0, low = 0, high = 5;
+    int x = 70, mid, pos = -1, find = 0, low = 0, high = 5;
     while(!find && low <= high)
     {
-        min = (high + low) / 2;
+        mid = (high + low) / 2;
         if(x > a[mid])
             high = mid - 1;
         else if(x < a[mid])
@@ -164,7 +164,7 @@ int BinarySearch(int key,int data[])
 ```c
 int main()
 {
-    int a[10] = {1,2,3}, n = 3, i;	// 1. 定义数组  n表示数组元素个数   
+    int a[10] = {1,2,3}, n = 3, i, x;	// 1. 定义数组  n表示数组元素个数   
     a[n++] = 99;				  // 2. 在数组尾插入 99 
     while(n < 10){				  // 3. 循环插入N个数到数组尾
         scanf("%d", &x);
