@@ -140,7 +140,7 @@ int main()
 11. 下面程序运行结果是（            ）
 
 ```c
-#incluce<stdio.h>
+#include<stdio.h>
 int main()
 {
     char a[] = "morming", t;
@@ -148,6 +148,7 @@ int main()
     for(i = 1; i < 7; i++)
         if(a[j] < a[i]) j = i;
     t = a[j];a[j] = a[7];a[7]=t;
+    printf("%s", a);
     return 0;
 }
 ```

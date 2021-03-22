@@ -65,4 +65,82 @@ int main()
 }
 ```
 
-4. 
+4. 下面程序功能是将一个数字符串转换为一个整数，如将字符串`"-1234"` 转为`-1234`。请填空。
+
+```c
+#include<stdio.h>
+#include<string.h>
+int chnum(char *p);
+int main()
+{
+    char s[6];
+    int n;
+    gets(s);
+    if(*s=='-') num = -chnum(s+1);
+    else n = chnum(s);
+    printf("%d", n);
+    return 0;
+}
+int chunum(char *p)
+{
+    int num = 0, k, len, j;
+    len = strlen(p);
+    for( ; _____________; p++)
+    {
+        k = ________________;
+        j = --len;
+        while(_________)
+            k = k * 10;
+        num += k;
+    }
+    return num;
+}
+```
+
+5. 下面程序功能是将八进制正整数字符串转为十进制整数。请填空。
+
+```c
+#include<stdio.h>
+int main()
+{
+    char *p, s[6];
+    int n;
+    p = s;
+    gets(p);
+    n = _____________;
+    while(__________ != '\0')
+        n = n * 8 + *p - '0';
+    printf("%d", n);
+    return 0;
+}
+```
+
+6. 下面程序功能是在字符串str中找出最大的字符并放在第一个位置上，并将该字符前的原字符顺序后移，如`chyab`变成`ychab`。请填空。
+
+```c
+#include<stdio.h>
+int main()
+{
+    char str[80], *p, *q, max;
+    gets(str); p = str;
+    max = *(p++);
+    while(*p != '\0')
+    {
+        if(max < *p ){
+            max = *p;
+            ______________;
+        }
+        p++;
+    }
+    p = q;
+    while(_______)
+    {
+        *p = *(p-1);
+        ______________;
+    }
+    *p = max;
+    puts(p);
+    return 0;
+}
+```
+
