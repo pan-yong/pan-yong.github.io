@@ -112,6 +112,7 @@ int main()
         else if(s[i]==c-32) s[i] +=32;
         i++;
     }
+    printf("%s", s);
     return 0;
 }
 ```

@@ -136,6 +136,7 @@ int main()
     int a[20], i , m = 10, k = 8;
     for(i = 0; m > 0; i++){
         a[i] = m % k;
+        m = m / k;
     }
     for(i--; i >= 0; i--)
         printf("%d", a[i]);
@@ -370,37 +371,37 @@ int main()
 }
 ```
 
-19. 函数fun的功能是：把形参a所指的数组中的奇数按原顺序依次存放到a[0]、a[1]、a[2]......中，把偶数从数组中删除，奇数个数通过函数值返回。
+20. 函数fun的功能是：把形参a所指的数组中的奇数按原顺序依次存放到a[0]、a[1]、a[2]......中，把偶数从数组中删除，奇数个数通过函数值返回。
 
-    ```c
-    #include<stdio.h>
-    #define N 9
-    int fun(int a[], int n)
+```c
+#include<stdio.h>
+#define N 9
+int fun(int a[], int n)
+{
+    int i, j = 0;
+    for(i = 0; i < n; i++)
     {
-        int i, j = 0;
-        for(i = 0; i < n; i++)
-        {
-            if(a[i]%2==______){
-                a[j] = a[i];
-                ___________;
-            }
+        if(a[i]%2==______){
+            a[j] = a[i];
+            ___________;
         }
-        return __________;
     }
-    int main()
-    {
-        int b[N] = {9,1,4,2,3,6,5,8,7}, i, n;
-        printf("The original data: ");
-        for(i = 0; i < N; i++)
-            printf("%4d",b[i]);
-        n = fun(b, N);
-        printf("\n The number of odd: %d\n", n);
-        for(i = 0; i < n; i++)
-            printf("%4d", b[i]);
-    }
-    ```
+    return __________;
+}
+int main()
+{
+    int b[N] = {9,1,4,2,3,6,5,8,7}, i, n;
+    printf("The original data: ");
+    for(i = 0; i < N; i++)
+        printf("%4d",b[i]);
+    n = fun(b, N);
+    printf("\n The number of odd: %d\n", n);
+    for(i = 0; i < n; i++)
+        printf("%4d", b[i]);
+}
+```
 
-20. 下面函数fun的功能是：计算数组元素中所有值为正数的平均值（不包括0）。主函数中，从键盘输入若干个数放入数组中，用0结束输入，并将0放在数组最后一个元素中。例如：数组中元素的值依次是`39,-47,21,2,-8,15,0`，则程序运行输出结果为`19.250000` 。求修改程序中的错误。
+21. 下面函数fun的功能是：计算数组元素中所有值为正数的平均值（不包括0）。主函数中，从键盘输入若干个数放入数组中，用0结束输入，并将0放在数组最后一个元素中。例如：数组中元素的值依次是`39,-47,21,2,-8,15,0`，则程序运行输出结果为`19.250000` 。求修改程序中的错误。
 
 ```c
 L1  #include<stdio.h>
@@ -440,7 +441,7 @@ L4  {
 L5      int p = 0, i;
 L6      while(x != a[p])
 L7          p = p + 1;
-L8      if(p<n)
+L8      if(p>=n)
 L9          return -1;
 L10     else{
 L11         for(i = p; i < n - 1; i++)
