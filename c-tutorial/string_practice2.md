@@ -5,14 +5,14 @@
 ```c
 unsigned int strlen(char *s) 
 {   unsigned int n; 
- 	for (n = 0; *s != '\0'; s++) 
+ 	for (n = 0; __________; s++) 
  		n++; 
  	return n; 
 }
 unsigned int strlen(char *s) 
 {   char *p = s; 
  	while (*p != '\0') 
- 		p++; 
+ 		__________; 
  	return p - s; 
 }
 ```
@@ -22,23 +22,23 @@ unsigned int strlen(char *s)
 ```c
 char *strcpy(char *s, char *t) 
 {   int i = 0; 
-    while ((s[i] = t[i]) != '\0') 
+    while (____________!= '\0') 
      	i++; 
     return s;
 }
 char *strcpy(char *s, char *t) 
 { 
      while ((*s = *t) != '\0') { 
-     	s++; t++; 
+     	______________ 
      } 
     return s;
 }
 char *strcpy(char *s, char *t) 
-{   while ((*s++ = *t++) != '\0');
+{   while ((*s++ = ________ ) != '\0');
     return s;
 }
 char *strcpy(char *s, char *t) 
-{   while (*s++ = *t++) ; 
+{   while ( ________ = *t++) ; 
     return s;
 }
 ```
@@ -50,7 +50,7 @@ char *strcpy(char *s, char *t)
  {  /* strcat: concatenate t to end of s; s must be big enough */  
      int i = 0, j = 0; 
      while (s[i] != '\0') /* find end of s */ 
-     	i++; 
+     	_____________; 
      while ((s[i++] = t[j++]) != '\0') /* copy t */ 
      	; 
  }
@@ -62,17 +62,17 @@ char *strcpy(char *s, char *t)
 /* strcmp: return <0 if s<t, 0 if s==t, >0 if s>t */ 
  int strcmp(char *s, char *t) 
  {   int i; 
-     for (i = 0; s[i] == t[i]; i++) 
+     for (i = 0; __________; i++) 
      	if (s[i] == '\0') 
      		return 0; 
-     return s[i] - t[i]; 
+     return ______________; 
  }
  int strcmp(char *s, char *t) 
  { 
  	for ( ; *s == *t; s++, t++) 
- 		if (*s == '\0') 
+ 		if (___________) 
  			return 0; 
- 	return *s - *t; 
+ 	return ____________; 
  }
 ```
 
@@ -82,7 +82,7 @@ char *strcpy(char *s, char *t)
  void reverse(char s[]) 
  {   /* reverse: reverse string s in place */ 
      int c, i, j; 
-     for (i = 0, j = strlen(s)-1; i < j; i++, j--) { 
+     for (i = 0, j = _________ ; i < j; _________ , j--) { 
      	c = s[i]; s[i] = s[j]; s[j] = c; 
      } 
  }
@@ -91,11 +91,11 @@ char *strcpy(char *s, char *t)
 6. squeeze
 
 ```c
- void squeeze(char s[], int c)  /* squeeze: delete all c from s */
+ void squeeze(char s[], char c)  /* squeeze: delete all c from s */
  { 
      int i, j; 
      for (i = j = 0; s[i] != '\0'; i++) 
-     	if (s[i] != c) 
+     	if (___________) 
      		s[j++] = s[i]; 
      s[j] = '\0'; 
  }
@@ -106,7 +106,7 @@ char *strcpy(char *s, char *t)
 ```c
 int atoi(char s[])   /* atoi: convert s to integer */ 
  {   int i, n = 0; 
-     for (i = 0; s[i] >= '0' && s[i] <= '9'; ++i) 
+     for (i = 0; _________________ ; ++i) 
      	n = 10 * n + (s[i] - '0'); 
      return n; 
  }
@@ -118,7 +118,7 @@ int atoi(char s[])   /* atoi: convert s to integer */
      if (s[i] == '+' || s[i] == '-') /* skip sign */ 
      	i++; 
      for (n = 0; isdigit(s[i]); i++) 
-     	n = 10 * n + (s[i] - '0'); 
+     	n = _________________; 
      return sign * n; 
  }
 ```
@@ -133,8 +133,8 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
      	n = -n; /* make n positive */ 
      i = 0; 
      do { /* generate digits in reverse order */ 
-     	s[i++] = n % 10 + '0'; /* get next digit */ 
-     } while ((n /= 10) > 0); /* delete it */ 
+     	s[i++] = _____________; /* get next digit */ 
+     } while ((____________) > 0); /* delete it */ 
      if (sign < 0) 
      	s[i++] = '-'; 
      s[i] = '\0'; 
@@ -155,11 +155,11 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
      if (s[i] == '+' || s[i] == '-') 
      	i++; 
      for (val = 0.0; isdigit(s[i]); i++) 
-     	val = 10.0 * val + (s[i] - '0'); 
+     	val = ____________________; 
      if (s[i] == '.') 
      	i++; 
      for (power = 1.0; isdigit(s[i]); i++) { 
-     	val = 10.0 * val + (s[i] - '0'); 
+     	val = ____________________; 
      	power *= 10; 
      } 
      return sign * val / power; 
@@ -179,9 +179,9 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
      {   ++nc; 
          if (c == '\n')  ++nl; 
          if (c == ' ' || c == '\n' || c = '\t') 
-            state = OUT; 
+            state = _________; 
          else if (state == OUT) { 
-            state = IN; 
+            state = _________; 
             ++nw; 
          } 
      } 
@@ -196,7 +196,7 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
  int trim(char s[]) 
  {   int n; 
      for (n = strlen(s)-1; n >= 0; n--) 
-     	if (s[n] != ' ' && s[n] != '\t' && s[n] != '\n') 
+     	if (_______________________________________________) 
      		break; 
      s[n+1] = '\0'; 
      return n; 
@@ -211,7 +211,7 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
  {   int i, j, k; 
      for (i = 0; s[i] != '\0'; i++) 
      { 
-     	for (j=i, k=0; t[k]!='\0' && s[j]==t[k]; j++, k++) 
+     	for (______________; t[k]!='\0' && s[j]==t[k]; j++, k++) 
      		; 
      	if (k > 0 && t[k] == '\0') 
      		return i; 
@@ -232,7 +232,7 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
      for (i = 0; i < 10; ++i) 
      	ndigit[i] = 0; 
      while ((c = getchar()) != EOF) 
-     	if (c >= '0' && c <= '9') 
+     	if (_______________________) 
      		++ndigit[c-'0']; 
      	else if (c == ' ' || c == '\n' || c == '\t') 
      		++nwhite; 
