@@ -116,15 +116,15 @@ int main()
 ```c
 struct STU{int num; float score;};
 void f1(struct STU p){
-    struct STU s[2] = {{20044, 550},{20045, 537}};
+    struct STU s[2] = { {20044, 550},{20045, 537} };
     p.num = s[0].num; p.score = s[0].score;
 }
 void f2(struct STU *p){
-    struct STU s[2] = {{20044, 550},{20045, 537}};
+    struct STU s[2] = { {20044, 550},{20045, 537} };
     p->num = s[1].num; p->score = s[1].score;
 }
 int main()
-{   struct STU s[2] = {{20041, 703}, {20042, 580}};
+{   struct STU s[2] = { {20041, 703}, {20042, 580} };
     f1(s[0]); f2(&s[1]);
     printf("%d %.0f\n", s[0].num, s[0].score);
 	printf("%d %.0f", s[0].num, s[0].score);
