@@ -85,7 +85,7 @@ printf("%d,%c", p->num, (*p).name[2]);
 struct date{ int year, month, day;};
 struct s{
     struct date birthday; char name[20];
-}x[2] = {{2008,10,1,"Guangzhou"},{2009,12,25,"Tianjin"}};
+}x[2] = { {2008,10,1,"Guangzhou"}, {2009,12,25,"Tianjin"} };
 printf("%s,%d", x[0].name, x[1].birthday.year);
 ```
 
