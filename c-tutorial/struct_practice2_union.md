@@ -104,7 +104,7 @@ void amovep(int *p, int a[][4], int n)
             *p++ = a[i][j];
 }
 int main()
-{   int *p, a[3][4] = {{1,3,5},{2,4,6}};
+{   int *p, a[3][4] = { {1,3,5},{2,4,6} };
     p = (int *) malloc( sizeof(int)*10);
     amovep(p, a, 3);
     printf("%d %d", p[2], p[5]);
