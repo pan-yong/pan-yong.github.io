@@ -53,15 +53,30 @@ int main()
 ```c
 float getMax(float a[], int n)
 {
-    
+    float max = a[0];
+    int i;
+    for(i = 1; i < n; i++)
+        if(__________)
+            max = ______;
+    return max;
 }
 float getMin(float a[], int n)
 {
-    
+    float min = a[0];
+    int i;
+    for(i = 1; i < n; i++)
+        if(__________)
+            min = ______;
+    return min;
 }
 float getAve(float a[], int n)
 {
-    
+    int i;
+    float sum = 0, ave;
+    for(i = 0; i < n; i++)
+        sum += ______;
+    ave = ___________;
+    return ave;
 }
 int main()
 {
@@ -77,11 +92,17 @@ int main()
 ```c
 void mystrcat(char s1[], char s2[])
 {
-    
+    int i = 0, j = 0;
+    while(_____) i++;
+    while(s2[j] != '\0')
+        ___________;
+    s1[i] = '\0';
 }
 int main()
 {
-    
+    char s1[80] = "welcome", s2[80] = "HR";
+    mystrcat(s1, s2);
+    printf("%s", s1);
 }
 ```
 
@@ -90,11 +111,15 @@ int main()
 ```c
 int mystrlen(char s[])
 {
-    
+    int i = 0;
+    while(s[i] != '\0')
+        _______;
+    return i;
 }
 int main()
 {
-    
+    char s[] = "heihei";
+    printf("%d", mystrlen(s));
 }
 ```
 
