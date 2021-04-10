@@ -35,6 +35,7 @@
 
 ```c
 #include <stdio.h>
+
 int main () 
 {
    FILE *fp;
@@ -64,15 +65,18 @@ int main ()
 
 ```c
 #include <stdio.h>
+
 int main () 
 {
    FILE *fp;
    int ch;
+
    fp = fopen("file.txt", "w+");
    for( ch = 33 ; ch <= 100; ch++ ) {
       fputc(ch, fp);
    }
    fclose(fp);
+
    return(0);
 }
 ```
@@ -89,6 +93,7 @@ int main ()
 {
    FILE *fp;
    char str[60];
+
    /* opening file for reading */
    fp = fopen("file.txt" , "r");
    if(fp == NULL) {
@@ -100,6 +105,7 @@ int main ()
       puts(str);
    }
    fclose(fp);
+   
    return(0);
 }
 ```
@@ -135,17 +141,20 @@ int main ()
    char str1[10], str2[10], str3[10];
    int year;
    FILE * fp;
+
    fp = fopen ("file.txt", "w+");
    fputs("We are in 2021", fp);
-    
+   
    rewind(fp);
    fscanf(fp, "%s %s %s %d", str1, str2, str3, &year);
-    
+   
    printf("Read String1 |%s|\n", str1 );
    printf("Read String2 |%s|\n", str2 );
    printf("Read String3 |%s|\n", str3 );
    printf("Read Integer |%d|\n", year );
+
    fclose(fp);
+   
    return(0);
 }
 ```
@@ -157,13 +166,16 @@ int main ()
 ```c
 #include <stdio.h>
 #include <stdlib.h>
+
 int main () 
 {
    FILE * fp;
+
    fp = fopen ("file.txt", "w+");
    int n = fprintf(fp, "%s %s %s %d", "We", "are", "in", 2021);
    printf("%d", n);
    fclose(fp);
+   
    return(0);
 }
 ```
@@ -177,19 +189,24 @@ int main ()
 ```c
 #include <stdio.h>
 #include <string.h>
+
 int main () 
 {
    FILE *fp;
    char c[] = "this is 18jsj1";
    char buffer[100];
+
    /* Open file for both reading and writing */
    fp = fopen("file.txt", "w+");
+
    /* Write data to the file */
    fwrite(c, strlen(c) + 1, 1, fp);
+
    /* Seek to the beginning of the file */
    fseek(fp, 0, SEEK_SET);
+	
+	int n;
    /* Read and display data */
-   int n ;
    n = fread(buffer, strlen(c)+1, 1, fp);
    //n = fread(buffer, sizeof(char), strlen(c)+1, fp);
    //n = fread(buffer, sizeof(char), strlen(c)+100, fp); 
@@ -197,6 +214,7 @@ int main ()
    printf("n = %d\n", n);
    printf("feof=%d\n",feof(fp));
    fclose(fp);
+   
    return(0);
 }
 ```
@@ -207,11 +225,14 @@ int main ()
 
 ```c
 #include<stdio.h>
+
 int main () 
 {
    FILE *fp;
    char str[] = "This is 18jsj";
+
    fp = fopen( "file.txt" , "w" );
+   
    int n;
    //n = fwrite(str , 1 , sizeof(str) , fp );
    n = fwrite(str ,sizeof(str) , 1 , fp );
@@ -230,14 +251,19 @@ int main ()
 
 ```c
 #include <stdio.h>
+
 int main () 
 {
    FILE *fp;
+
    fp = fopen("file.txt","w+");
    fputs("This is 18jsj1.", fp);
+  
    fseek( fp, 7, SEEK_SET );
    fputs(" C Programming Language", fp);
+
    fclose(fp);
+   
    return(0);
 }
 ```
@@ -250,32 +276,7 @@ int main ()
 
 检测是否读到文件尾。如果是返回非零，如果不是返回0。
 
-##### 14. long int ftell(FILE *stream);
-
-得到文件当前位置，相对于文件头的位置偏移量。文件出错，返回-1。
-
-```c
-#include <stdio.h>
-
-int main () 
-{
-   FILE *fp;
-   int len;
-   fp = fopen("file.txt", "r");
-   if( fp == NULL )  {
-      perror ("Error opening file");
-      return(-1);
-   }
-    
-   fseek(fp, 0, SEEK_END);
-   len = ftell(fp);
-   fclose(fp);
-   printf("Total size of file.txt = %d bytes\n", len); 
-   return(0);
-}
-```
-
-##### 15. 参考资料
+##### 14. 参考资料
 
 > https://www.tutorialspoint.com/c_standard_library/stdio_h.htm
 
@@ -509,9 +510,30 @@ int f(SREC *a, SREC *b, int l, int h)
 }
 ```
 
+##### 2015年高考
+
+6. 下面程序运行结果是（        ）
+
+```c
+#include<stdio.h>
+int main()
+{    
+    FILE *fp;
+    int x[6]={0,1,2,3,4,5},i;
+    fp=fopen("test.dat","wb");
+    fwrite(x,sizeof(int),3,fp);
+    rewind(fp);
+    fread(x,sizeof(int),3,fp);
+    for(i=0; i<6; i++)
+         printf("%d",x[i]);
+    fclose(fp);
+    return 0;
+}
+```
+
 ##### 2013年高考
 
-6. 下面程序从文本文件test.txt逐个读入字符，并显示在屏幕上。
+7. 下面程序从文本文件test.txt逐个读入字符，并显示在屏幕上。
 
 ```c
 #include<stdio.h>
@@ -536,7 +558,7 @@ int main()
 
 ##### 2011年高考
 
-7. 随着信息化进程的不断推进，数据的安全性越来越受到人们的重视，数据加密技术是保证数据安全的重要手段。编程实现对C盘根目录下名为“new.dat”文件的数据进行加密，加密方式是将“new.dat”文件中每个字符与字符A进行异或运算，运算后的加密数据存储到“new.dat”文件中。
+8. 随着信息化进程的不断推进，数据的安全性越来越受到人们的重视，数据加密技术是保证数据安全的重要手段。编程实现对C盘根目录下名为“new.dat”文件的数据进行加密，加密方式是将“new.dat”文件中每个字符与字符A进行异或运算，运算后的加密数据存储到“new.dat”文件中。
 
 ```c
 #include<stdio.h>
@@ -563,7 +585,7 @@ int main()
 
 ##### 2010年高考
 
-8. 设文件studs.dat中存放着学生的基本信息，其基本信息用结构体来描述。以下程序的功能是：输入要读取的学生人数，利用malloc动态分配内存来存储从文件中读取的学生信息（以方便进一步管理），并输出读取的学号，姓名，专业。请将正确的内容填入答题卡的相应位置上，使程序完整。
+9. 设文件studs.dat中存放着学生的基本信息，其基本信息用结构体来描述。以下程序的功能是：输入要读取的学生人数，利用malloc动态分配内存来存储从文件中读取的学生信息（以方便进一步管理），并输出读取的学号，姓名，专业。请将正确的内容填入答题卡的相应位置上，使程序完整。
 
 ```c
 #include<stdio.h>
@@ -604,7 +626,7 @@ int main()
 
 ##### 2009年高考
 
-9. 以下程序的功能是：输入某公司50名职员的工号、姓名和地址并存入名为“company.txt”的磁盘文件。请将正确的内容填入答题卡相应位置中，使程序完整。
+10. 以下程序的功能是：输入某公司50名职员的工号、姓名和地址并存入名为“company.txt”的磁盘文件。请将正确的内容填入答题卡相应位置中，使程序完整。
 
 ```c
 #include<stdio.h>
@@ -639,122 +661,3 @@ int main()
 }
 ```
 
-##### 其他练习题
-
-10. 标准库函数fgets(s,n,f)的功能是（        ）
-
-```text
-A. 从文件f中读取长度为n的字符串存入指针s所指的内存
-B. 从文件f中读取长度不超过n-1的字符串存入指针s所指的内存
-C. 从文件中读取长度为n-1的字符串存入指针s所指的内存
-```
-
-11. 函数fputs(str,fp)的正确功能是（        ）
-
-```text
-A. 把str所指的字符串，包括最后的'\0'，输出到fp所指的文件中
-B. 把str所指的字符串输出到fp所指的文件中，最后的'\0'用'\n'替换
-C. 把str所指的字符串输出到fp所指的文件中，但不输出'\0'
-D. 把str所指的字符串输出到fp所指的文件中，但不输出'\0'，而是由系统自动在字符串最后加字符串结束标志
-```
-
-12. 函数fseek(fp, -20, 2)的含义是（        ）
-
-```text
-A. 将文件位置指针移到距离文件头20个字节处
-B. 将文件位置指针从当前位置向后移动20个字节
-C. 将文件位置指针从文件末尾处后退20个字节
-D. 将文件位置指针移动到距当前位置20个字节处
-```
-
-13. 与fseek(fp, 0, SEEK_SET)函数作用相同的是（        ）
-
-    ```text
-    A. feof(fp)			B. ftell(fp)		C. fgetc(fp)		D. rewind(fp)
-    ```
-
-14. 设有以下结构体类型，将结构体数组中的元素写道硬盘fp所指文件中，不正确的形式是（        ）
-
-    ```c
-    struct st{ char name[10];int num; float s[4]; } student[50];
-    ```
-
-    ```text
-    A. fwrite(student , sizeof(struct st), 50, fp);
-    B. fwrite(student, 50 * sizeof(struct st), 1, fp);
-    C. fwrite(student, 25*sizeof(struct st), 25, fp);
-    D. for(i = 0; i < 50; i++)
-    	  fwrite(student+i, sizeof(struct st), 1, fp);
-    ```
-
-    15. 下面程序输出结果是（        ）
-
-    ```c
-    #include<stdio.h>
-    int main()
-    {
-        FILE *fp;
-        int i, k ,n;
-        fp = fopen("data.dat", "w+");
-        for(i = 1; i < 6; i++)
-        {
-            fprintf(fp, "%d", i);
-            if(i%3==0)fprintf(fp,"\n");
-        }    
-        rewind(fp);
-        fscanf(fp, "%d%d", &k, &n);
-        printf("%d %d", k, n);
-        return 0;
-    }
-    ```
-
-    16. 已知e:\ex1.dat存放了3个学生的姓名、年龄、住址信息，将它们打印出。
-
-        ```c
-        #include<stdio.h>
-        ____________ struct{
-            char xm[20];  int n;  char zz[40];
-        }XS;
-        int main()
-        {
-            XS a[3];
-            int i;
-            FILE *fp;
-            if((fp = fopen("e:\\ex1.dat", "rb")) == NULL){
-                printf("file open error");
-                eixt(0);
-            }
-            fread(_______________________);
-            for(i = 0; i < 3; i++)
-                printf("%s, %d, %s\n", a[i].xm, a[i].n, a[i].zz);
-            ______________________________;
-            return 0;
-        }
-        ```
-
-        17. 下面程序从一个二进制文件读出结构体数据，并将结构体数据输出到屏幕上，在main函数中有三处错误，请标记并改正，不得增行和删行。
-
-            ```c
-            #include<stdio.h>
-            struct student 
-            {
-                char name[10];
-                float score;
-            }stu;
-            int main()
-            {
-                file *f;
-                if((f = fopen("a.txt", "rb")) == NULL)
-                {
-                	printf("cannot open file!\n");
-                    exit(0);
-                }
-                while(feof(f))
-                {
-                    fread(stu, sizeof(struct student), 1, f);
-                    printf("%s, %.2f\n", stu.name, stu.score);
-                }
-                fclose(f);
-                return 0;
-            }
-            ```
