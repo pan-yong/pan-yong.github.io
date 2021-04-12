@@ -1,0 +1,85 @@
+## Work Counting
+
+The fourth in our series of useful programs counts lines, words, and characters, with the loose definition that a word is any sequence of characters that does not contain a blank, tab or newline. This is a bare-bones version of the UNIX program wc.
+
+```c
+#include<stdio.h>
+
+#define	IN	1	/*inside a word*/
+#define OUT	0	/*outside a word*/
+
+/*count lines, words, and characters in input*/
+int main()
+{
+    int c, nl, nw, nc, state;
+    state = OUT;
+    nl = nw = nc = 0;
+    while( (c = getchar()) != EOF )
+    {
+        ++nc;
+        if(c == '\n')
+            ++nl;
+        if(c == ' ' || c == '\n' || c == '\t')
+            state = OUT;
+        else if(state == OUT){
+            state = IN;
+            ++nw;
+        }
+    }
+    printf("%d %d %d\n", nl, nw, nc);
+    return 0;
+}
+```
+
+```tex
+Input:
+
+Output:
+
+```
+
+```tex
+如何输入EOF 
+Windows 下：输入Enter，再输入ctrl +z，再输入Enter 。
+Linux下：ctrl + d
+```
+
+```tex
+知识点
+1. 赋值运算符=，结合次序，从右往左。
+	nl = nw = nc = 0 等价于 nl = (nw = (nc = 0))
+	
+2. 逻辑或 || 从左至右求值，只要能够判断最终结果为真或假，求值立即终止。逻辑与&& 比逻辑或||高一个优先级。
+	if( c == ' ' || c == '\n' || c == '\t')
+
+3. if语句
+```
+
+```c
+//练习1-12: 编写一个程序，输入若干字符，以每行一个单词的形式输出。 
+
+#include<stdio.h>
+#define IN 1
+#define OUT 0
+int main()
+{
+    int c, state = OUT;
+    while((c = getchar()) != EOF)
+    {
+        if(c == ' ' || c == '\n' || c == '\t')
+        {
+            if(state == IN) {
+                putchar('\n');
+                state = OUT;
+            }
+        }
+        else if(state == OUT){
+            state = IN;
+            putchar(c);
+        }
+        else
+            putchar(c);
+    }
+}
+```
+

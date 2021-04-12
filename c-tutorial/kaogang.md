@@ -23,6 +23,6 @@
 
 操作系统：Windows 7
 
-编程软件：[Turbo C3.0](https://h2ocdn.lavasoft.com/soft32/d6617ffe495784fbd76cece42cbda0851cc87f34/turbo-c_3.2.2.0_soft32.exe?AWSAccessKeyId=2LBKUXL4M3WJQV5I22NS&Expires=1616039037&Signature=TX2zQUv4p1l7gj9GAhU1DL5A%2BTY%3D)
+编程软件：[Turbo C3.0](https://down10.zol.com.cn/bianchengtools/WY_TCPP30H_B1009.zip)
 
 参考教材：《编程语言基础——C语言》（第3版），陈琳主编。
