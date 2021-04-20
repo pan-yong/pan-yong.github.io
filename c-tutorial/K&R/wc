@@ -32,13 +32,6 @@ int main()
 ```
 
 ```tex
-Input:
-
-Output:
-
-```
-
-```tex
 如何输入EOF 
 Windows 下：输入Enter，再输入ctrl +z，再输入Enter 。
 Linux下：ctrl + d
@@ -53,6 +46,9 @@ Linux下：ctrl + d
 	if( c == ' ' || c == '\n' || c == '\t')
 
 3. if语句
+
+4. while语句
+
 ```
 
 ```c
