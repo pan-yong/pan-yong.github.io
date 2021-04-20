@@ -171,19 +171,21 @@ struct NumNode *insertToList(struct NumNode *head, int fdata)
         q = p;
         p = p->next;
     }
+    // p == NULL
+    // fdata <= p->data   插入在p的前面  
     if(p != NULL)
     {
     	if(head == p){
-            _____________________;
+            _____________________;   // newnode->next = head; head = newnode;
         }
         else{
-            q->next = newNode;
+            q->next = newNode;		// q->next = newnode; 
         }
-        _________________________;
+        _________________________;   // newnode->next = p;
     }
     else
     {
-        _________________________;
+        _________________________;  // q是尾结点   q->next = newnode;
     }
     return head;
 }
