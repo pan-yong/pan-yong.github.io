@@ -9,14 +9,11 @@ A. char s[5]={"abc"};	  B. char s[5]={'a','b','c'};
 C. char s[5]="abcd";	  D. char s[5]="abcde";
 ```
 
-3. 下面程序输出结果是（        ）
+2. 下面程序输出结果是（        ）
 
 ```c
-#include<stdio.h>
-#include<string.h>
 int main()
-{
-    char s[] = "perfect", b[9] = "perfect"
+{   char s[] = "perfect", b[9] = "perfect"
     printf("%d %d %d", strlen(s), sizeof(s),sizeof(b));	
 }
 ```
@@ -44,10 +41,47 @@ A. gets(a,b);		B. scanf("%s%s",a,b);	C. scanf("%s%s",&a,&b);		D.gets("a"),gets("
 6. 下面程序运行结果是（        ）
 
 ```c
-#include<stdio.h>
+char a[3], b[] = "China";
+a = b;  printf("%s", a);
+A. 运行后将输出China		B. 运行后将输出Ch		C. 运行后将输出Chi	D. 编译出错
+```
+
+7. 下面程序功能是输出两个字符串中对应相等的字符，请填空。
+
+```c
+char x[] = "programming", y[] = "Fortran";
+int i = 0;
+while(x[i]!='\0' && y[i] != '\0')
+    if(x[i]==y[i]) printf("%c",__________);
+    else i++;
+```
+
+8. 下面程序段的运行结果是（            ）
+
+```c
+char c[] = "\t\v\\\0will\n", d[] = "ab\n\\012\\\"" ;
+printf("%d %d",strlen(c), strlen(d));
+```
+
+9. 下面程序运行结果是（        ）
+
+```c
 int main()
-{
-    char a1[5], a2[5], a3[5], a4[5];
+{   char a[] = "morming", t;
+    int i, j = 0;
+    for(i = 1; i < 7; i++)
+        if(a[j] < a[i]) j = i;
+    t = a[j];a[j] = a[7];a[7]=t;
+    printf("%s", a);
+    return 0;
+}
+```
+
+10. 下面程序运行结果是（            ）
+
+```c
+int main()
+{   char a1[5], a2[5], a3[5], a4[5];
     scanf("%s%s", a1, a2);
     gets(a3);gets(a4);
     puts(a1);puts(a2);
@@ -64,15 +98,7 @@ int main()
       cc dd         dd           ee
 ```
 
-7. 下面程序运行结果是（        ）
-
-```c
-char a[3], b[] = "China";
-a = b;  printf("%s", a);
-A. 运行后将输出China		B. 运行后将输出Ch		C. 运行后将输出Chi	D. 编译出错
-```
-
-8. 下面程序输出结果是（        ）
+11. 下面程序输出结果是（        ）
 
 ```c
 #include<stdio.h>
@@ -97,7 +123,7 @@ int main()
                         f
 ```
 
-9. 当运行一些程序时，从键盘输入`AhaMA Aha<回车>` ，则下面程序的运行结果是（                                  ）
+12. 当运行一些程序时，从键盘输入`AhaMA Aha<回车>` ，则下面程序的运行结果是（                                  ）
 
 ```c
 #include<stdio.h>
@@ -117,7 +143,7 @@ int main()
 }
 ```
 
-10. 下面程序运行结果是（               ）
+13. 下面程序运行结果是（               ）
 
 ```c
 #include<stdio.h>
@@ -136,40 +162,6 @@ int main()
     }
     return 0;
 }
-```
-
-11. 下面程序运行结果是（            ）
-
-```c
-#include<stdio.h>
-int main()
-{
-    char a[] = "morming", t;
-    int i, j = 0;
-    for(i = 1; i < 7; i++)
-        if(a[j] < a[i]) j = i;
-    t = a[j];a[j] = a[7];a[7]=t;
-    printf("%s", a);
-    return 0;
-}
-```
-
-12. 下面程序功能是输出两个字符串中对应相等的字符，请填空。
-
-```c
-char x[] = "programming";
-char y[] = "Fortran";
-int i = 0;
-while(x[i]!='\0' && y[i] != '\0')
-    if(x[i]==y[i]) printf("%c",__________);
-    else i++;
-```
-
-13. 下面程序段的运行结果是（            ）
-
-```c
-char c[] = "\t\v\\\0will\n", d[] = "ab\n\\012\\\"" ;
-printf("%d %d",strlen(c), strlen(d));
 ```
 
 14. 下面程序运行结果是（        ）

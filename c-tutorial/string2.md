@@ -28,18 +28,21 @@ char *strcpy(char *s, char *t)
 }
 char *strcpy(char *s, char *t) 
 { 
+    char *dest = s;
      while ((*s = *t) != '\0') { 
      	s++; t++; 
      } 
-    return s;
+    return dest;
 }
 char *strcpy(char *s, char *t) 
-{   while ((*s++ = *t++) != '\0');
-    return s;
+{   char *dest = s;
+    while ((*s++ = *t++) != '\0');
+    return dest;
 }
 char *strcpy(char *s, char *t) 
-{   while (*s++ = *t++) ; 
-    return s;
+{   char *dest = s;
+    while (*s++ = *t++) ; 
+    return dest;
 }
 ```
 
