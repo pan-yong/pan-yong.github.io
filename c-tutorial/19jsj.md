@@ -68,8 +68,21 @@ static int day_tab[2][13] = {{0,31,28,31,30,31,30,31,31,30,31,30,31},{0,31,29,31
 struct date{
     int year, month, day;
 };
+int day_of_year(struct date pd)
+{
+    int day = pd.day;
+    int year = pd.year;
+    int leap = year%4==0&&year%100!=0||year%400==0;
+    int i;
+    for(i = 0; i < pd.month; i++)
+        day += day_tab[leap][i];
+    return day;
+}
 int main()
 {
-    
+    struct date pd;
+    scanf("%d %d %d", &pd.year, &pd.month, &pd.day);
+    printf("%d", day_of_year(pd));
+    return 0;
 }
 ```
