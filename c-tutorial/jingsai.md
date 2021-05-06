@@ -4,21 +4,21 @@
 
 **竞赛时间**
 
-2021年5月12日（周三）14：30——17：00         305机房
+2021年5月12日（星期三）14：30~17：00  
 
 **竞赛报名**
 
 在校学生均可报名，需要C语言编程基础。即日起开始报名，5月12日12：00截止。
 
-报名地址：https://shimo.im/forms/jryjHkVrRQhhktqh/fill
+[报名地址：https://shimo.im/forms/jryjHkVrRQhhktqh/fill](https://shimo.im/forms/jryjHkVrRQhhktqh/fill)
 
 **竞赛形式**
 
+地点：305机房
+
 形式：组队形式参赛，可以一人一组，最多不超过三人一组。每个小组一台电脑，小组成员分工协作完成任务。每完成一道题，对应小组插起一个气球，营造竞技又富有趣味的竞赛氛围。
 
-平台：竞赛使用dotcpp平台，在线自动判题打分排名。题型：程序填空题，程序设计题，都需要提交完整代码。请提前注册号账号。
-
-练习赛地址：https://www.dotcpp.com/oj/contest2975.html
+平台：竞赛使用dotcpp平台，在线自动判题打分排名。题型：程序填空题，程序设计题，都需要提交完整代码。请提前注册号账号，[尝试练习赛](https://www.dotcpp.com/oj/contest2975.html)。
 
 **竞赛评委**
 
