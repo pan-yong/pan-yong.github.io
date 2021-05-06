@@ -32,3 +32,4 @@
 
 奖品：《UNIX传奇：历史与回忆》、Linus自传《只是为了好玩》、《C程序设计语言》。
 
+<img src=".\images\jingsai" alt="C语言程序设计竞赛" style="zoom:50%;" />
