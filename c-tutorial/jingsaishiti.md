@@ -17,23 +17,18 @@
 INF
 ```
 
+参考答案
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```c
+int main()
+{
+    int x1, y1, x2, y2;
+    scanf("%d %d", &x1, &y1);
+    scanf("%d %d", &x2, &y2);
+    if(x1 == x2) printf("INF");
+    else printf("%d", (y2-y1)/(x2-x1));
+}
+```
 
 ###### B. [核桃的数量](https://www.dotcpp.com/oj/problem.php?id=1446)
 
@@ -59,23 +54,23 @@ INF
 20
 ```
 
+参考代码：
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```c
+#include<stdio.h>
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    int sum = 0;
+    while(++sum)
+    {
+        if(sum % 3==0 && (sum/3)%a==0 && (sum/3)%b==0 && (sum/3)%c==0)
+            break;
+    }
+    printf("%d",sum/3);
+}
+```
 
 ###### C. [IP判断](https://www.dotcpp.com/oj/problem1116.html)
 
@@ -110,12 +105,6 @@ N
 
 请补全下面代码：
 
-
-
-
-
-
-
 ```c
 #include<stdio.h>
 #include<string.h>
@@ -126,34 +115,28 @@ int main()
    while(scanf("%s",s)!=EOF)
    {
        int i = 0, num = 0;
-       for(i=0;_______(1)_______;i++)
+       for(i=0;s[i];i++)
        {
-           if(isdigit(s[i]))
+           if(isdigit(s[i])){
+               num = num * 10 + s[i]-'0';
+           }
+           else if(s[i]=='.')
            {
-               ___________(2)_____________;
                if(num > 255){
                    printf("N\n");
                    break;
                }
+               num = 0;
            }
-           else if(s[i]=='.')
-           {
-               ___________(3)____________;
-           }
-           else 
-           {
+           else {
                 printf("N\n");
                 break;
             }  
        }  
-       if(______(4)________)printf("Y\n");    
+       if(!s[i])printf("Y\n");    
    }
 }
 ```
-
-
-
-
 
 ###### D. [错误票据](https://www.dotcpp.com/oj/problem1458.html)
 
@@ -179,53 +162,27 @@ int main()
 
 请补全下面代码：
 
-
-
-
-
-
-
-
-
-
-
-
-
 ```c
 #include<stdio.h>
 int main()
 {
     int N,a[100000]={0}, t, m, n, min = 100000;
-    scanf("%d", &N);		   // N表示接下来有N行数据输入
+    scanf("%d", &N);
     while(scanf("%d", &t)!=EOF) // 输入票据ID
     {
-        if(_______) n = t;		 // 票据ID号t重复出现
-        a[t] = 1;				// 标记ID号t出现过
-        if(t < min) min = t;	 // 记录票据最小ID
+      if(a[t]) n = t;			// 找到重复票据ID
+      a[t] = 1;					// 标记ID出现过
+      if(t < min) min = t;		// 记录票据最小ID
     }
     m = min;
     while(1)
     {
-        if(________)			// 找到断号ID
+        if(a[++m]==0)			// 找到断号ID
             break;
     } 
-    printf("%d %d", m, n);		// 输出断号ID，重号ID
+    printf("%d %d", m, n);
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ###### E. [洗牌](https://www.dotcpp.com/oj/problem1542.html)
 
@@ -253,48 +210,43 @@ J 8 3 K 4 1 6 J 6
 
 请补全下面代码：
 
-
-
-
-
 ```c
 #include<stdio.h>
 #include<string.h>
-// 函数功能：把扑克牌字符串转整数。
+
 int cardToInt(char card[3])
 {
-    if(___________________________)
+    if(card[0]=='1'&&card[1]=='0')
         return 10;
-    else if(card[0] == 'J')  return 11;
-    else if(card[0] == 'Q')  return 12;
-    else if(card[0] == 'K')  return 13;
+    else if(card[0] == 'J')
+        return 11;
+    else if(card[0] == 'Q')
+        return 12;
+    else if(card[0] == 'K')
+        return 13;
     else if(card[0] >= '0' && card[0] <= '9')
-        return __________________;
+        return card[0] - '0';
 }
-// 函数功能：按照洗牌规则洗牌
 void shuffleCards(char cards[][3], int n)
 {
-    int i = 0, j, p;  char tmpCard[3] = {0};
+    int i = 0, j, p;
+    char tmpCard[3] = {0};
     for(i = 0; i < n; i++)
     {
-        ____________________________; // 查看牌cards[i]大小
-        if(p < i)	// 把牌cards[i]插入到下标为p的位置
-        {  
-            // 把牌cards[i]放入到tmpCard中
-            strcpy(tmpCard, cards[i]); 
+        p = cardToInt(cards[i]);
+        if(p < i)
+        {
+            strcpy(tmpCard, cards[i]);
             j = i-1;
-            while(______________)				
-            {   
-                // 扑克牌后移，空出下标为p的位置
-                ___________________________; 
+            while(j >= p)
+            {
+                strcpy(cards[j+1], cards[j]);
                 j--;
             }
-            // 把拿到的牌插入到下标为p的位置
             strcpy(cards[j+1],tmpCard); 
         }
     }
 }
-// 函数功能：输出每一张扑克牌
 void printCards(char cards[][3], int n)
 {
     int i;
@@ -305,32 +257,16 @@ int main()
 {
     char cards[52][3] = {0}, ch;
     int n = 0;
-    while(scanf("%s",cards[n])!=EOF)  // 输入每一张扑克牌
+    while(scanf("%s",cards[n])!=EOF)
         n++;
     
-    if(n < 52)printf("-1");			// 牌数量不对，输出-1
+    if(n < 52)printf("-1");
     else{
-        shuffleCards(cards,n);		// 洗牌
-        printCards(cards,n);		// 输出扑克牌
+        shuffleCards(cards,n);
+        printCards(cards,n);
     }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ###### F. [笨小猴](https://www.dotcpp.com/oj/problem1553.html)
 
@@ -362,9 +298,13 @@ Lucky Word
 int isPrime(int n)
 {
    // 请补全代码
+    int i;
+    if(n < 2) return 0;
     
-    
-    
+    for(i = 2; i < n; i++)
+        if(n%i==0)
+            return 0;
+    return 1;
 }
 // 函数功能：
 // 统计s中各字母出现的次数，返回出现最多次数与出现最小次数之差
@@ -372,7 +312,7 @@ int max_min(char s[])
 {
     int i, c[26] = {0}, max, min;
     for(i = 0; s[i]; i++) //遍历s，统计各字母出现次数
-        c[_______]++;
+        c[s[i]-'a']++;
     
     // 找字母出现次数最大值
     max = 0;
@@ -381,7 +321,9 @@ int max_min(char s[])
     
     // 找字母出现次数最小值。注意s中没有出现过的字母，不包括在内。
     // 请在下面补全代码：
-    
+    min = 100;
+    for(i = 0; i < 26; i++)
+        if(c[i] &&  c[i] < min) min = c[i];
     
     return max - min;
 }
@@ -389,20 +331,12 @@ int main()
 {
     char s[100];
     gets(s);
-    int maxn_minn = __________________;
-    if(isPrime(maxn_minn)) 
-        ____________________;
-    else 
-        ____________________;
+    int maxn_minn = max_min(s);
+    if(isPrime(maxn_minn)) printf("Lucky Word\n%d",maxn_minn);
+    else printf("No Answer\n0");
     return 0;
 }
 ```
-
-
-
-
-
-
 
 ###### G.[报时助手](https://www.dotcpp.com/oj/problem1468.html)
 
@@ -445,28 +379,25 @@ zero fifteen
 void convert(int h, int m, char *time)
 {
     // 数字0~20的英文转换表
-     char *table[21]={"zero", "one", "two", 
-                      "three", "four", "five",
-                      "six",  "seven", "eight",
-                      "nine", "ten",  "eleven", 
-                      "twelve",  "thirteen",  "fourteen",
-                      "fifteen", "sixteen",  "seventeen", 
-                      "eighteen",  "nineteen",  "twenty"};
-    
-    // 把h转英文复制到time中
+     static char *table[21] = {"zero", "one", "two", "three", "four", "five",
+            "six",  "seven", "eight","nine", "ten",  "eleven", "twelve",  
+            "thirteen",  "fourteen",  "fifteen", "sixteen",  "seventeen",  
+            "eighteen",  "nineteen",  "twenty"};
+    // 把h转英文，复制到time中
     if(h>=0 && h <= 20)
     {
-         ______________________
-         strcat(time, " ");
+         strcpy(time,table[h]);
+        strcat(time, " ");
     }
+
     else if(h > 20){
         strcpy(time,table[20]);
         strcat(time, " ");
-        strcat(time,___________);
+        strcat(time,table[h-20]);
         strcat(time, " ");
     }
     
-    // 把m转英文追加到time后面
+    // 把m转英文，追加到time后面
     if(m == 0){
         strcat(time,"o'clock");
     }
@@ -478,18 +409,23 @@ void convert(int h, int m, char *time)
         strcat(time, " ");
         strcat(time, table[m-20]);
     }
-    
     else if(m >= 30 && m < 40)
     {
-       // 请补全代码
+        strcat(time, "thirty");
+        strcat(time, " ");
+        strcat(time, table[m-30]);
     }
     else if(m >= 40 && m < 50)
     {
-        // 请补全代码
+        strcat(time, "forty");
+        strcat(time, " ");
+        strcat(time, table[m-40]);
     }
     else if(m >= 50 && m < 60)
     {
-        // 请补全代码
+        strcat(time, "fifty");
+        strcat(time, " ");
+        strcat(time, table[m-50]);
     }
         
 }
