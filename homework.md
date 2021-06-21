@@ -1,25 +1,33 @@
-notes
+## Week01 Homework
+
+[TOC]
+
+#### 1. 听课笔记
+
+##### 数组
+
+###### 合并有序数组
 
 主体思路和细节分开，这个思路很赞。简单一句话，听后觉得这个思路很简单，但是这样简洁的表达，我做不到。
 
  ```c
- // 举例：
- // 合并有序数组
- // 主体思路：从后往前分别扫描nums1, nums2, 大的数放到nums1尾
- // 细节：扫描数组时，注意边界
- void merge(int* nums1, int nums1Size, int m, int *nums2, int nums2Size, int n)
- {
-     int k = n + m - 1;
-     int i = m - 1;
-     int j = n - 1;
-     for(; k >= 0; k--)
-     {
-         if( j < 0 || i>=0 && nums1[i] > nums2[j])
-             nums1[k] = nums1[i--];
-         else
-             nums1[k] = nums2[j--];
-     }
- }
+// 举例：
+// 合并有序数组
+// 主体思路：从后往前分别扫描nums1, nums2, 大的数放到nums1尾
+// 细节：扫描数组时，注意边界
+void merge(int* nums1, int nums1Size, int m, int *nums2, int nums2Size, int n)
+{
+    int k = n + m - 1;
+    int i = m - 1;
+    int j = n - 1;
+    for(; k >= 0; k--)
+    {
+        if( j < 0 || i>=0 && nums1[i] > nums2[j])
+            nums1[k] = nums1[i--];
+        else
+            nums1[k] = nums2[j--];
+    }
+}
  ```
 
 
@@ -85,3 +93,28 @@ struct ListNode* reverseList(struct ListNode *p, struct ListNode *r)
 ```
 
 我们可以背模块，但是不要背题。
+
+#### 2. 阅读作业
+
+#### 3. 刷题作业
+
+
+
+###### 加一
+
+https://leetcode-cn.com/problems/plus-one/
+
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* plusOne(int* digits, int digitsSize, int* returnSize)
+{
+	int *result = (int *)malloc(sizeof(int)*(digitsSize+1));
+    int i;
+    for(i = digitsSize)
+    
+    return result;
+}
+```
+
