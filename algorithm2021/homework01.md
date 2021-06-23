@@ -1,10 +1,10 @@
-## Week01 Homework
+## Homework01
 
 
 
-###### 合并有序数组
+###### 1. 合并有序数组
 
-主体思路和细节分开，简单一句话，思路很受启发。
+> 老师：写程序，主体思路和细节分开。这句话，很受启发。
 
  ```c
 // 举例：
@@ -26,7 +26,7 @@ void merge(int* nums1, int nums1Size, int m, int *nums2, int nums2Size, int n)
 }
  ```
 
-###### 删除有序数组中的重复项
+###### 2. 删除有序数组中的重复项
 
 ```c
 // 主体思路：从第2个元素开始，到前面去搜索，有重复项直接跳过，没有重复项保留到数组。
@@ -226,7 +226,58 @@ struct ListNode* reverseList(struct ListNode *p, struct ListNode *r)
 }
 ```
 
-我们可以背模块，但是不要背题。
+> 我们可以背模块，但是不要背题。
+
+
+
+##### 前缀和
+
+###### [1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)
+
+```c
+int numberOfSubarrays(int* nums, int numsSize, int k)
+{
+    int s[50001] = {0}, count[50001] = {1,0}, i, j;
+
+    for(i = 1; i <= numsSize; i++)
+    {
+        s[i] = s[i-1] + nums[i-1] % 2;
+        count[s[i]]++;
+    }    
+    
+    int ans = 0;
+    /*
+    for(i = 1; i <= numsSize; i++)
+        for(j = 0; j < i; j++)
+            if (s[i] - s[j] == k)
+                ans++;
+    */
+
+    for(i = 1; i <= numsSize; i++)
+        if(s[i] - k >= 0)
+            ans += count[s[i] - k];
+    return ans;
+}
+```
+
+
+
+###### [304. 二维区域和检索 - 矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/)
+
+```c
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
