@@ -1,8 +1,6 @@
 ## Homework01
 
-
-
-###### 1. 合并有序数组
+###### [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
 > 老师：写程序，主体思路和细节分开。这句话，很受启发。
 
@@ -26,7 +24,7 @@ void merge(int* nums1, int nums1Size, int m, int *nums2, int nums2Size, int n)
 }
  ```
 
-###### 2. 删除有序数组中的重复项
+###### [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
 ```c
 // 主体思路：从第2个元素开始，到前面去搜索，有重复项直接跳过，没有重复项保留到数组。
@@ -55,7 +53,7 @@ int removeDuplicates(int *nums, int numsSize)
 }
 ```
 
-###### 移动零
+###### [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
 
 ```c
 // 主体思路：不是零的数据保留下来
@@ -69,7 +67,7 @@ void moveZeroes(int* nums, int numsSize){
 }
 ```
 
-###### [加一](https://leetcode-cn.com/problems/plus-one/)
+###### [66. 加一](https://leetcode-cn.com/problems/plus-one/)
 
 ```c
 /**
@@ -129,7 +127,9 @@ int* plusOne(int* digits, int digitsSize, int* returnSize)
 
 > 原来，带头节点的链表，这个头结点是保护节点，以免出现NULL的操作。
 
-###### 反转链表
+#[206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+
+难度简单1805收藏分享切换为英文接收动态反馈
 
 ```c
 struct ListNode* reverseList(struct ListNode *head)
