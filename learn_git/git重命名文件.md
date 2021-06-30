@@ -14,3 +14,12 @@
   方法二：
   git mv read readme.md
 
+- 查看版本历史
+
+```tex
+git log
+git log --graph
+git help --web log
+gitk 图形界面查看版本信息
+```
+
