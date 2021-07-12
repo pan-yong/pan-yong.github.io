@@ -109,7 +109,7 @@ int delet(int a[], int n, int x)
     int i = 0, j;
     while(a[i]!=x && i < n)		// 找到x元素的下标 i
         i++;
-    if(i >= n) return 0;		// 没有找到x, 删除失败
+    if(i >= n) return ;		// 没有找到x, 直接返回
     for( j = i + 1; j < n; j++)
         ________________;		// 每个元素前移1个位置，覆盖删除x
     return 1;					// 删除x成功
