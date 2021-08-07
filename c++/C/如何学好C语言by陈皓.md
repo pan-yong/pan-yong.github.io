@@ -9,6 +9,14 @@
 1.  K&R 书中例题、课后习题，认真阅读并上机练习。每天一章，共八章。
 2. 
 
+##### 英语练习
+
+中英字典：[剑桥英语词典](https://dictionary.cambridge.org/) 
+
+英英字典：[dictionary.com](https://www.dictionary.com/)
+
+基础练习：[English as a Second Language](https://www.rong-chang.com/)
+
 
 
 ##### 编码规范

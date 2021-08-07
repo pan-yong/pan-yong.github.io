@@ -181,6 +181,26 @@ main()
 // c = getchar() != EOF
 ```
 
+```tex
+1. int getchar(void)
+
+   从标准输入中（一般位键盘）一次读取一个字符。遇到文件尾，返回`EOF`。
+
+   命令行下可以通过文件输入`prog < infile` ，注意`< infile` 并不包含在`argv` 命令行参数中。
+
+   `otherprog | prgo` 将`otherprog`程序的输出结果通过管道重定向到程序`prog`的标准输入上。
+
+2. int putchar(int c)
+
+   将单个字符c送至标准输出上，默认标准输出是屏幕。
+
+   同样，命令行下可以使用`prog > outfile` 的格式将输出重定向到文件中。
+
+   同样，支持管道命令，`prog | anotherprog` 将`prog`程序的输出重定向到`anotherprog`的标准输入中。
+```
+
+
+
 ###### 1.5.2 字符计数
 
 ```c
@@ -410,6 +430,211 @@ main()
     
     if (ovflow > 0)
         printf("There are %d word >= %d\n", ovflow, MAXWORD);
+}
+```
+
+```tex
+如何输入EOF 
+Windows 下：输入Enter，再输入ctrl +z，再输入Enter 。
+Linux下：ctrl + d
+```
+
+```c
+#include <stdio.h>
+
+#define MAXSHIT	15		// max length of histogram
+#define MAXWORD 11		// max length of a word
+#define IN  1		    // inside a word
+#define OUT 0		    // outside a word
+
+// print vertical histogram
+main()
+{
+    int c, i, j;
+    int nc = 0;
+    int state = OUT;
+    int maxvalue;		// max value for wl[]
+    int ovflow = 0;			// number of overflow words
+    int wl[MAXWORD] = {0};	// word length counters
+   
+    while ((c = getchar()) != EOF){
+        if (c == ' ' || c == '\t' || c == '\n'){
+            state = OUT;
+            if (nc > 0)
+                if (nc < MAXWORD)
+                    ++wl[nc];
+            	else
+                    ++ovflow;
+            nc = 0;
+        }
+        else if (state == OUT){
+            state = IN;
+            nc = 1;
+        }
+        else
+            ++nc;
+    }
+    maxvalue = 0;
+    for (i = 1; i < MAXWORD; ++i)
+        if (wl[i] > maxvalue)
+            maxvalue = wl[i];
+    
+    for (i = MAXSHIT; i > 0; --i){
+        for (j = 1; j < MAXWORD; ++j)
+            if(wl[j] * MAXSHIT / maxvalue >= i)
+                printf("  *  ");
+        	else
+                printf("     ");
+        putchar('\n');
+    }
+    
+    for (i = 1; i < MAXWORD; ++i)
+        printf("%4d ", i);
+    putchar('\n');
+    for (i = 1; i < MAXWORD; ++i)
+        printf("%4d ", wl[i]);
+    putchar('\n');
+    if (ovflow > 0)
+        printf("There are %d words >= %d\n", ovflow, MAXWORD);
+}
+```
+
+###### 练习1-14 打印各字符出现频率直方图
+
+```c
+#include <stdio.h>
+
+#define MAXSHIT 15
+#define MAXCHAR	128
+
+// print horizotal histogram freq. of different characters
+main()
+{
+	int cc[MAXCHAR] = {0};		// character counters
+    int maxvalue = 0;			// maximum value of cc[]
+    char ch;
+    int i, len;
+    
+    while ((ch = getchar()) != EOF) {
+        ++cc[ch];
+    }
+        
+    for (i = 1; i < MAXCHAR; ++i) {
+        if(cc[i] > maxvalue){
+            maxvalue = cc[i];
+        }
+    }
+        
+    for (i = 1; i < MAXCHAR; ++i) {
+    	if(cc[i] <= 0)
+			continue;
+			 
+        if (isprint(i))
+            printf("%5d - %c - %5d : ", i, i, cc[i]);
+        else 
+            printf("%5d -   - %5d : ", i, cc[i]);
+        if (cc[i] > 0) {
+            if ((len = cc[i] * MAXSHIT / maxvalue) <= 0)
+                len = 1;
+        }
+        else {
+            len = 0;
+        }
+        while (len > 0){
+            putchar('*');
+            --len;
+        }
+        putchar('\n');
+    }
+   
+}
+```
+
+##### 1.7 函数
+
+```c
+#include <stdio.h>
+
+int power(int m, int n);
+
+main()
+{
+    int i;
+    
+    for (i = 0; i < 10; ++i)
+        printf("%d %d %d\n", i, power(2,i), power(-3, i));
+    return 0;
+}
+
+int power(int base, int n)
+{
+    int i;
+    int p = 1;
+    for (i = 1; i <= n; ++i)
+        p = p * base;
+    return p;
+}
+```
+
+##### 1.8 参数——传值调用
+
+在C语言中，所有函数参数都是“通过值”传递的。也就是说，传给被调函数的参数值存放在临时变量中，而不是存放在原来的变量中。这样一来，被调用函数不能直接修改主调函数中变量的值。
+
+传值调用的利大于弊，在被调函数中，参数可以看作是便于初始化的局部变量，因此额外使用的变量更少，这样程序可以更紧凑简洁。
+
+如果是数组参数，情况就有所不同了。当数组名作为参数时，传递给函数的值时数组起始元素的地址——它并不复制数组本身。
+
+
+
+##### 1.9 字符数组
+
+```c
+#include <stdio.h>
+#define MAXLINE 1000
+
+int getline(char line[], int maxline);
+void copy(char to[], char from[]);
+
+main()
+{
+    int len = 0;
+    int max = 0;
+    char line[MAXLINE] = {0};
+    char longest[MAXLINE] = {0};
+    
+
+    while ((len = getline(line, MAXLINE)) > 0){
+        if (len > max){
+            max = len;
+            copy(longest, line);
+        }
+    }
+    if (max > 0){
+        printf("%s\n", longest);
+    }
+    return 0;
+}
+
+int getline(char s[], int lim)
+{
+    int c, i;
+    
+    for (i = 0; i < lim - 2 && (c = getchar()) != EOF && c != '\n'; ++i)
+        s[i] = c;
+    if (c == '\n'){
+        s[i] = c;
+        ++i;
+    }
+    s[i] = '\0';
+    return i;
+}
+
+void copy(char to[], char from[])
+{
+    int i = 0;
+    
+    while ((to[i] = from[i]) != '\0')
+        ++i;
 }
 ```
 
