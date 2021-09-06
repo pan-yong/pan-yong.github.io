@@ -24,9 +24,7 @@ float 单精度浮点型
 
 1. 编写程序，输出人的身体质量指数。计算公式：
 
-$$
-BMI = 体重 \div 身高^2。（体重单位：千克；身高单位：米）
-$$
+<img src=".\images\image-20210906095459809.png" alt="image-20210906095459809" style="zoom:80%;" />
 
 ```c
 #include <stdio.h>
@@ -50,13 +48,7 @@ BMI正常值在20至25之间，超过25为超重，30以上则属肥胖。
 
 2. 编写程序求一元二次方程的根。
 
-$$
-ax^2 + bx + c = 0
-$$
-
-$$
-求根公式：x1 = \frac{-b + \sqrt{b^2 - 4ac}}{ 2*a} , x2 = \frac{-b - \sqrt{b^2 - 4ac}}{ 2*a}
-$$
+<img src=".\images\image-20210906095542927.png" alt="image-20210906095542927" style="zoom:80%;" />
 
 ```c
 #include <stdio.h>
