@@ -40,3 +40,12 @@ printf   输出函数
 
 - 第三步：编译  -->  链接  -->  运行（可执行二进制文件） 
 
+- 编译器
+
+  - Dev C++：https://bloodshed-dev-c.en.softonic.com/
+
+  - Microsoft Visual C++ 2010
+
+  - 在线编译器：https://c.runoob.com/compile/11/
+
+    
