@@ -69,17 +69,62 @@ double     双精度浮点     64位
 修饰符
 
 ```tex
-1）signed 有符号，二进制最高位1表示负数，二进制最高位0表示正数。unsigned 无符号。只能修饰char和int。
+1）signed 有符号，二进制最高位1表示负数，二进制最高位0表示正数。
+   unsigned 无符号，只能修饰char和int。
 
 2）short  只能修饰 int ，表示短整型。
 
-3）long 只能修饰int 和 double。sizeof(long double) 是16字节。sizeof(long int) 是4字节。
+3）long 只能修饰int 和 double。sizeof(long double) 16字节。sizeof(long int) 4字节。
 
 ```
 
 课堂练习
 
 ```tex
+// 进制转换
+#include <stdio.h>
+main()
+{
+    int a = 65;
+    printf("%d %o %x", a, a, a);
+}
+
+// 输出身体质量指数 BMI = 体重 / (身高)^2
+#include <stdio.h>
+main()
+{
+    float weight = 67.5;
+    float height = 1.75;
+    float BMI;
+    
+    BMI = weight / (height * height);
+    printf("%f", BMI);
+}
+
+// 对比 float 和 double
+main()
+{
+    float a = 3.141592654;
+    double b = 3.141592654;
+    
+    printf("%f\n", a);
+    printf("%lf\n", b);
+}
+
+// 输出字符常量 'A'
+main()
+{
+    char c1 = 'A';
+    printf("%c %d\n", c1, c1);
+    
+    char c2 = 65;
+    printf("%c %d\n", c2, c2);
+    
+    putchar('\x41');
+    putchar('\101');
+    
+}
+
 // 编写程序，通过sizeof 输出每个基础类型的大小。
 
 #include<stdio.h>
@@ -215,7 +260,7 @@ main()
 
 
 
-## HelloWorld
+## 运算符与表达式
 
 例2：输入直径，输出圆的面积和周长
 
