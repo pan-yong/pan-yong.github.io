@@ -2,25 +2,25 @@
 
 ###### 1. 输出`hello world`
 
-参考课件：http://ixuexi.work/20jsj1/1HelloWorld
+[课件](http://ixuexi.work/20jsj1/1HelloWorld)
 
 
 
 ###### 2. 输出65的十进制、八进制、十六进制值
 
-参考课件：http://ixuexi.work/20jsj1/2int
+[课件](http://ixuexi.work/20jsj1/2int)
 
 
 
 ###### 3. 编写程序输出自己的身体质量指数
 
-参考课件：http://ixuexi.work/20jsj1/3float
+[课件](http://ixuexi.work/20jsj1/3float)
 
 
 
 ###### 4. 编写下面程序观察输出结果
 
-参考课件：http://ixuexi.work/20jsj1/4char
+[课件](http://ixuexi.work/20jsj1/4char)
 
 ```c
 // 输出字符常量 'A'
