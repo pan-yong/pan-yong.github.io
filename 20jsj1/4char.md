@@ -10,14 +10,22 @@ main()
 ```
 
 - 字符类型标识符  `char`
-
-- 字符常量：用单引号括起来的一个字符，例如，'A' 
-
+- 字符常量：用单引号括起来的一个字符，例如，`'A' `
 - ASCII：字符在内存中实际存的是整数，也就是对应的ASCII码，'A' 的ASCII值是65，'a'是97，'0'是48。
+
+```c
+main()
+{
+    putchar('A');
+    putchar(65);  // printf("%c", 65);
+    putchar('\n');
+}
+```
 
 - 转义字符：
 
-  ```tex
+  ```c
+  /*
   '\n'
   '\t'
   '\\'
@@ -25,6 +33,19 @@ main()
   '\"'
   '\x41'
   '\101'
+  */
+  
+  main()
+  {
+      putchar('A');
+      putchar(65);
+      putchar('\n');
+      putchar('\\');
+      putchar('\'');
+      putchar('\"');
+      putchar('\x41');
+      putchar('\101');
+  }
   ```
 
 - 上机练习
@@ -41,7 +62,6 @@ main()
     
     putchar('\x41');
     putchar('\101');
-    
 }
 ```
 
