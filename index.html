@@ -93,6 +93,7 @@
                 month = date.getMonth()+1;
                 year  = date.getFullYear() ;
                 wk  = date.getDay();
+
                 str = year+"年"+month+"月"+day+"日 星期";
                 switch(wk){
                         case 0: str += "天"; break;
@@ -103,6 +104,21 @@
                         case 5: str += "五"; break;
                         case 6: str += "六"; break;
                 }
+                
+                mdays = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+                
+                if (month == 6 && day < 7){
+                    gaokao = 7 - day;
+                }
+                else{
+                    gaokao = mdays[month] - day + 7;
+                    for (i = month + 1; i != 6; i = i % 12 + 1)
+                        gaokao += mdays[i];
+                }
+                
+                
+                str += "&nbsp;" + " 高考倒计时：" + gaokao + "天";
+
             return str;
         }
 
