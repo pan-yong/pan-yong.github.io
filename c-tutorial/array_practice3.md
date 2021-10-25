@@ -107,19 +107,14 @@ int main()
 
 ```c
 int main()
-{
-    int a[] = {89,88,76,70,68,58};
+{   int a[] = {89,88,76,70,68,58};
     int x = 70, mid, pos = -1, find = 0, low = 0, high = 5;
-    while(!find && low <= high)
-    {
+    while(!find && low <= high){
         mid = (high + low) / 2;
-        if(x > a[mid])
-            high = mid - 1;
-        else if(x < a[mid])
-            low = mid + 1;
+        if(x > a[mid])  high = mid - 1;
+        else if(x < a[mid])  low = mid + 1;
         else{
-            pos = mid;
-            find = 1;
+            pos = mid; find = 1;
         }
     }
     printf("pos=%d",pos);
@@ -130,11 +125,9 @@ int main()
 
 ```c
 int main()
-{
-    int key=0;
+{   int key=0, data[10]={1,3,5,7,8,9,13,18,22,28};
     printf("请输入要查找的数：");
     scanf("%d",&key);
-    int data[10]={1,3,5,7,8,9,13,18,22,28};
     int ret=BinarySearch(key,data);
     if(ret>=0)
 	    printf("\n %d 是数组中的第%d个数\n",key,ret+1);
@@ -163,8 +156,7 @@ int BinarySearch(int key,int data[])
 
 ```c
 int main()
-{
-    int a[10] = {1,2,3}, n = 3, i, x;	// 1. 定义数组  n表示数组元素个数   
+{   int a[10] = {1,2,3}, n = 3, i, x;	// 1. 定义数组  n表示数组元素个数   
     a[n++] = 99;				  // 2. 在数组尾插入 99 
     while(n < 10){				  // 3. 循环插入N个数到数组尾
         scanf("%d", &x);
@@ -172,25 +164,20 @@ int main()
     }
     for(i = 0; i < n; i++)
         printf("%4d", a[i]);  // 输出数组所有的数
-	return 0;
 }
 ```
 
 2. 数组有n个元素，在下标pos（pos<n）的位置插入x。
 
 ```c
-#include<stdio.h>
 int main()
-{
-    int a[20] = {3,7,10,12,18,20}, i, j;
+{   int a[20] = {3,7,10,12,18,20}, i, j;
     int x = 15, pos = 4;// 把15插入到数组下标为4的位置
-    for(j = 5; j >= pos; j--)// 数据后移空出pos位置
+    for(j = 5; ________; j--)// 数据后移空出pos位置
         a[j+1] = a[j];
     a[pos] = x;				// 把数据插入到pos的位置
-    
     for(i = 0; i < 7; i++)
         printf("%4d", a[i]);
-    return 0;
 }
 ```
 
@@ -212,7 +199,6 @@ int main()
     n = i + 1;    			// 元素个数增加1
     for(i = 0; i < n; i++)
         printf("%4d", a[i]);
-    return 0;
 }
 ```
 
@@ -224,7 +210,7 @@ int main()
 int main()
 {
     int a[] = {1,2,3,4,5};
-    int i, n = 5; 	 // 数组元素个数
+    int i, n = 5; 	 		// 数组元素个数
 	_________________;		//--n;  个数减1，相当于删除了数组最后一个元素 
     for(i = 0; i < n; i++)
         printf("%4d", a[i]);
@@ -250,7 +236,6 @@ int main()
     if( delet(a,n,x) ) --n;
     for(i = 0; i < n; i++)
         printf("%4d", a[i]);
-    return 0;
 }
 ```
 
