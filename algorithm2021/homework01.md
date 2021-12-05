@@ -123,8 +123,6 @@ int* plusOne(int* digits, int digitsSize, int* returnSize)
 }
 ```
 
-
-
 > 原来，带头节点的链表，这个头结点是保护节点，以免出现NULL的操作。
 
 #[206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
