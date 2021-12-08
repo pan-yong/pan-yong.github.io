@@ -15,7 +15,7 @@ main()
 #        预处理
 include  包含
 stdio.h  标准输入输出头文件
-main(){} 主函数，C程序的入口，必须要有，且只有一个。
+main(){} 主函数，C程序的入口，必须要有且只有一个。
 printf   输出函数
 \n       表示换行
 ;        每条C语言语句以分号结束
@@ -33,7 +33,11 @@ printf   输出函数
 第三步：编译  -->  链接  -->  运行（可执行二进制文件）
 ```
 
-- 其它编译器：[在线C语言编译器](https://c.runoob.com/compile/11/)、GCC编译器、Microsoft Visual C++ 2010 ......
+- [在线C语言编译器](https://c.runoob.com/compile/11/)
+
+- GCC编译器
+
+- Microsoft Visual C++ 2010 
 
 - 上机练习题
 
@@ -112,17 +116,10 @@ printf 输出函数，十进制整数输出z。库函数。
 
 ```
 
-![img](.\images\inta.jpg)
+
 
 ```c
-#include<stdio.h>
-int main()
-{
-    int a;
-    a = 1;
-    a = 2;
-    printf("%d", a);
-}
+
 ```
 
 
@@ -132,15 +129,7 @@ int main()
 ![img](.\images\printf.jpg)
 
 ```c
-#include<stdio.h>
-int main()
-{
-    int a;
-    a = 7;
-    a = a + 1;
-    printf("%d", a);
-    return 0;
-}
+
 ```
 
 ![img](.\images\intajia1.jpg)
@@ -187,6 +176,24 @@ B）函数组成
 C）若干过程组成
 D）若干子程序组成
 
+3. 修改下面程序中的错误
+    #include<stdio.h>
+    main
+    {
+        int a;
+        a = 5;
+        printf("%d\n", a);
+    }
+    
+4. 修改下面程序中的错误
+    #include<stdio.h>
+    main()
+    {
+        int a, b;
+        a = 1
+        b = 2
+        printf("%d\n", a+b);
+    }
 ```
 
 ###### 小结
