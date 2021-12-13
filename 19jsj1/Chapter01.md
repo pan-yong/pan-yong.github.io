@@ -4,7 +4,7 @@
 
 *2021.9.1*
 
-##### 知识点1  输出 H·ello World
+##### 知识点1  输出 Hello World
 
 ```c
 #include<stdio.h>

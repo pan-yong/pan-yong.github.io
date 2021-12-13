@@ -11,16 +11,7 @@ main()
 ```
 
 ```tex
-编写C程序步骤:
-
-第1步：打开编辑器。
-第2步：编写源代码。
-第3步：编译-->链接-->运行（可执行二进制文件）
-```
-
-```tex
 代码说明：
-
 所有代码必须使用英文输入法输入
 #        预处理
 include  包含
@@ -34,7 +25,13 @@ printf   输出函数
 
 ```
 
+编写C程序步骤:
 
+```tex
+第1步：打开编辑器。
+第2步：编写源代码。
+第3步：编译-->链接-->运行（可执行二进制文件）
+```
 
 ##### 2. 编写C程序的工具
 
@@ -107,18 +104,20 @@ printf   输出函数
   ```tex
   （1）
       #include<stdio.h>
-      main
+      int main
       {
           printf("hello, world");
+          return 0;
       }
   ```
 
   ```tex
   （2）
       #include<stdio.h>
-      main()
+      int main()
       {
           printf("hello, world")
+          return 0;
       }
   ```
 
@@ -127,7 +126,8 @@ printf   输出函数
       include<stdio.h>
       main()
       {
-          printf("hello, world")
+          printf("hello, world");
+          return 0;
       }
   ```
 
