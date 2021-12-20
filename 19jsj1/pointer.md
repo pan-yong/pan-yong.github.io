@@ -34,7 +34,24 @@ int main()
 }
 ```
 
-3.下面程序输出结果是（        ）
+3.以下程序输出结果是（        ）
+
+```c
+void fun(int *a, int *max, int *min)
+{   int i;  *max = *min = *a;
+    for(i = 1; i < 9; i++){
+        if(*max < *(a+i))  *max = *(a+i);
+        if(*min > *(a+i))  *min = *(a+i);
+    }
+}
+int main()
+{   int a[9] = {76, 78, 45, 90, 34, 52, 12, 66, 38}, max, min;
+    fun(a, &max, &min);		
+    printf("%d %d", max, min);	
+}
+```
+
+4.下面程序输出结果是（        ）
 
 ```c
 int main()
@@ -107,23 +124,6 @@ int main()
 ```
 
 5.以下程序输出结果是（        ）
-
-```c
-void fun(int *a, int *max, int *min)
-{   int i;  *max = *min = *a;
-    for(i = 1; i < 9; i++){
-        if(*max < *(a+i))  *max = *(a+i);
-        if(*min > *(a+i))  *min = *(a+i);
-    }
-}
-int main()
-{   int a[9] = {76, 78, 45, 90, 34, 52, 12, 66, 38}, max, min;
-    fun(a, &max, &min);		
-    printf("%d %d", max, min);	
-}
-```
-
-6.以下程序输出结果是（        ）
 
 ```c
 #define N 7
@@ -245,3 +245,4 @@ int main()
     for(i = k; i >= 0; i--)  printf("%d", *(____));
 }
 ```
+
