@@ -1,17 +1,8 @@
 #include<stdio.h>
 int main()
 {
-    printf("A\n");
-    printf("BC\n");
-    printf("DEF\n");
-    printf("GHIJ\n");
-    printf("KLMNO\n");
-    printf("PQRSTU\n");
-    printf("V\n");
-    printf("w\n");
-    printf("x\n");
-    printf("y\n");
-    printf("z\n");
+    int i = 3;
+    printf("%d %d", ++i, i);
     
     return 0;
 }

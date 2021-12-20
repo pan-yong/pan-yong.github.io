@@ -45,7 +45,9 @@ printf   输出函数
   Dev C++  -->  文件  -->  新建源代码 --> 编写代码保存  --> 编译链接运行
   ```
 
-- Microsoft Visual C++ 2010 等
+- gcc + vscode
+
+- Microsoft Visual C++ 2010 
 
 **macOS**
 
