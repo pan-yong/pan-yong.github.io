@@ -22,12 +22,11 @@
         <div class="bookmark-container">
             <div class="bookmark-set">
                 <div class="bookmark-title">C语言课件</div>
-                <div class="bookmark-inner-container">
-                     
-                     <a class="bookmark" href="./20jsj1/1HelloWorld">01 hello,world</a>
-                     <a class="bookmark" href="./20jsj1/2变量">02 变量</a>
-                     <a class="bookmark" href="./20jsj1/8数组的定义">08 数组的定义</a>
-                     <a class="bookmark" href="./20jsj1/9数组的操作">09 数组的操作：遍历查找插入删除</a>
+                <div class="bookmark-inner-container"> 
+                     <a class="bookmark" href="./20jsj1/01HelloWorld">01 hello,world</a>
+                     <a class="bookmark" href="./20jsj1/02变量">02 变量</a>
+                     <a class="bookmark" href="./20jsj1/08数组的定义">08 数组的定义</a>
+                     <a class="bookmark" href="./20jsj1/09数组的操作">09 数组：遍历查找插入删除</a>
                      <a class="bookmark" href="./20jsj1/10排序">10 排序</a>
                 </div>
             </div>
@@ -124,6 +123,9 @@
                 
                 if (month == 6 && day < 7){
                     gaokao = 7 - day;
+                }
+                else if(month == 6 && (day == 7 || day == 8)){
+                    gaokao = 0;
                 }
                 else{
                     gaokao = mdays[month] - day + 7;
