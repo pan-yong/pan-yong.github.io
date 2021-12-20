@@ -127,12 +127,12 @@
                 }
                 else{
                     gaokao = mdays[month] - day + 7;
-                    for (i = month + 1; i != 6; i = i % 12 + 1)
+                    for (i = month%12 + 1; i != 6; i = i % 12 + 1)
                         gaokao += mdays[i];
                 }
                 
                 
-                str += "&nbsp;" + " 19计算机1班 高考倒计时：" + gaokao + "天";
+                str += "<br>" + " 19计1班 高考倒计时：" + gaokao + "天";
 
             return str;
         }
