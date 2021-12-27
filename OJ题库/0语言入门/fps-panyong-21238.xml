@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[输出算式II]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">从键盘读入两个整数，计算这两个整数的和、差、积、商。</span><span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">在屏幕上输出计算公式。每行一个公式。</span> 
+</p>
+<p>
+	<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;"><strong>在每行行末输出一个换行符。</strong><br />
+</span> 
+</p>]]></description>
+<input><![CDATA[<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">输入为两个整数。</span>]]></input> 
+<output><![CDATA[<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">输出总共有4行。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第1行输出这两个数的和的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第2行输出这两个数的差的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第3行输出这两个数的积的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第4行输出这两个数的商的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">每行的行尾均有一个换行符。</span>]]></output>
+<sample_input><![CDATA[6 2]]></sample_input>
+<sample_output><![CDATA[6+2=8
+6-2=4
+6*2=12
+6/2=3]]></sample_output>
+  <test_input><![CDATA[9 3]]></test_input>
+<test_output><![CDATA[9+3=12
+9-3=6
+9*3=27
+9/3=3]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-输入练习]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int a,b,c,d,e,f;
+	scanf("%d%d",&a,&b);
+	c=a+b;
+	d=a-b;
+	e=a*b;
+	f=a/b;
+	printf("%d+%d=%d\n%d-%d=%d\n%d*%d=%d\n%d/%d=%d\n",a,b,c,a,b,d,a,b,e,a,b,f);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int a,b,c;
+	scanf("%d%d",&a,&b);
+	c=a+b;
+	printf("%d+%d=%d\n",a,b,c);
+	c=a-b;
+	printf("%d-%d=%d\n",a,b,c);
+	c=a*b;
+	printf("%d*%d=%d\n",a,b,c);
+	c=a/b;
+	printf("%d/%d=%d\n",a,b,c);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a,b:integer;
+begin
+  readln(a,b);
+  writeln(a,'+',b,'=',a+b);
+  writeln(a,'-',b,'=',a-b);
+  writeln(a,'*',b,'=',a*b);
+  if a mod b =0 then
+  writeln(a,'/',b,'=',a/b:0:0);
+end.]]></solution>
+	</item>
+</fps>

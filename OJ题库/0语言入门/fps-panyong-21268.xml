@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[输出数位II]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p style="font-family:'Microsoft Yahei';font-size:14px;">
+	从键盘上读入一个三位整数，分别输出这个三位数百位、十位和个位上的数字，三个数字之间用空格隔开。
+</p>
+<p style="font-family:'Microsoft Yahei';font-size:14px;">
+	<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">行末输出一个换行符。</span>
+</p>]]></description>
+<input><![CDATA[<span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;">输入一个三位整数。</span>]]></input> 
+<output><![CDATA[<p style="font-family:'Microsoft Yahei';font-size:14px;">
+	分别输出这个三位数百位、十位和个位上的数字，三个数字之间用空格隔开。
+</p>
+<p style="font-family:'Microsoft Yahei';font-size:14px;">
+	<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">行末输出一个换行符。</span>
+</p>]]></output>
+<sample_input><![CDATA[123]]></sample_input>
+<sample_output><![CDATA[1 2 3]]></sample_output>
+  <test_input><![CDATA[456]]></test_input>
+<test_output><![CDATA[4 5 6]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-输入练习]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int a,b,c,d;
+	scanf("%d",&a);
+	b=a/100;
+	c=(a%100)/10;
+	d=a%10;
+	printf("%d %d %d\n",b,c,d);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	 int a,b,c,d;
+	 scanf("%d",&a);
+	 b=a/100;
+	 c=a/10%10;
+	 d=a%10;
+	 printf("%d %d %d",b,c,d);
+	 return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var st:string;
+    i:longint;
+begin
+  readln(st);
+  for i:=1 to length(st) do
+  if i<>length(st) then write(st[i],' ') else writeln(st[i]);
+end.]]></solution>
+	</item>
+</fps>

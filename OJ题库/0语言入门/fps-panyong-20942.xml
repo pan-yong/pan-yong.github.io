@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[A+B Problem]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="color:#355F29;font-family:Tahoma;background-color:#FFFFFF;">输入两个自然数a,b，输出他们的和。</span>]]></description>
+<input><![CDATA[<p>
+	<span style="color:#355F29;font-family:Tahoma;background-color:#FFFFFF;">共一行：两个自然数a和b,中间用一个空格隔开。</span> 
+</p>
+<p>
+	<span style="color:#355F29;font-family:Tahoma;background-color:#FFFFFF;">(0&lt;=a,b&lt;=32767)</span> 
+</p>]]></input> 
+<output><![CDATA[<span style="color:#355F29;font-family:Tahoma;background-color:#FFFFFF;">共一行：输出a+b。</span>]]></output>
+<sample_input><![CDATA[123 500]]></sample_input>
+<sample_output><![CDATA[623]]></sample_output>
+  <test_input><![CDATA[30000 30000]]></test_input>
+<test_output><![CDATA[60000]]></test_output>
+<hint><![CDATA[<p class="mb10" style="font-family:'Microsoft Yahei';font-size:13px;background-color:#F5F5F5;">
+	你的程序应该从标准输入stdin('Standard Input')获取输出 并将结果输出到标准输出stdout('Standard Output')。
+</p>
+<p class="mb10" style="font-family:'Microsoft Yahei';font-size:13px;background-color:#F5F5F5;">
+	例如，在C语言可以使用'scanf'，在C++可以使用'cin'进行输入；在C使用'printf'，在C++使用'cout'进行输出。
+</p>
+<p class="mb10" style="font-family:'Microsoft Yahei';font-size:13px;background-color:#F5F5F5;">
+	用户程序不允许直接读写文件，如果这样做可能会判为运行时错误"<i class="cBlue">Runtime Error</i>"。
+</p>
+<p class="mb10" style="font-family:'Microsoft Yahei';font-size:13px;background-color:#F5F5F5;">
+	下面是题号为<a href="http://oj.csbiji.com/problem.php?id=1000" target="_blank"><i class="cBlue">1000</i></a>的题目的参考答案：
+</p>
+<br />
+<i class="cRed">C++:</i><span style="font-family:'Microsoft Yahei';font-size:13px;line-height:normal;background-color:#F5F5F5;"></span> 
+<pre><span> #include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int a,b;
+    while (cin &gt;&gt; a &gt;&gt; b) {
+        cout &lt;&lt; a+b &lt;&lt; endl;
+    }
+	return 0;
+} </span></pre>
+<i class="cRed">C:</i><span style="font-family:'Microsoft Yahei';font-size:13px;line-height:normal;background-color:#F5F5F5;"></span> 
+<pre><span> #include &lt;stdio.h&gt;
+int main() {
+    int a,b;
+    while (scanf("%d %d",&amp;a, &amp;b) != EOF) {
+        printf("%d\n",a+b);
+    }
+	return 0;
+} </span></pre>
+<i class="cRed">PASCAL:</i><span style="font-family:'Microsoft Yahei';font-size:13px;line-height:normal;background-color:#F5F5F5;"></span> 
+<pre><span> program p1001(Input,Output); 
+var 
+  a,b:Integer; 
+begin 
+   while not eof(Input) do 
+     begin 
+       Readln(a,b); 
+       Writeln(a+b); 
+     end; 
+end. </span></pre>
+<i class="cRed">Java:</i><span style="font-family:'Microsoft Yahei';font-size:13px;line-height:normal;background-color:#F5F5F5;"></span> 
+<pre><span> import java.util.*;
+public class Main {
+	public static void main(String args[]) {
+		Scanner cin = new Scanner(System.in);
+		int a, b;
+		while (cin.hasNext()) {
+			a = cin.nextInt(); 
+			b = cin.nextInt();
+			System.out.println(a + b);
+		}
+	}
+}</span></pre>]]></hint>
+<source><![CDATA[语言篇]]></source>
+		<solution language="C++"><![CDATA[#include <iostream>
+using namespace std;
+int main(){
+    int a,b;
+    while(cin >> a >> b)
+        cout << a+b << endl;
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var
+  a,b:integer;
+begin
+  readln(a,b);
+  writeln(a+b);
+  readln;
+end.]]></solution>
+	</item>
+</fps>

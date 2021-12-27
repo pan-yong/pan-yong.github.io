@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[数字分隔]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<pre>输入一个5位整数，分解出它的每位数字，并将这些数字间隔3个'-'的形式打印出来。</pre>]]></description>
+<input><![CDATA[<pre>输入只有一行，该行只有一个五位整数。</pre>]]></input> 
+<output><![CDATA[<pre>输出只有一行，分解出它的每位数字，并将这些数字间隔3个减号（就是："-"）的形式打印出来。</pre>]]></output>
+<sample_input><![CDATA[12345]]></sample_input>
+<sample_output><![CDATA[1---2---3---4---5]]></sample_output>
+  <test_input><![CDATA[45678]]></test_input>
+<test_output><![CDATA[4---5---6---7---8]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-输入练习]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int a,b,c,d,e,f;
+	scanf("%d",&a);
+	b=a/10000;
+	c=(a%10000)/1000;
+	d=(a%1000)/100;
+	e=(a%100)/10;
+	f=a%10;
+	printf("%d---%d---%d---%d---%d\n",b,c,d,e,f);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int a,b,c,d,e,f;
+	scanf("%d",&a);
+	b=a/10000;
+	c=a/1000%10;
+	d=a/100%10;
+	e=a/10%10;
+	f=a%10;
+	printf("%d---%d---%d---%d---%d",b,c,d,e,f);
+	return 0; 
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var st:string;
+    i:longint;
+begin
+  readln(st);
+  for i:=1 to length(st) do
+  if i<>length(st) then write(st[i],'---') else writeln(st[i]);
+end.]]></solution>
+	</item>
+</fps>

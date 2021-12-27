@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[字符I]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-size:14px;">从键盘读入一个字符并原样输出。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">从键盘读入一个字符。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">输出这个字符。</span>]]></output>
+<sample_input><![CDATA[a]]></sample_input>
+<sample_output><![CDATA[a]]></sample_output>
+  <test_input><![CDATA[A]]></test_input>
+<test_output><![CDATA[A]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a;
+	scanf("%c",&a);
+	printf("%c",a);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a;
+	scanf("%c",&a);
+	printf("%c",a);
+	return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[字符II]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-size:14px;">从键盘输入一个字符，按照字母顺序输出下一个字符。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">键盘输入一个字符。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">按照字母顺序输出下一个字符。</span>]]></output>
+<sample_input><![CDATA[a]]></sample_input>
+<sample_output><![CDATA[b]]></sample_output>
+  <test_input><![CDATA[c]]></test_input>
+<test_output><![CDATA[d]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b;
+	scanf("%c",&a);
+	b=a+1;
+	printf("%c",b);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a;
+	scanf("%c",&a);
+	a=a+1;
+	printf("%c",a);
+	return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[输出ASCII码]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-size:14px;">从键盘输入一个字符，输出这个字符的</span><span style="font-size:14px;">ASCII码，行末有一个换行符。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">输入任意一个字符。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">输出这个字符的</span><span style="font-size:14px;">ASCII码，行末有一个换行符。</span>]]></output>
+<sample_input><![CDATA[a]]></sample_input>
+<sample_output><![CDATA[97]]></sample_output>
+  <test_input><![CDATA[A]]></test_input>
+<test_output><![CDATA[65]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+  char a;
+  scanf("%c",&a);
+  printf("%d\n",a);
+  return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a;
+	scanf("%c",&a);
+	printf("%d",a);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a:char;
+begin
+  readln(a);
+  writeln(ord(a));
+end.]]></solution>
+	</item>
+<item>
+<title><![CDATA[字符的ASCII码值差]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-size:14px;">从键盘输入两个字符，中间用空格隔开，输出这两个字符ASCII码值的差，行末有一个换行符。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">在一行输入两个字符，中间用空格隔开。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">输出这两个字符的</span><span style="font-size:14px;">字符的ASCII码值差，行末有一个换行符。</span>]]></output>
+<sample_input><![CDATA[b a]]></sample_input>
+<sample_output><![CDATA[1]]></sample_output>
+  <test_input><![CDATA[a z]]></test_input>
+<test_output><![CDATA[-25]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+  char a,b;
+  scanf("%c %c",&a,&b);
+  printf("%d\n",a-b);
+  return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b,c;
+	scanf("%c %c",&a,&b);
+	c=a-b;
+	printf("%d",c);
+	return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[小写转大写]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-size:14px;">从键盘读入一个小写字符，把该小写字符转换成大写字符之后输出。行末输出一个换行符。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">从键盘输入一个小写字符。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">把小写字符转换成大写字符之后输出。行末有一个换行符。</span>]]></output>
+<sample_input><![CDATA[a]]></sample_input>
+<sample_output><![CDATA[A]]></sample_output>
+  <test_input><![CDATA[b]]></test_input>
+<test_output><![CDATA[B]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b;
+	scanf("%c",&a);
+	b=a-32;
+	printf("%c",b);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b;
+	scanf("%c",&a);
+	b=a-('a'-'A');
+	printf("%c",b);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var s:char;
+begin
+ readln(s);
+ write(upcase(s));
+end.]]></solution>
+	</item>
+<item>
+<title><![CDATA[大写转小写]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">从键盘读入一个大写字符，把该大写字符转换成小写字符之后输出。行末输出一个换行符。</span>]]></description>
+<input><![CDATA[<span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">从键盘输入一个大写字符。</span>]]></input> 
+<output><![CDATA[<span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">把大写字符转换成小写字符之后输出。行末有一个换行符。</span>]]></output>
+<sample_input><![CDATA[A]]></sample_input>
+<sample_output><![CDATA[a]]></sample_output>
+  <test_input><![CDATA[B]]></test_input>
+<test_output><![CDATA[b]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b;
+	scanf("%c",&a);
+	b=a+32;
+	printf("%c",b);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a,b;
+	scanf("%c",&a);
+	b=a+('a'-'A');
+	printf("%c",b);
+	return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[ascii码输出字符]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">从键盘输入一个数字（ASCII码），输出这个</span><span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">ASCII码对应的字符，行末有一个换行符。</span>]]></description>
+<input><![CDATA[<span style="font-size:14px;">从键盘输入一个数字</span><span style="font-family:'Microsoft Yahei';font-size:14px;line-height:28px;background-color:#F5F5F5;">（ASCII码）</span><span style="font-size:14px;">，范围在0-127之间。</span>]]></input> 
+<output><![CDATA[<span style="font-size:14px;">输出这个</span><span style="font-family:'Microsoft Yahei';line-height:28px;background-color:#F5F5F5;font-size:14px;">ASCII码对应的字符。行末有一个空格。</span>]]></output>
+<sample_input><![CDATA[65]]></sample_input>
+<sample_output><![CDATA[A]]></sample_output>
+  <test_input><![CDATA[48]]></test_input>
+<test_output><![CDATA[0]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-字符处理]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+  int a;
+  scanf("%d",&a);
+  printf("%c",a);  
+  return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	char a;
+	scanf("%d",&a);
+	printf("%c",a);
+	return 0;
+}]]></solution>
+	</item>
+</fps>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[小数四则运算算式]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<pre>
+<p>
+	从键盘读入两个小数，计算这两个整数的和、差、积、商。在屏幕上输出计算公式。每行一个公式。
+</p>
+
+<p>
+	<strong>在每行行末输出一个换行符。</strong>
+</p>
+</pre>]]></description>
+<input><![CDATA[<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">输入为两个小数。</span>]]></input> 
+<output><![CDATA[<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">输出总共有4行。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第1行输出这两个数的和的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第2行输出这两个数的差的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第3行输出这两个数的积的公式。</span><br />
+<span style="color:#333333;font-family:Monaco, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:20px;background-color:#FFFFFF;">第4行输出这两个数的商的公式。</span><br />
+<strong>每行的行尾均有一个换行符。输出的所有实数均保留2位小数。</strong>]]></output>
+<sample_input><![CDATA[2.56 0.32]]></sample_input>
+<sample_output><![CDATA[2.56+0.32=2.88
+2.56-0.32=2.24
+2.56*0.32=0.82
+2.56/0.32=8.00]]></sample_output>
+  <test_input><![CDATA[1.50 1.20]]></test_input>
+<test_output><![CDATA[1.50+1.20=2.70
+1.50-1.20=0.30
+1.50*1.20=1.80
+1.50/1.20=1.25]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-输入练习]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	float a,b,c,d,e,f;
+	scanf("%f%f",&a,&b);
+	c=a+b;
+	d=a-b;
+	e=a*b;
+	f=a/b;
+	printf("%.2f+%.2f=%.2f\n",a,b,c);
+	printf("%.2f-%.2f=%.2f\n",a,b,d);
+	printf("%.2f*%.2f=%.2f\n",a,b,e);
+	printf("%.2f/%.2f=%.2f\n",a,b,f);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	float a,b,c;
+	scanf("%f%f",&a,&b);
+	c=a+b;
+	printf("%.2f+%.2f=%.2f\n",a,b,c);
+	c=a-b;
+	printf("%.2f-%.2f=%.2f\n",a,b,c);
+	c=a*b;
+	printf("%.2f*%.2f=%.2f\n",a,b,c);
+	c=a/b;
+	printf("%.2f/%.2f=%.2f\n",a,b,c);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a,b:real;
+begin
+  readln(b,a);
+  writeln(b:0:2,'+',a:0:2,'=',b+a:0:2);
+  writeln(b:0:2,'-',a:0:2,'=',b-a:0:2);
+  writeln(b:0:2,'*',a:0:2,'=',b*a:0:2);
+  writeln(b:0:2,'/',a:0:2,'=',b/a:0:2);
+end.]]></solution>
+	</item>
+</fps>

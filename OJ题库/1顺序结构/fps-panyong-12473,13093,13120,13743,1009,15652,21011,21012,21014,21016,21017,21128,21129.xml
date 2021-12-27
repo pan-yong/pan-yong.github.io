@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[财务管理]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[小明毕业一年了，并且找到了一份好工作。这一年里他赚了很多钱，现在他想知道他这一年里的平均月薪是多少，请你写一个程序帮他计算。]]></description>
+<input><![CDATA[<span style="line-height:1.5;">输入包括12行。第i行为第i个月的实际月薪。（i=1,2,3...）</span>]]></input> 
+<output><![CDATA[输出小明的平均月薪，保留两位小数，并且最前面输出一个￥符号。]]></output>
+<sample_input><![CDATA[100.00 
+489.12 
+12454.12 
+1234.10 
+823.05 
+109.20 
+5.27 
+1542.25 
+839.18 
+83.99 
+1295.01 
+1.75]]></sample_input>
+<sample_output><![CDATA[￥1581.42
+]]></sample_output>
+  <test_input><![CDATA[1234.01
+2345.02
+3456.03
+4567.00
+5678.50
+6789.43
+7890.68
+8901.72
+6666.33
+9012.09
+11111.00
+12306.00]]></test_input>
+<test_output><![CDATA[￥6663.15]]></test_output>
+<test_input><![CDATA[12345.12
+12434.45
+42524.56
+86342.11
+23436.67
+75443.45
+43565.90
+54342.00
+11111.33
+34365.09
+12231.32
+21344.65
+
+]]></test_input>
+<test_output><![CDATA[￥35790.55
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言入门-基础练习]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	double a,s=0;
+	int i;
+	for(i=0;i<12;i++)
+	{
+		scanf("%lf",&a);
+		s+=a;
+	}
+	printf("￥%.2lf\n",s/12);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	float salary[12];
+	float sum=0;
+	for(int i=0;i<12;i++)
+	{
+		scanf("%f",&salary[i]);
+		sum+=salary[i];
+	}
+	printf("￥%.2f\n",sum/12);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[program p1009;
+var i:longint;
+    s,t:double;
+begin
+  s:=0;
+  for i:=1 to 12 do
+   begin
+     readln(t);
+     s:=s+t;
+   end;
+  write('￥');
+  writeln((s/12):0:2);
+end.
+]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+	//转换int成为ascii码值
+	/*
+	 public static char toChar(int prefix){
+		return (char) prefix;
+	}
+	*/
+	//输入整型
+	/*
+	public static int scanfInt(){
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
+	*/
+	//输入float
+	/*
+	public static float scanfFloat(){
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		return sc.nextFloat();
+	}
+	*/
+	public static void main(String[] args){
+		
+		float[] salary = new float[12];
+		float count = 0;
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<12;i++){
+			salary[i] = sc.nextFloat();
+			count += salary[i];
+		}
+		float averageSalary = count/12;
+		
+		System.out.println("￥"+String.format("%.2f", averageSalary));
+	}
+}]]></solution>
+			<solution language="Python"><![CDATA[#coding=utf-8
+import sys
+
+def getlist():
+  list = []
+  for line in sys.stdin:
+      a = line.split()
+      b = map(lambda x:float(x),a)
+      list += b 
+  return list
+        
+
+sum=reduce(lambda x,y:x+y,getlist())
+print ('￥'+str(round(sum/12,2)))]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】梯形面积]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<img><src><![CDATA[http://tk.hustoj.com:80/upload/image/20181112/20181112092957_57087.png]]></src><base64><![CDATA[iVBORw0KGgoAAAANSUhEUgAAAGsAAACECAMAAACgcyVpAAAAAXNSR0IArs4c6QAAAJNQTFRFpaWlMjIyKysrcHBwfHx8kpKSnp6e////AAAAOTk5ZmZmFhYZXFxc3Nzc9/f3iIiISEhI7+/vQEBAw8PDz8/PTk5ODg4OIiIi5+fn2///r6+vabf/25E6UlJSADqRt7e3AGa3goKCeHh4/7dr/9uR///bkToA//+3oer/OgAAt2YAZgAAOjqRpFBQZma3OpHbAABm57A2HAAABMlJREFUaN7tm21zojAUhQFFAoKAKNpWa9Vtt9t9/f+/bkkCEiAkNyHpzuyYD2vXzvgUOOdy7pU46POWg4JPW5osZIfVOQ0NBukAASzeG4ZYr2/PD/j1yzeEXugnsodVv6NzHgesr98RZR2qz37qfnKHhUxcrwNhff0VDI4CGdcGZV3pUQ3OYV8qBlivb4heLu5xKWPEx0Vw/OtVvSKdsyhgBcEHX4dWWNeXjviCwJIOCeuJxxqqUp/10bC+/HjgnEODNaryMlq+k6rx/NDRQ61A5n+KapTWQ8R1r5U637Ov5XvKP79X3ll31p2lynLDKeuswtqXy2iuv5Z7BVYRbtzU0V7HuQLLiYN9eNFm+UsFVnoJgnwdacPcAs6KfPxvfNRlzY5wVnYiL+f1Qo+1WOZglpfU74WasG0KZpXNn1V4vhYr9aCsvLz9mGhqf7cBsjYuY2t3psOKZ0DW45Z5f5VFWupYwVh+94+KthqwtQNjzfzur1INOc5DGGv72Pvdo6sOWyYgljsQkYb2RQWYYZVD1yfe2WABblmMvdqVh6rad08AFmsvRvvHWLEAZwBWx16s9jNFi+3lLH/M876aHMcLcMvq26tdJyU5jhfgljWwV7s2nkop9gopKxTcwRN3DmdFkZQljFwqMWRRriSsVSm8z61iuPbXCwkr8SSJa5ZNLcA31imTReQFWPu7RMzyI2n2P7lA7ccXMeuSyhsNaAT3+bfnGyt2AF1NAozg4aOQFRaQFgqofX4BvrGkHU1z/EftAtywJPZi1jkDyHF7FrCk9mK0D8g86U7AkttLLYbw+qOGBbBXoBLBo3icNZ8rsKoIfpGqIx9lxQul8cFKqv3MH2Wti0BtySL42R1l7RLVyUgqaT+H/ZGDtIeqjrjuD/ujmpXsNGY+Yu0PC3DNKtY6AyZxBB/0RzVrEWtNs4QR/LLms9TsxbafghjSL8A1S9FesAje749qlrK9mAg+Wor7/VHNUrcX0356C1h/5CD97yykEbw3oKIsLXvJI3ivAFOWnr3YGDID9EeUpWkvafvZ7Y8oK71MHlLzI3inAFNW5E+fiHMjeKc/oqzsZGD8zovgnQEVZXmJARZX+2wBpqxyZeSLBU4EZ/sjwtovAzMrH04CmQEVYRWhqa9MVoMIzvRHhOXEgbHVj+BMASYsA/Yaj+BtASYsE/ZiYkhX+21/RFhG7DXWfrb9EWGZsddYBL8VYMIyZK+RCH7rjzDLmL3YGHIcDqgwiz+lnKr9NoI3BRizxqaU01YbwZsBFWb5MxssJoLXAyrMmvlWWG0Er/sjzBJMKSeW4iaC00iIWe7GEusWwWkBxqwyD6wt2n7S/qhi5WVgcdFvgMiAqmJZsVcvgpMCXLHs2KsXQ3ABrliW7MVG8DMZUFUsW/bqaB8X4IplzV6dCO4WmGXPXmwEX8aYZdNeTPuJ8orlfcqD3+vN/TmiO+u/YiE7LO2NAjos3htmWPiBX/J0++SNAlLW68/34EBgkzcKSFnXd/x0+4uJjQKw64Ufbp++UQDEen17MrFRAMSiD5xP3igAYlXyaM+l/kYBCOvwdBPKpI0CANb1d3UWKW7aRgE564rP1Z/39rppbxSQsg7kM19MbBRQr4f6GwWUWRM2CvwFCZhiqgLig6oAAAAASUVORK5CYII=]]></base64></img><description><![CDATA[<p>
+	<strong>例1.2 </strong>&nbsp;在下图中，梯形中阴影部分面积是150平方厘米，求梯形面积。
+</p>
+<img src="http://tk.hustoj.com:80/upload/image/20181112/20181112092957_57087.png" alt="" /><br />]]></description>
+<input><![CDATA[<p>
+	无输入。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>s=梯形的面积，保留2位小数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[]]></sample_input>
+<sample_output><![CDATA[s=400.00
+]]></sample_output>
+  <hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+	printf("s=400.00");
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+using namespace std; 
+int main()
+{ 
+	float ss,sh,sup,sdown;
+	sup=15;
+	sdown=25;
+	sh=2*150/sup;
+	ss=(sup+sdown)*sh/2;
+	printf("s=%0.2f\n",ss);
+	return 0; 
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program aa;
+var a:real;
+begin
+ a:=400;
+ write('s=',a:0:2);
+end.]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】圆的面积]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<strong>上机练习1.2</strong>&nbsp; &nbsp;输入圆的半径R，求圆的面积和周长。（提示：<span style="font-size:10.5pt;font-family:黑体;">π</span>=3.1415926）
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	<span>一个数R(0&lt;R&lt;=100)，表示圆的半径，当然可能为小数哦。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>一行两个数，圆的面积和周长，中间用一个空格分隔，面积和周长都保留2位小数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>
+<p>
+	<span> </span> 
+</p>
+<hr />
+<p>
+	<br />
+</p>
+<p>
+	<span> </span> 
+</p>
+<pre class="prettyprint lang-html">&nbsp;&nbsp;&nbsp;&nbsp;注意输出格式：一行输出两个数，中间用一个空格分隔。 
+&nbsp;&nbsp;&nbsp;&nbsp;例如有， s=3.14; c=6.28; 
+&nbsp;&nbsp;&nbsp;&nbsp;输出语句： printf("%0.2f %0.2f\n",s,c);  //切记行尾输出换行符"/n"
+&nbsp;&nbsp;&nbsp;&nbsp;输出结果： 3.14 6.28</pre>
+<hr />
+<br />
+<p>
+	<br />
+</p>]]></output>
+<sample_input><![CDATA[1
+]]></sample_input>
+<sample_output><![CDATA[3.14 6.28
+]]></sample_output>
+  <test_input><![CDATA[87.7
+]]></test_input>
+<test_output><![CDATA[24162.90 551.04
+]]></test_output>
+<test_input><![CDATA[0.8
+]]></test_input>
+<test_output><![CDATA[2.01 5.03
+]]></test_output>
+<test_input><![CDATA[56
+]]></test_input>
+<test_output><![CDATA[9852.03 351.86
+]]></test_output>
+<test_input><![CDATA[9
+]]></test_input>
+<test_output><![CDATA[254.47 56.55
+]]></test_output>
+<test_input><![CDATA[5]]></test_input>
+<test_output><![CDATA[78.54 31.42
+]]></test_output>
+<test_input><![CDATA[17.7
+]]></test_input>
+<test_output><![CDATA[984.23 111.21
+]]></test_output>
+<test_input><![CDATA[88.8
+]]></test_input>
+<test_output><![CDATA[24772.84 557.95
+]]></test_output>
+<test_input><![CDATA[100
+]]></test_input>
+<test_output><![CDATA[31415.93 628.32
+]]></test_output>
+<test_input><![CDATA[10
+]]></test_input>
+<test_output><![CDATA[314.16 62.83
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+  double  r;
+  double pi=3.1415926;
+  scanf("%lf",&r);
+  printf("%.2lf ",pi*r*r);
+  printf("%.2lf",pi*(r+r));
+  return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+using namespace std;
+int main()
+{
+	const float p=3.1415926;
+	float ii,s,c;
+	scanf("%f",&ii);
+	s=p*ii*ii;
+	c=2*p*ii;
+	printf("%0.2f %0.2f\n",s,c);
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program aa;
+var a,b,c,d,e,f:real;
+begin
+ read(a);
+ b:=3.1415926;
+ c:=a*a*b;
+ d:=a*2*b;
+ write(c:0:2,' ',d:0:2);
+end.]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner in  =new Scanner(System.in);
+		while(in.hasNext()){
+			double R = in.nextDouble();
+			double len = 2*Math.PI*R;
+			double area = Math.PI*R*R;
+			System.out.printf("%.2f %.2f\n",area,len);
+		}
+	}
+}
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】交换两数]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<strong>例2.1 &nbsp;</strong>输入两个正整数A和B，试交换A、B的值（使A的值等于B，B的值等于A）。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<strong>注意：</strong>教材源程序中切记删除提示输入数据信息的语句，输出语句中多余的信息也应删除。
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	一行两个整数A和B，中间用一个空格分隔，A和B介于-2147483647~2147483647之间。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	一行两个数，表示交换后的结果，中间用一个空格分隔。
+</p>
+<p>
+	<br />
+</p>]]></output>
+<sample_input><![CDATA[5 8
+]]></sample_input>
+<sample_output><![CDATA[8 5
+]]></sample_output>
+  <test_input><![CDATA[90225510 -719655258
+]]></test_input>
+<test_output><![CDATA[-719655258 90225510
+]]></test_output>
+<test_input><![CDATA[5884 6973
+]]></test_input>
+<test_output><![CDATA[6973 5884
+]]></test_output>
+<test_input><![CDATA[2242 22971
+]]></test_input>
+<test_output><![CDATA[22971 2242
+]]></test_output>
+<test_input><![CDATA[27 0
+]]></test_input>
+<test_output><![CDATA[0 27
+]]></test_output>
+<test_input><![CDATA[98 35
+]]></test_input>
+<test_output><![CDATA[35 98
+]]></test_output>
+<test_input><![CDATA[13877 59
+]]></test_input>
+<test_output><![CDATA[59 13877
+]]></test_output>
+<test_input><![CDATA[435548545 1984101788
+]]></test_input>
+<test_output><![CDATA[1984101788 435548545
+]]></test_output>
+<test_input><![CDATA[-575571661 1742001921
+]]></test_input>
+<test_output><![CDATA[1742001921 -575571661
+]]></test_output>
+<test_input><![CDATA[3590 3586
+]]></test_input>
+<test_output><![CDATA[3586 3590
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+  int a,b,t;
+  while(scanf("%d%d",&a,&b)!=EOF)
+  {
+    t=b;
+    b=a;
+    a=t;
+    printf("%d %d",a,b);
+  }
+  return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+using namespace std;
+int main()
+{  int ii,jj,tp; 
+	cin>>ii>>jj; 
+	cout<<jj<<" "<<ii<<endl;
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program ex_1;
+ var
+ a,b,c:longint;
+begin
+ readln(a,b);
+ c:=a;
+ a:=b;
+ b:=c;
+ writeln(a,' ',b);
+end.
+
+
+
+]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNext()){
+			int A=sc.nextInt(),B=sc.nextInt(),temp;
+			temp=A;
+			A=B;
+			B=temp;
+			System.out.println(A+" "+B);
+		}
+		sc.close();
+	}
+}]]></solution>
+			<solution language="Python"><![CDATA[# coding=utf-8
+x,y = map(int, input().split())
+print(y,end=" ")
+print(x)]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】五人分糖果]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<strong>例2.17&nbsp;</strong> 某幼儿园里，有5个小朋友编号为1，2，3，4，5，他们按自己的编号顺序围坐在一张圆桌旁。他们身上都有若干个糖果(键盘输入)，现在他们做一个分糖果游戏。从1号小朋友开始，将自己的糖果均分三份（如果有多余的糖果，则立即吃掉），自己留一份，其余两份分给他的相邻的两个小朋友。接着2号、3号、4号、5号小朋友同样这么做。问一轮后，每个小朋友手上分别有多少糖果。
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	五个整数，表示1号、2号、3号、4号和5号小朋友的糖果数（不大于100）。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	按1~5号的顺序输出小朋友游戏结束后的糖果数，中间用一个空格分隔。（注意修改教材上的格式输出语句）
+</p>
+<p>
+	<br />
+</p>]]></output>
+<sample_input><![CDATA[8 9 10 11 12
+]]></sample_input>
+<sample_output><![CDATA[11 7 9 11 6
+]]></sample_output>
+  <test_input><![CDATA[12 13 48 12 92
+]]></test_input>
+<test_output><![CDATA[44 22 26 44 35
+]]></test_output>
+<test_input><![CDATA[71 24 3 89 17
+]]></test_input>
+<test_output><![CDATA[61 21 37 54 23
+]]></test_output>
+<test_input><![CDATA[8 3 15 13 10
+]]></test_input>
+<test_output><![CDATA[9 6 11 12 6
+]]></test_output>
+<test_input><![CDATA[73 73 73 73 73
+]]></test_input>
+<test_output><![CDATA[100 67 71 80 44
+]]></test_output>
+<hint><![CDATA[<p>
+	提示：教材上程序中是输出语句为：<span>printf("%5d%5d%5d%5d%5d\n",a,b,c,d,e); &nbsp; //%5d按5位宽度输出，本题中输出格式不是按固定宽度，而是中间间隔一个空格，应该修改为：</span><span>printf("%d %d %d %d %d\n",a,b,c,d,e); </span><span></span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{int a,b,c,d,e;
+scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+b=b+a/3;
+e=e+a/3;
+a=a/3;
+a=a+b/3;
+c=c+b/3;
+b=b/3;
+b=b+c/3;
+d=d+c/3;
+c=c/3;
+c=c+d/3;
+e=e+d/3;
+d=d/3;
+d=d+e/3;
+a=a+e/3;
+e=e/3;
+printf("%d %d %d %d %d",a,b,c,d,e);
+return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+using namespace std;
+int main()
+{
+	int aa,ab,ac,ad,ae;
+	scanf("%d%d%d%d%d",&aa,&ab,&ac,&ad,&ae);
+	aa=aa/3;ab=ab+aa;ae=ae+aa;
+	ab=ab/3;ac=ac+ab;aa=aa+ab; 
+	ac=ac/3;ad=ad+ac;ab=ab+ac; 
+	ad=ad/3;ae=ae+ad;ac=ac+ad; 
+	ae=ae/3;aa=aa+ae;ad=ad+ae; 
+	printf("%d %d %d %d %d\n",aa,ab,ac,ad,ae);  	
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program hjc;
+var
+  a,b,c,d,e:integer;
+begin
+ read(a,b,c,d,e);
+ a:=a div 3; b:=b+a; e:=e+a;
+ b:=b div 3; c:=c+b; a:=a+b;
+ c:=c div 3; d:=d+c; b:=b+c;
+ d:=d div 3; e:=e+d; c:=c+d;
+ e:=e div 3; a:=a+e; d:=d+e;
+ write(a,' ',b,' ',c,' ',d,' ',e);
+end.
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】平均分]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<strong>例2.19 &nbsp;</strong>已知某班有男同学x位，女同学y位，x位男生平均分是87分，y位女生的平均分是85，问全体同学平均分是多少分？保留一位小数。
+</p>
+<br />
+注意修改教材源程序中的输出语句。<br />
+<br />]]></description>
+<input><![CDATA[<p>
+	<span>一行两个整数x和y,0&lt;x,y&lt;=100，x表示男同学人数，y表示女同学人数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>一个数，全体同学平均分，保留1位小数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[20 30
+]]></sample_input>
+<sample_output><![CDATA[85.8
+]]></sample_output>
+  <test_input><![CDATA[100 100
+]]></test_input>
+<test_output><![CDATA[86.0
+]]></test_output>
+<test_input><![CDATA[27 57
+]]></test_input>
+<test_output><![CDATA[85.6
+]]></test_output>
+<test_input><![CDATA[22 5
+]]></test_input>
+<test_output><![CDATA[86.6
+]]></test_output>
+<test_input><![CDATA[80 12
+]]></test_input>
+<test_output><![CDATA[86.7
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+int x,y;
+double f;
+scanf("%d%d",&x,&y);
+f=(87*x+85*y)/(1.0*(x+y));
+printf("%0.1lf",f);
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+	int x1,y1;
+	cin>>x1>>y1; 
+	printf("%0.1f\n",float(x1*87+y1*85)/(x1+y1)); 
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program ex_1;
+ var
+ x,y,a:real;
+begin
+ readln(x,y);
+ a:=(87*x+85*y)/(x+y);
+ writeln(a:0:1);
+end.
+
+
+
+]]></solution>
+			<solution language="Python"><![CDATA[# coding=utf-8
+x,y = map(int, input().split())
+t=(x*87+y*85)/(x+y)
+print('%.1f'%t)]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】歌手大奖赛]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	例2.20 &nbsp;歌手大奖赛上6名评委给一位参赛者打分，6个人打分的平均分为9.6分；如果去掉一个最高分，这名参赛者的平均分为9.4分；如果去掉一个最低分，这名参赛者的平均分为9.8分；如果去掉一个最高分和一个最低分，这名参赛者的平均是多少？
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	无输入。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>参赛者的最终得分，保留2位小数。（注意修改教材程序中的输出语句，不要用域宽输出）</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[]]></sample_input>
+<sample_output><![CDATA[9.60
+]]></sample_output>
+  <hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	/*int x,y;
+	double a,b,feng;
+	scanf("%d%d",&x,&y);
+	a=x*1.0;
+	b=y*1.0;
+	feng=(a*87+b*85)/(a+b);*/
+	printf("%.2lf",9.60);
+	return 0;
+	
+	
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+using namespace std;
+int main()
+{
+	float rhigh,rlow,rsc_all,rsc_high,rsc_low,rans;
+	rsc_all=6*9.6;
+	rsc_high=5*9.4; 
+	rsc_low=5*9.8;
+	rhigh=rsc_all-rsc_high;
+	rlow=rsc_all-rsc_low; 
+	rans=(rsc_all-rhigh-rlow)/4;  
+	printf("%0.2f\n",rans); 	
+	return 0; 
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program ex_1;
+begin
+ writeln('9.60');
+end.
+
+
+
+
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】三角形面积]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<img><src><![CDATA[http://tk.hustoj.com:80/attached/image/20140119/20140119143616_59952.jpg]]></src><base64><![CDATA[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]]></base64></img><description><![CDATA[<p>
+	例2.21 &nbsp;传说古代的叙拉古国王海伦二世发现的公式，利用三角形的三条边长来求取三角形面积。已知△ABC中的三边长分别为a,b,c，求△ABC的面积。（保留3位小数）
+</p>
+<p>
+	提示：已知三角形的三条边长为a,b,c，求面积的公式为海伦公式：
+</p>
+<p style="text-align:center;">
+	<img src="http://tk.hustoj.com:80/attached/image/20140119/20140119143616_59952.jpg" width="280" height="40" alt="" /> 
+</p>
+<p>
+	其中p=(a+b+c)/2
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	<span>一行三个数a,b,c，表示三角形的三条边，并且保证能构成三角形，0&lt;a,b,c&lt;100。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>三角形的面积，保留3位小数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[3 4 5
+]]></sample_input>
+<sample_output><![CDATA[6.000
+]]></sample_output>
+  <test_input><![CDATA[48.8 83.6 39.5
+]]></test_input>
+<test_output><![CDATA[590.376
+]]></test_output>
+<test_input><![CDATA[38 98 74
+]]></test_input>
+<test_output><![CDATA[1235.555
+]]></test_output>
+<test_input><![CDATA[9 18 10
+]]></test_input>
+<test_output><![CDATA[27.330
+]]></test_output>
+<test_input><![CDATA[7.6 2.0 8.6
+]]></test_input>
+<test_output><![CDATA[6.961
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C++"><![CDATA[#include<cstdio>                        
+#include<cmath>
+using namespace std;
+int main()
+{
+	float xa,xb,xc,xp,xs;
+	scanf("%f%f%f",&xa,&xb,&xc); 
+	xp=(xa+xb+xc)/2; 
+	xs=sqrt(xp*(xp-xa)*(xp-xb)*(xp-xc));
+	printf("%0.3f\n",xs);
+	return 0;
+}
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】解方程]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	例2.23 求一元二次方程x2+3x+2=0的两个实数根。
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	无输入。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>x1=一个根 x2=另一个根，x1&gt;=x2，保留3位小数。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[]]></sample_input>
+<sample_output><![CDATA[x1=-1.000 x2=-2.000
+]]></sample_output>
+  <hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+printf("x1=-1.000 x2=-2.000");
+return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>                     
+#include<cmath>
+using namespace std;
+int main()
+{
+	int xA=1,xB=3,xC=2;
+	int xd;
+	float xx1,xx2;
+	xd=xB*xB-4*xA*xC;
+	
+	xx2=(-xB-sqrt(xd))/(2*xA);
+  	xx1=(-xB+sqrt(xd))/(2*xA); 
+	printf("x1=%0.3f x2=%0.3f\n",xx1,xx2);  
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[program ex_1;
+begin
+ writeln('x1=-1.000 x2=-2.000');
+end.
+
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】分糖果]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<strong>上机练习2.2.1 &nbsp;</strong>有三个小朋友甲乙丙。甲有50粒糖果，乙有43粒糖果，丙有13粒糖果。现在他们做一个游戏。从甲开始，将自己的糖分三份，自己留一份，其余两份分别给乙与丙，多余的糖果自己吃掉，然后乙与丙也依次这样做。问最后甲、乙、丙三人各有多少粒糖果？
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<div>
+</div>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	无输入。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>甲、乙、丙三人的糖果数，中间用一个空格分隔。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[]]></sample_input>
+<sample_output><![CDATA[]]></sample_output>
+  <test_input><![CDATA[0]]></test_input>
+<test_output><![CDATA[51 35 16
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	printf("51 35 16\n");
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+using namespace std;
+int main()
+{
+	int aa,ab,ac;
+	ab=43; ac=13;aa=50; 
+	aa=aa/3;ab=ab+aa;ac=ac+aa;
+	ab=ab/3;ac=ac+ab;aa=aa+ab; 
+	ac=ac/3;aa=aa+ac;ab=ab+ac; 
+	printf("%d %d %d\n",aa,ab,ac);  	
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program aa;
+begin
+ write('51 35 16');
+end.]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】车棚]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<strong>上机练习2.2.4 </strong>&nbsp;某车棚存有自行车和三轮车共65辆，它们的轮子数合计为150个，求该棚内存有的自行车和三轮车各是多少辆？
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	无输入。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	<span>车棚内存有的自行车和三轮车数量，中间用一个空格分隔。</span> 
+</p>
+<p>
+	<span><br />
+</span> 
+</p>]]></output>
+<sample_input><![CDATA[]]></sample_input>
+<sample_output><![CDATA[]]></sample_output>
+  <test_input><![CDATA[0]]></test_input>
+<test_output><![CDATA[45 20
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+	int x,y;
+	printf("45 20");
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y;
+	y=150-65*2;
+	x=65-y;
+ 	cout<<x<<' '<<y<<endl;	
+	return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program hjc;
+var
+ a,b:integer;
+begin
+ a:=65;
+ b:=150-2*a;
+ a:=65-b;
+ writeln(a,' ',b);
+end.
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】正弦和余弦]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+	<span id="fck_dom_range_temp_1390820812796_232">输入正整数n（n&lt;360），输出n度的正弦、余弦函数值。提示：将角度转换为弧度，使用数学函数，pi=3.1415926。</span> 
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	一个正整数n（n&lt;360）。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	n度的正弦、余弦函数值，都保留3位小数，中间用一个空格分隔。
+</p>
+<p>
+	<br />
+</p>]]></output>
+<sample_input><![CDATA[10
+]]></sample_input>
+<sample_output><![CDATA[0.174 0.985
+]]></sample_output>
+  <test_input><![CDATA[288
+]]></test_input>
+<test_output><![CDATA[-0.951 0.309]]></test_output>
+<test_input><![CDATA[100
+]]></test_input>
+<test_output><![CDATA[0.985 -0.174]]></test_output>
+<test_input><![CDATA[1
+]]></test_input>
+<test_output><![CDATA[0.017 1.000]]></test_output>
+<test_input><![CDATA[359
+]]></test_input>
+<test_output><![CDATA[-0.017 1.000]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+#include<math.h>
+int main()
+{
+  int n;
+  double pi;
+  scanf("%d",&n);
+  pi=3.1415926;
+  printf("%.3lf %.3lf",sin(n/360.0*2*pi),cos(n/360.0*2*pi));
+  return 0;
+
+    
+    
+    
+    
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	float pi=3.1415926,a,b,n;
+	cin>>n;
+	n=(n*pi)/180;
+	a=sinl(n);b=cosl(n);
+	printf("%0.3f %0.3f",a ,b);
+	return 0;
+}
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[【基础题】距离]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<img><src><![CDATA[http://tk.hustoj.com:80/attached/image/20140127/20140127191339_58665.jpg]]></src><base64><![CDATA[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]]></base64></img><description><![CDATA[<p>
+	输入4个浮点数<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>，输出平面坐标系中点(<i>x</i><sub>1</sub>,<i>y</i><sub>1</sub>)到点(<i>x</i><sub>2</sub>,<i>y</i><sub>2</sub>)的距离。
+</p>
+<p>
+	<br />
+</p>]]></description>
+<input><![CDATA[<p>
+	一行，4个浮点数<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>y</i><sub>2，</sub>每两个数中间用空格隔开。
+</p>
+<p>
+	<br />
+</p>]]></input> 
+<output><![CDATA[<p>
+	两点间的距离，保留3位小数。
+</p>
+<p>
+	<br />
+</p>]]></output>
+<sample_input><![CDATA[1 1 2 2
+]]></sample_input>
+<sample_output><![CDATA[1.414
+]]></sample_output>
+  <test_input><![CDATA[-30.09 100.876 6.6667 -0.009
+]]></test_input>
+<test_output><![CDATA[107.372]]></test_output>
+<test_input><![CDATA[-5 -8.99 10.23 6.5488
+]]></test_input>
+<test_output><![CDATA[21.758]]></test_output>
+<test_input><![CDATA[20 13 3 27
+]]></test_input>
+<test_output><![CDATA[22.023]]></test_output>
+<test_input><![CDATA[0.9 3.6 18.88 90.04
+]]></test_input>
+<test_output><![CDATA[88.290]]></test_output>
+<hint><![CDATA[<span style="line-height:15px;">两点</span>（<i>x</i><sub>1</sub><span>,&nbsp;</span><i>y</i><sub>1），（</sub><i>x</i><sub>2</sub><span>,&nbsp;</span><i>y</i><sub>2）</sub>间的距离公式：<img src="http://tk.hustoj.com:80/attached/image/20140127/20140127191339_58665.jpg" alt="" />]]></hint>
+<source><![CDATA[语言基础-顺序结构]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+    double x1,x2,y1,y2;
+    scanf("%lf%lf%lf%lf",&x1,&y1,&x2,&y2);
+    printf("%.3lf",sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)));
+    return 0;
+    
+    
+    
+    
+    
+    
+}
+]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+  float a,b,c,d,s;
+  cin>>a>>b>>c>>d;	
+  s=sqrt((a-c)*(a-c)+(b-d)*(b-d));
+  printf("%0.3f\n",s);
+}]]></solution>
+			<solution language="Pascal"><![CDATA[program p21129;
+ var x1,x2,y1,y2,s:real;
+begin
+ readln(x1,y1,x2,y2);
+ s:=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+ writeln(s:0:3);
+end.
+]]></solution>
+	</item>
+</fps>

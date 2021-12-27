@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.2" url="https://github.com/zhblue/freeproblemset/">
+	<generator name="HUSTOJ" url="https://github.com/zhblue/hustoj/"/>
+	<item>
+<title><![CDATA[ASCII码]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[相信大家一定都知道大名鼎鼎的ASCII码，这次给你的任务是输入数字（表示ASCII码），输出相对应的字符信息。]]></description>
+<input><![CDATA[第一行为一个整数T（1&lt;=T&lt;=1000）。<br />
+接下来包括T个正整数，由空白符分割。（空白符包括空格、换行、制表符）<br />
+这些整数不会小于32。<br />]]></input> 
+<output><![CDATA[在一行内输出相应的字符信息。（注意不要输出任何多余的字符）]]></output>
+<sample_input><![CDATA[13
+72 101 108 108 111 44
+32 119 111 114 108 100 33]]></sample_input>
+<sample_output><![CDATA[Hello, world!]]></sample_output>
+  <test_input><![CDATA[1000
+82 111 116 77 38 110 40 43 41 89 93
+35 70 61 126 32 68 35 62 118 34 101 78 51 49 36 38 102 74 49 94 50
+81 91 43 96 126 106 112 52 97 72 39 45 126 79 45 82 66 95 108 102 75
+41 47 43 91 45 56 37 47 119 100 106 37 38 36 40 109 32 54 107 120 115 80 95 113 34 63 85 101 65 115 54 74 99 53 93 48 63 123 76 103 98 108 126 80 106 33 103 92 54 105 118 109 64 83 70 77 64 116 61 121 48 124 118 124 92 89 98 114 80 51 51 77 107 123 77 97 46 77 88 102 66 104 67 38 117 115 100 113 111 54 84 91 94 50 77 66 66 65 66 36 86 82 92 47 57 60 83 55 42 71 75 49 59 69 125 68 118 110 118 60 41 58 126 50 124 35 66 75 109 115 39 47 91 52 67 108 52 84 99 67 90 42 76 75 126 64 49 57 81 120 62 120 125 116 50 48 51 32 95 116 120 83 70 99 91 113 36 68 59 114 126 125 115 59 102 40 58 70 51 89 32 45 99 43 85 54 113 114 39 46 120 57 119 66 100 117 92 63 51 77 95 116 98 95 67 57 111 98 70 42 91 119 67 76 50 82 49 40 105 50 124 41 94 119 62 82 99 89 69 108 106 54 102 66 101 59 76 42 101 91 43 100 109 57 73 100 55 118 51 85 118 103 122 42 52 37 76 85 126 120 92 33 119 44 122 42 75 68 53 40 115 36 52 40 122 81 90 76 65 105 73 83 98 89 34 97 109 54 40 47 51 35 89 118 95 84 36 83 116 113 97 69 120 75 77 46 96 111 70 63 77 43 110 120 78 64 111 39 64 123 100 91 104 123 121 108 109 83 42 94 32 49 44 70 79 81 32 75 118 48 58 112 46 77 101 73 87 123 47 44 38 68 79 51 98 79 83 45 103 99 69 52 82 86 63 88 113 115 98 65 73 39 33 35 42 77 65 57 100 108 52 105 69 95 73 46 114 98 74 44 50 69 78 77 112 34 53 51 72 92 110 116 117 120 84 46 35 116 112 122 119 40 85 72 108 65 47 43 56 65 66 67 105 43 34 94 95 51 79 86 68 58 34 64 46 53 99 69 102 38 83 41 97 91 57 67 91 34 120 121 44 122 38 116 82 67 117 54 69 67 42 57 95 83 51 94 58 96 120 70 82 106 94 118 102 99 57 65 97 72 55 120 93 102 63 33 121 75 75 51 43 70 95 118 88 65 120 56 48 95 54 119 110 89 47 103 56 39 81 114 51 46 121 110 67 50 37 82 115 37 126 49 50 41 33 106 80 95 41 109 103 35 42 109 33 67 86 90 81 42 82 84 99 44 109 70 124 111 90 92 64 61 37 68 81 73 102 87 83 84 117 95 109 58 54 115 95 115 67 47 97 45 73 85 90 63 120 82 66 57 97 79 110 116 96 126 111 33 106 44 81 69 47 118 124 120 98 49 91 101 50 36 37 92 94 33 114 110 63 106 95 88 77 42 51 33 48 109 59 60 73 33 110 87 56 123 123 93 80 104 47 33 83 88 54 110 49 114 92 117 70 61 66 35 45 83 33 49 113 40 102 40 50 35 40 125 54 102 118 56 104 53 114 90 87 123 101 36 126 68 114 40 69 55 119 35 66 62 98 117 109 74 108 38 43 48 116 112 52 86 80 78 118 90 38 75 47 104 67 109 68 57 91 121 50 57 90 46 35 91 88 93 102 33 108 53 55 111 36 75 85 42 44 104 74 108 111 105 95 35 99 117 73 73 97 87 40 73 121 118 49 59 95 35 35 52 117 110 34 93 88 121 112 115 93 95 53 92 41 53 73 89 47 95 72 88 92 92 85 60 121 65 58 46 47 33 72 113 58 118 101 86 117 35 35 74 116 82 34 62 35 118 47 77 80 70 63 120 109 49 47 54 105 45 113 122 124 112 124 33 63 94 89 76 121 80 96 41 41 103 85 51 96 68 100 122 107 85 65 112 80 61 110 57 50 69 105 67 99 68 56 35 109 121 121 54 117 116 34 116 111 74 101 57 84 106 51 92 49 115 69 89 87 84 102 124 51 77 113 61 77 87 110 78 37 90 121 117 73 106 77 73 97 84 99 41 73 110 56 124 119 53 74 39 80 111 37 66 70 34 91 78 54 43 84 101	91 121 67 116 98 61 98 84 74 102 38 125 121 50
+68 48 85 88 67 42 63 69 56 55 115	49 45 86 73 106 50 73 64 42 66 104 41 91 92 82 42
+
+]]></test_input>
+<test_output><![CDATA[RotM&n(+)Y]#F=~ D#>v"eN31$&fJ1^2Q[+`~jp4aH'-~O-RB_lfK)/+[-8%/wdj%&$(m 6kxsP_q"?UeAs6Jc5]0?{Lgbl~Pj!g\6ivm@SFM@t=y0|v|\YbrP33Mk{Ma.MXfBhC&usdqo6T[^2MBBAB$VR\/9<S7*GK1;E}Dvnv<):~2|#BKms'/[4Cl4TcCZ*LK~@19Qx>x}t203 _txSFc[q$D;r~}s;f(:F3Y -c+U6qr'.x9wBdu\?3M_tb_C9obF*[wCL2R1(i2|)^w>RcYElj6fBe;L*e[+dm9Id7v3Uvgz*4%LU~x\!w,z*KD5(s$4(zQZLAiISbY"am6(/3#Yv_T$StqaExKM.`oF?M+nxN@o'@{d[h{ylmS*^ 1,FOQ Kv0:p.MeIW{/,&DO3bOS-gcE4RV?XqsbAI'!#*MA9dl4iE_I.rbJ,2ENMp"53H\ntuxT.#tpzw(UHlA/+8ABCi+"^_3OVD:"@.5cEf&S)a[9C["xy,z&tRCu6EC*9_S3^:`xFRj^vfc9AaH7x]f?!yKK3+F_vXAx80_6wnY/g8'Qr3.ynC2%Rs%~12)!jP_)mg#*m!CVZQ*RTc,mF|oZ\@=%DQIfWSTu_m:6s_sC/a-IUZ?xRB9aOnt`~o!j,QE/v|xb1[e2$%\^!rn?j_XM*3!0m;<I!nW8{{]Ph/!SX6n1r\uF=B#-S!1q(f(2#(}6fv8h5rZW{e$~Dr(E7w#B>bumJl&+0tp4VPNvZ&K/hCmD9[y29Z.#[X]f!l57o$KU*,hJloi_#cuIIaW(Iyv1;_##4un"]Xyps]_5\)5IY/_HX\\U<yA:./!Hq:veVu##JtR">#v/MPF?xm1/6i-qz|p|!?^YLyP`))gU3`DdzkUApP=n92EiCcD8#myy6ut"toJe9Tj3\1sEYWTf|3Mq=MWnN%ZyuIjMIaTc)In8|w5J'Po%BF"[N6+Te[yCtb=bTJf&}y2D0UXC*?E87s1-VIj2I@*Bh)[\R*
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int t,a[1000],i;
+	while(scanf("%d",&t)!=EOF)
+	{
+		for(i=0;i<t;i++)
+			scanf("%d",&a[i]);
+		for(i=0;i<t;i++)
+			printf("%c",a[i]);
+		puts("");
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int n;
+	while(scanf("%d",&n)!=EOF)
+	{
+		for(int i=0;i<n;i++)
+		{
+			int a;
+			scanf("%d",&a);
+			printf("%c",a);
+		}
+	}
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a,i,b:integer;
+begin
+read(a);
+for i:=1 to a do
+begin
+read(b);write(chr(b))
+end
+end.
+]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+	
+	public static char toChar(int prefix){
+		return (char) prefix;
+	}
+	
+	public static void main(String[] args) {
+		
+		int flag;
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		flag = sc.nextInt();
+		int[] ascaii = new int[flag];
+		char[] word = new char[flag];
+		for(int i=0;i<flag;i++){
+			ascaii[i] = sc.nextInt();
+			word[i] = toChar(ascaii[i]);
+		}
+		for(int j =0;j<flag;j++){
+			System.out.print(word[j]);
+		}
+		System.out.println();
+		
+	}
+}]]></solution>
+			<solution language="Python"><![CDATA[import sys
+
+def getlist():
+  list = []
+  for line in sys.stdin:
+      a = line.split()
+      b = map(lambda x:int(x),a)
+      if len(b) != 1:
+         list += map(lambda x:chr(x),b)
+  return list
+print ''.join(getlist())
+       ]]></solution>
+	</item>
+<item>
+<title><![CDATA[奇怪的信]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[有一天, 小明收到一张奇怪的信, 信上要小明计算出给定数各个位上数字为偶数的和。<br />
+例如：5548，结果为12，等于 4 + 8 。<br />
+小明很苦恼，想请你帮忙解决这个问题。<br />]]></description>
+<input><![CDATA[输入数据有多组。每组占一行，只有一个整整数，保证数字在32位整型范围内。]]></input> 
+<output><![CDATA[对于每组输入数据，输出一行，每两组数据之间有一个空行。]]></output>
+<sample_input><![CDATA[415326
+3262]]></sample_input>
+<sample_output><![CDATA[12
+
+10]]></sample_output>
+  <test_input><![CDATA[3450
+16397
+27412
+30060
+30989
+30556
+19790
+21387
+2085812984
+12953
+22708
+15162
+24600
+27491
+32319
+31
+273
+2230
+14279
+26693
+11947
+24837
+20933
+24267
+30168
+8841
+605
+16089
+3178
+5592
+29084
+19160
+15227
+28345
+5886
+9187
+18700
+7991
+2147424682
+21880
+9452
+24820
+21794
+18804
+23772
+26816
+27951
+14398
+7152
+30826
+2489
+26946
+14648
+17110
+10727
+22433
+6560
+22096
+11173
+3878
+26901
+288
+28137
+21885
+28393
+25695
+26683
+29599
+377
+10505
+23412
+13201
+23821
+2899
+32710
+26190
+25087
+12350
+21500
+1538
+2128866666
+31084
+29187
+18552
+17751
+19250
+3242
+13782
+32139
+30960
+31398
+6024
+8643
+19357
+29401
+21370
+8
+22182
+24020
+1
+]]></test_input>
+<test_output><![CDATA[4
+
+6
+
+8
+
+6
+
+8
+
+6
+
+0
+
+10
+
+32
+
+2
+
+12
+
+8
+
+12
+
+6
+
+2
+
+0
+
+2
+
+4
+
+6
+
+14
+
+4
+
+14
+
+2
+
+14
+
+14
+
+20
+
+6
+
+14
+
+8
+
+2
+
+14
+
+6
+
+4
+
+14
+
+22
+
+8
+
+8
+
+0
+
+32
+
+18
+
+6
+
+16
+
+6
+
+20
+
+4
+
+22
+
+2
+
+12
+
+2
+
+16
+
+14
+
+18
+
+22
+
+0
+
+2
+
+8
+
+12
+
+10
+
+0
+
+16
+
+8
+
+18
+
+10
+
+18
+
+10
+
+8
+
+22
+
+2
+
+0
+
+0
+
+8
+
+2
+
+12
+
+10
+
+2
+
+8
+
+10
+
+2
+
+2
+
+8
+
+50
+
+12
+
+10
+
+10
+
+0
+
+2
+
+8
+
+10
+
+2
+
+6
+
+8
+
+12
+
+18
+
+0
+
+6
+
+2
+
+8
+
+14
+
+8
+
+0
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int n,t,s,a=0;
+	while(scanf("%d",&n)!=EOF)
+	{
+		if(a++)
+			printf("\n");
+		s=0;
+		while(1)
+		{
+			t=n%10;
+			if(t%2==0)
+				s+=t;
+			n/=10;
+			if(n==0)
+				break;
+		}
+		printf("%d\n",s);
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int n,t,s,a=0;
+	while(scanf("%d",&n)!=EOF)
+	{
+		if(a++)
+			printf("\n");
+		s=0;
+		while(1)
+		{
+			t=n%10;
+			if(t%2==0)
+				s+=t;
+			n/=10;
+			if(n==0)
+				break;
+		}
+		printf("%d\n",s);
+	}
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a:string;y,i,b,s:integer;
+begin
+while not eof do
+begin
+readln(a);
+for i:=1 to length(a)do
+begin
+val(copy(a,i,1),b,y);
+if b mod 2=0 then
+s:=s+b end;
+writeln(s);
+writeln;
+s:=0
+end
+end.]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		while(in.hasNext()){
+			char[] cs = in.nextLine().toCharArray();
+			int cou = 0;
+			for(char c:cs)
+				if(c%2==0)
+					cou+=c-48;
+			System.out.println(cou);
+			System.out.println();
+		}
+	}
+
+}
+]]></solution>
+			<solution language="Python"><![CDATA[import sys
+  
+for line in sys.stdin:
+    a = line.split()[0]
+    list = [int(i) for i in a if int(i)%2==0 ]
+    if len(list)!=0:
+       print reduce(lambda x,y:x+y,list)
+       print ''
+    else:
+       print 0
+       print '']]></solution>
+	</item>
+<item>
+<title><![CDATA[挂盐水]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[挂盐水的时候，如果滴起来有规律，先是滴一滴，停一下；然后滴二滴，停一下；再滴三滴，停一下...，现在有一个问题：这瓶盐水一共有VUL毫升，每一滴是D毫升，每一滴的速度是一秒（假设最后一滴不到D毫升，则花费的时间也算一秒），停一下的时间也是一秒这瓶水什么时候能挂完呢？]]></description>
+<input><![CDATA[输入数据包含多个测试实例，每个实例占一行，由VUL和D组成，其中 0&lt;D&lt;VUL&lt;5000。]]></input> 
+<output><![CDATA[对于每组测试数据，请输出挂完盐水需要的时间，每个实例的输出占一行。]]></output>
+<sample_input><![CDATA[10 1]]></sample_input>
+<sample_output><![CDATA[13]]></sample_output>
+  <test_input><![CDATA[1853 391
+3525 2027
+2269 609
+4494 4310
+826 401
+1497 545
+1434 1411
+1013 971
+3460 466
+3961 1990
+3537 3394
+4753 4455
+1745 434
+1540 695
+2985 2201
+1661 723
+4675 2552
+2967 2383
+3479 3058
+3164 923
+3169 1476
+1223 968
+715 39
+2561 1322
+3412 1993
+2401 1884
+121 119
+1967 702
+595 53
+123 65
+3825 3196
+4665 3645
+895 646
+4200 1524
+2743 2604
+3547 2648
+4032 3156
+2712 1513
+1740 1201
+583 52
+134 71
+13 12
+3747 2965
+2298 1302
+4864 1661
+4151 637
+437 398
+3052 2413
+641 58
+1993 699
+2214 1925
+4252 250
+2718 2655
+994 532
+469 226
+1889 659
+3601 2811
+4125 1440
+1304 739
+105 83
+4553 3602
+369 13
+2670 998
+2462 734
+3199 2659
+2930 2575
+4051 3436
+3156 1271
+995 453
+1758 449
+639 253
+1485 247
+717 263
+2185 1405
+759 258
+1790 724
+2661 2078
+641 168
+3146 1002
+575 410
+323 212
+4787 1083
+2030 291
+1878 53
+4791 1302
+3044 2502
+3761 2756
+3652 382
+2547 263
+689 269
+1160 42
+4183 4123
+812 548
+1951 79
+3340 2297
+503 59
+2925 2134
+2155 309
+2703 1998
+1305 716
+2 1
+]]></test_input>
+<test_output><![CDATA[7
+3
+6
+3
+4
+4
+3
+3
+11
+3
+3
+3
+7
+4
+3
+4
+3
+3
+3
+6
+4
+3
+24
+3
+3
+3
+3
+4
+16
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+16
+3
+3
+3
+3
+4
+10
+3
+3
+16
+4
+3
+23
+3
+3
+4
+4
+3
+4
+3
+3
+3
+36
+4
+6
+3
+3
+3
+4
+4
+6
+4
+10
+4
+3
+4
+4
+3
+6
+6
+3
+3
+7
+10
+43
+6
+3
+3
+13
+13
+4
+34
+3
+3
+31
+3
+12
+3
+10
+3
+3
+3
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+	int VUL,D;
+	while(scanf("%d%d",&VUL,&D)!=EOF)
+	{
+		int i=1,t=0,s=0,count=0;
+		while(1)
+		{
+			s+=i*D;
+			count+=i;
+			if(s==VUL)
+			{
+				t=count+i-1;
+				break;
+			}
+			if((s+(i+1)*D)>VUL)
+			{
+				int d;
+				d=(VUL-s)%D?((VUL-s)/D+1):(VUL-s)/D;
+				t=count+i+d;
+				break;
+			}
+			else i++;
+		}
+		printf("%d\n",t);
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<map>
+#include<queue>
+#include<stack>
+#include<set>
+#include<vector>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+#define Max(a,b) (a > b ? a : b)
+#define Min(a,b) (a < b ? a : b)
+#define INF 0x3f3f3f3f
+#define M 100
+
+int judge(double n ,double d)
+{
+    double ans = 0;
+    for(int i = 1; ; i++)
+    {
+        ans += i * d;
+        if(ans >= n)
+        {
+            return i;
+        }
+    }
+}
+
+int main()
+{
+    double n,d;
+    while(scanf("%lf%lf",&n,&d)!=EOF)
+    {
+        int ans = n / d + 0.9;
+        ans += judge(n,d) - 1;
+        printf("%d\n",ans );
+    }
+    return 0;
+}
+]]></solution>
+			<solution language="Pascal"><![CDATA[program p1022;
+var s,i,j,k,t:longint;
+    vul,d:longint;
+begin
+  while not eof do
+  begin
+     readln(vul,d);
+     s:=0; i:=0; t:=0;
+     t:=vul div d;
+     if d*t<vul then t:=t+1;
+     while s<t do
+      begin
+        i:=i+1;  
+        s:=s+i;
+      end;
+     writeln(t+i-1)
+  end;
+end.
+]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		while(in.hasNext()){
+			int vul = in.nextInt();
+			int d = in.nextInt();
+			int[] arr = new int[200];
+			arr[0] = d;
+			for(int i=1;i<arr.length;i++){
+				int tem =(i+1)*d;  
+				arr[i] = arr[i-1]+tem;
+				if(vul<=arr[i]){
+					if(d==arr[i])System.out.println(i+1+(vul+d-1)/d);
+					else System.out.println(i+(vul+d-1)/d);
+					break;
+				}
+			}
+		}
+	}
+
+}
+]]></solution>
+			<solution language="Python"><![CDATA[import sys,math
+  
+def check(n,d):
+    Alist=[]
+    j = int((2*n/d)**0.5+1)
+    for i in xrange(1,j):
+        if (i+1)*i*d <= 2*n:
+            Alist.append(i)  
+    k= max(Alist)
+    if 2*n-k*(k+1)*d==0:
+        print (k+1)*k/2+(k-1)
+    elif n%d == 0:
+        l = math.ceil(n/d-k*(k+1)/2)
+        print k*(k+1)/2+k+int(l)
+    else:
+        l = math.ceil(n/d-k*(k+1)/2+1)
+        print k*(k+1)/2+k+int(l)
+
+for line in sys.stdin:
+    n,d = map(lambda x:int(x),line.split())
+    check(n,d)]]></solution>
+			<solution language="C#"><![CDATA[using System;
+using System.Collections.Generic;
+
+namespace BoP
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            string line;
+            while ((line = Console.ReadLine()) != null)
+            {
+                string[] tokens = line.Split(' ');
+                int a = int.Parse(tokens[0]);
+                int b = int.Parse(tokens[1]);
+                int sum = a / b;
+                if (a % b != 0)
+                {
+                    sum++;
+                }
+                int z = 1;
+                int x = 0;
+                while (x < sum)
+                {
+                    x += z;
+                    z++;
+                }
+                z--;
+                z--;
+                int sdfds = z;
+                int sdfdssdfsf = sdfds + sum;
+                Console.WriteLine(sdfdssdfsf);
+            }
+        }
+    }
+}
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[手机话费]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[小明的手机每天消费1元，每消费K元就可以获赠1元，一开始小明有M元，问最多可以用多少天？]]></description>
+<input><![CDATA[输入包括多个测试实例。每个测试实例包括2个整数M，K（2&lt;=k&lt;=M&lt;=1000)。M=0，K=0代表输入结束。]]></input> 
+<output><![CDATA[对于每个测试实例输出一个整数，表示M元可以用的天数。]]></output>
+<sample_input><![CDATA[2 2
+4 3
+0 0]]></sample_input>
+<sample_output><![CDATA[3
+5]]></sample_output>
+  <test_input><![CDATA[220 111
+707 113
+948 38
+569 474
+413 376
+936 656
+738 627
+824 354
+720 192
+958 279
+53 8
+902 757
+14 14
+874 767
+540 518
+415 223
+214 210
+13 3
+303 101
+926 522
+927 90
+69 52
+874 542
+734 238
+437 311
+497 412
+866 346
+342 77
+805 228
+924 368
+125 74
+55 43
+623 458
+576 521
+575 471
+946 760
+177 5
+206 205
+865 585
+373 159
+983 151
+789 365
+551 464
+870 764
+63 23
+270 54
+255 255
+695 367
+736 462
+872 597
+497 369
+525 134
+804 656
+813 170
+829 633
+986 958
+467 259
+854 71
+322 73
+845 791
+619 608
+560 246
+893 855
+674 255
+751 148
+145 130
+230 133
+225 171
+764 50
+976 485
+836 373
+802 634
+914 375
+690 43
+344 21
+560 363
+619 292
+50 32
+995 198
+828 154
+66 9
+529 59
+459 419
+120 39
+498 101
+900 630
+127 75
+220 124
+605 543
+620 283
+869 842
+438 352
+148 77
+85 17
+942 55
+724 705
+406 268
+279 145
+614 292
+586 230
+1000 1000
+2 2
+0 0
+]]></test_input>
+<test_output><![CDATA[221
+713
+973
+570
+414
+937
+739
+826
+723
+961
+60
+903
+15
+875
+541
+416
+215
+19
+306
+927
+937
+70
+875
+737
+438
+498
+868
+346
+808
+926
+126
+56
+624
+577
+576
+947
+221
+207
+866
+375
+989
+791
+552
+871
+65
+275
+256
+696
+737
+873
+498
+528
+805
+817
+830
+987
+468
+866
+326
+846
+620
+562
+894
+676
+756
+146
+231
+226
+779
+978
+838
+803
+916
+706
+361
+561
+621
+51
+1000
+833
+74
+538
+460
+123
+502
+901
+128
+221
+606
+622
+870
+439
+149
+90
+959
+725
+407
+280
+616
+588
+1001
+3
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int m,k,d;
+	while(scanf("%d%d",&m,&k)!=EOF,m||k)
+	{
+		d=0;
+		while(m)
+		{
+			m--;
+			d++;
+			if(d%k==0)
+				m++;
+		}
+		printf("%d\n",d);
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int m,k,d;
+	while(scanf("%d%d",&m,&k)!=EOF,m||k)
+	{
+		d=0;
+		while(m)
+		{
+			m--;
+			d++;
+			if(d%k==0)
+				m++;
+		}
+		printf("%d\n",d);
+	}
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var m,n,t,p:integer;
+begin
+  m:=1;
+  while (m<>0) or (n<>0) do begin
+    readln(m,n);
+    if (m=0) and (n=0) then break;
+    while m>0 do begin
+      inc(t);p:=p+1;m:=m-1;
+      if p=n then begin m:=m+1;p:=0; end;
+    end;
+    writeln(t);t:=0;p:=0;
+  end;
+end.
+]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		while(true){
+			int m = in.nextInt();
+			int k = in.nextInt();
+			if(m==0 && k==0)break;
+			int tem = m;
+			while(true){
+				if(tem<k)break;
+				m += tem/k;
+				tem = tem%k+tem/k;
+			}
+			System.out.println(m);
+		}
+	}
+
+}
+]]></solution>
+			<solution language="Python"><![CDATA[import sys
+  
+def check(m,k):
+    i=0
+    while True:
+          if m!=0:
+              m -= 1
+              i +=1
+              if i%k==0:
+                 m = m+1
+          if m==0:
+              break
+    return i
+
+for line in sys.stdin:
+    m,k=map(lambda x:int(x),line.split())
+    if m!=0 and k!=0:
+       print check(m,k)]]></solution>
+	</item>
+<item>
+<title><![CDATA[积雪清理]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[小明所在的城市昨晚下了一场大雪，所有道路都被积雪覆盖了。为了保证交通畅通，需要动用除雪车清理道路上的积雪，但是整个城市只有一辆除雪车。<br />
+城市的每条道路都有两条行车道，除雪车可以单向清除一条道路的一条行车道上的积雪，并且除雪车可以在任意一个路口改变方向（包括U形转弯），同时在任意一条道路的尽头可以掉头（U形）到另一条行车道行驶。<br />
+除雪车在除雪时以20km/h的速度行驶，在积雪已经被清除的车道上则以50km/h的速度行驶。<br />
+现请你计算，除雪车清理完所有道路的所有车道，并且最后回到车库最少需要多长时间？]]></description>
+<input><![CDATA[输入的第一行包含两个整数x和y，表示停放除雪车的车库的坐标。<br />
+接下来若干行，每行输入四个实数x1，y1，x2，y2，表示某条道路的起始点坐标，所有道路均为直路。<br />
+车库的坐标一定位于某条道路的线段上。<br />
+输入中的所有坐标单位均为米。<br />]]></input> 
+<output><![CDATA[输出除雪车清理完所有道路的所有车道，并且最后回到车库最少需要多长时间，格式为hh:mm，结果将秒四舍五入到分。]]></output>
+<sample_input><![CDATA[0 0
+0 0 10000 10000
+5000 -10000 5000 10000
+5000 10000 10000 10000]]></sample_input>
+<sample_output><![CDATA[03:55]]></sample_output>
+  <test_input><![CDATA[1 0
+1 0 10001 0
+10 0 10 20000
+50 0 50 5000
+10050 0 10050 5000
+50 5000 10050 5000
+]]></test_input>
+<test_output><![CDATA[05:00
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	double x1,y1,x2,y2,s=0,t;
+	int m;
+	scanf("%*d%*d");
+	while(scanf("%lf%lf%lf%lf",&x1,&y1,&x2,&y2)!=EOF)
+		s+=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+	t=s/20000*2;
+	m=(t-(int)t)*60+0.5;
+	if(m==60)
+		printf("%02d:00\n",(int)t+1);
+	else
+		printf("%02d:%02d\n",(int)t,m);
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	double x1,y1,x2,y2,s=0,t;
+	int m;
+	scanf("%*d%*d");
+	while(scanf("%lf%lf%lf%lf",&x1,&y1,&x2,&y2)!=EOF)
+		s+=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+	t=s/20000*2;
+	m=(t-(int)t)*60+0.5;
+	if(m==60)
+		printf("%02d:00\n",(int)t+1);
+	else
+		printf("%02d:%02d\n",(int)t,m);
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var a,b,x1,x2,y1,y2:longint;s:real;
+begin
+ readln(a,b);
+ while not eof do
+  begin
+  readln(x1,y1,x2,y2);
+  s:=s+sqrt(sqr(x1-x2)+sqr(y1-y2))/1000;
+  end;
+ s:=s/10;
+ if (s<10)and(s>1) then
+  if frac(s)*60>=10 then
+   writeln('0',trunc(s),':',frac(s)*60:0:0)else
+   writeln('0',trunc(s),':0',frac(s)*60:0:0)
+ else if s>10 then
+  if frac(s)*60>=10 then
+   writeln(trunc(s),':',frac(s)*60:0:0)else
+   writeln(trunc(s),':0',frac(s)*60:0:0)else
+  if s*60>=10 then
+   writeln('00:',s*60:0:0)else
+   writeln('00:0',s*60:0:0)
+end.]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int x = in.nextInt();
+		int y = in.nextInt();
+		double sum = 0;
+		while (in.hasNextInt()) {
+			int x1 = in.nextInt();
+			int y1 = in.nextInt();
+			int x2 = in.nextInt();
+			int y2 = in.nextInt();
+			sum += Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+		}
+		double time = sum * 2 / 20000;
+		int hour = (int) sum * 2 / 20000;
+		int minutes = (int) ((time - hour) * 60 + 0.5);
+		String strHour = null, strMinutes = null;
+		if (hour < 10)
+			strHour = "0" + hour;
+		else
+			strHour = "" + hour;
+		if (minutes < 10)
+			strMinutes = "0" + minutes;
+		else
+			strMinutes = "" + minutes;
+		System.out.printf(strHour + ":" + strMinutes);
+	}
+}
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[一家人]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[最近小明交了一个新朋友叫小宇，他们在聊天的时候发现500年前他们竟然是一家人！现在小明想知道小宇是他的长辈，晚辈，还是兄弟。]]></description>
+<input><![CDATA[输入包含多组测试数据。每组首先输入一个整数N（N&lt;=10），接下来N行，每行输入两个整数a和b，表示a的父亲是b（1&lt;=a,b&lt;=20）。小明的编号为1，小宇的编号为2。<br />
+输入数据保证每个人只有一个父亲。<br />]]></input> 
+<output><![CDATA[对于每组输入，如果小宇是小明的晚辈，则输出“You are my younger”，如果小宇是小明的长辈，则输出“You are my elder”，如果是同辈则输出“You are my brother”。]]></output>
+<sample_input><![CDATA[5
+1 3
+2 4
+3 5
+4 6
+5 6
+6
+1 3
+2 4
+3 5
+4 6
+5 7
+6 7]]></sample_input>
+<sample_output><![CDATA[You are my elder
+You are my brother]]></sample_output>
+  <test_input><![CDATA[4
+1 5
+2 8
+5 7
+7 8
+8
+1 3
+2 4
+3 5
+4 6
+5 7
+6 8
+7 9
+8 9
+10
+1 20
+2 3
+3 4
+4 5
+5 6
+6 7
+7 8
+8 9
+9 10
+10 20
+2
+1 5
+2 5
+7
+1 10
+7 5
+5 8
+10 6
+2 7
+6 11
+8 11
+]]></test_input>
+<test_output><![CDATA[You are my elder
+You are my brother
+You are my younger
+You are my brother
+You are my younger
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+int main()
+{
+	int ak[3000],i,a,b,n,counter1,counter2;
+	while(scanf("%d",&n)!=EOF)
+	{
+		for(i=0;i<n;i++)
+		{
+			scanf("%d%d",&a,&b);
+			ak[a]=b;
+		}
+		i=1;
+		counter1=counter2=0;
+		while(ak[i])
+		{
+			i=ak[i];
+			counter1++;
+		}
+		i=2;
+		while(ak[i])
+		{
+			i=ak[i];
+			counter2++;
+		}
+		if(counter1<counter2)printf("You are my younger\n");
+		else if(counter2<counter1)printf("You are my elder\n");
+		else printf("You are my brother\n");
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<cstdio>
+#include<map>
+using namespace std;
+ 
+int main()
+{
+	int n,a,b,na[5000],nb[5000];
+	map<int,int> p;
+	while(scanf("%d",&n)!=EOF)
+	{
+		p.clear();
+		while(n--)
+		{
+			scanf("%d%d",&a,&b);
+			p[a]=b;
+		}
+		int k1=0;
+		na[k1]=p[1];
+		while(p.count(na[k1]))
+		{
+			int t;
+			t=p[na[k1]];
+			k1++;
+			na[k1]=t;
+		}
+		int k2=0;
+		nb[k2]=p[2];
+		while(p.count(nb[k2]))
+		{
+			int t;
+			t=p[nb[k2]];
+			k2++;
+			nb[k2]=t;
+		}
+		int flag=0;
+		for(int i=0;i<=k1;i++)
+		{
+			if(flag)
+				break;
+			for(int j=0;j<=k2;j++)
+				if(na[i]==nb[j])
+				{
+					if(i<j)
+						printf("You are my younger\n");
+					else if(i>j)
+						printf("You are my elder\n");
+					else
+						printf("You are my brother\n");
+					flag=1;
+					break;
+				}
+		}
+	}
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[var
+ i,x,y,j,n,a,b:longint;
+ f:array[0..10000] of longint;
+begin
+ while not eoln do begin
+  readln(n);x:=0;y:=0;
+  for i:=1 to n do begin readln(a,b);f[a]:=b;end;
+  i:=1;
+  repeat
+    inc(x);
+    i:=f[i];
+  until i=0;
+  j:=2;
+  repeat
+    inc(y);
+    j:=f[j];
+  until j=0;
+  if x>y then writeln('You are my elder');
+  if x=y then writeln('You are my brother');
+  if x<y then writeln('You are my younger');
+ end;
+end.]]></solution>
+			<solution language="Java"><![CDATA[
+
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+
+public class Main {
+
+	
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(new BufferedInputStream(System.in));
+		
+		while(scanner.hasNext())
+		{
+			 int number1 = 0;
+			 int number2 = 0;
+			 int n = scanner.nextInt();
+			 int a[][] = new int[20 + 2][2 + 20];
+			 for(int i = 0; i < n; i++)
+			 {
+				 int x = scanner.nextInt();
+				 int y = scanner.nextInt();
+				 a[x][y] = 1;
+			 }
+			 
+			 boolean a1 = true;
+			 int x1 = 1;
+			 while(a1)
+			 {
+				 for(int i = 1; i <= 20; i++)
+				 {
+					 if(a[x1][i] == 1)
+					 {
+						 x1 = i;
+						 number1++;
+						 a1 = true;
+						 break;
+					 }
+					 else
+					 {
+						 a1 = false;
+					 }
+					
+				 }
+			 }
+			 
+			 
+			 boolean a2 = true;
+			 int x2 = 2;
+			 while(a2)
+			 {
+				 for(int i = 1; i <= 20; i++)
+				 {
+					 if(a[x2][i] == 1)
+					 {
+						 x2 = i;
+						 number2++;
+						 a2 = true;
+						 break;
+					 }
+					 else
+					 {
+						 a2 = false;
+					 }
+					
+				 }
+			 }
+			 
+			 if(number1 == number2)
+			 {
+				 System.out.println("You are my brother");
+			 }
+			 else if(number1 > number2)
+			 {
+				 System.out.println("You are my elder");
+			 }
+			 else
+			 {
+				 System.out.println("You are my younger");
+			 }
+		}
+		
+		
+		
+	}
+}]]></solution>
+			<solution language="Python"><![CDATA[
+while True:
+    n = input()
+    lst = [0 for i in range(21)]
+    #print lst
+    while n:
+        [a,b]=raw_input().split()
+        lst[int(a)]=int(b)
+        n -= 1
+        if n==0:break
+    for i in lst:
+        if i>0 and lst[i]==0:root=i
+    #print root
+    #print lst
+    xiaoming = 0
+    xiaoyu = 0
+    pos = 1
+    while lst[pos]!=root:
+        xiaoming+=1
+        pos=lst[pos]
+    pos = 2
+    while lst[pos]!=root:
+        xiaoyu+=1
+        pos=lst[pos]
+    if xiaoming>xiaoyu:print "You are my elder"
+    elif xiaoming<xiaoyu:print "You are my younger"
+    else:print "You are my brother"
+    
+]]></solution>
+	</item>
+<item>
+<title><![CDATA[子网掩码]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[32]]></memory_limit>
+
+<description><![CDATA[子网掩码是用来判断任意两台计算机的IP地址是否属于同一子网络的根据。<br />
+最为简单的理解就是两台计算机各自的IP地址与子网掩码进行AND运算后，如果得出的结果是相同的，则说明这两台计算机是处于同一个子网络上的，可以进行直接的通讯。就这么简单。<br />
+<br />
+请看以下示例：<br />
+<br />
+运算演示之一：<br />
+IP地址　 &nbsp; 192.168.0.1&nbsp;<br />
+子网掩码　 255.255.255.0&nbsp;<br />
+<br />
+转化为二进制进行运算：<br />
+IP地址　 &nbsp;11010000.10101000.00000000.00000001&nbsp;<br />
+子网掩码　11111111.11111111.11111111.00000000&nbsp;<br />
+<br />
+AND运算：<br />
+　　　　　11010000.10101000.00000000.00000000&nbsp;<br />
+<br />
+转化为十进制后为：<br />
+　　　　　　192.168.0.0<br />
+<br />
+<br />
+运算演示之二：&nbsp;<br />
+IP地址　 &nbsp; 192.168.0.254&nbsp;<br />
+子网掩码　 255.255.255.0&nbsp;<br />
+<br />
+转化为二进制进行运算：&nbsp;<br />
+IP地址　 &nbsp;11010000.10101000.00000000.11111110&nbsp;<br />
+子网掩码　11111111.11111111.11111111.00000000&nbsp;<br />
+<br />
+AND运算：<br />
+　　　　　11010000.10101000.00000000.00000000&nbsp;<br />
+<br />
+转化为十进制后为：<br />
+　　　　　　192.168.0.0<br />
+<br />
+<br />
+运算演示之三：&nbsp;<br />
+IP地址　 &nbsp; 192.168.0.4&nbsp;<br />
+子网掩码　 255.255.255.0<br />
+<br />
+转化为二进制进行运算：<br />
+IP地址　 &nbsp;11010000.10101000.00000000.00000100&nbsp;<br />
+子网掩码　11111111.11111111.11111111.00000000&nbsp;<br />
+<br />
+AND运算：<br />
+　　　　　11010000.10101000.00000000.00000000&nbsp;<br />
+<br />
+转化为十进制后为：<br />
+　　　　　　192.168.0.0<br />
+<br />
+通过以上对三组计算机IP地址与子网掩码的AND运算后，我们可以看到它运算结果是一样的，均为192.168.0.0，所以计算机就会把这三台计算机视为在同一子网络。]]></description>
+<input><![CDATA[输入的第一行是本机IP地址；<br />
+第二行是子网掩码；<br />
+第三行是一个整数N，表示后面有N个IP地址；<br />
+接下来N行：<br />
+第1个IP地址<br />
+...<br />
+...<br />
+第N个IP地址<br />]]></input> 
+<output><![CDATA[计算并输出N个IP地址是否与本机在同一子网内。对于在同一子网的输出“INNER”，对于在不同子网的输出“OUTER”。]]></output>
+<sample_input><![CDATA[192.168.0.1
+255.255.255.0
+3
+192.168.0.2
+192.168.0.254
+192.168.1.2]]></sample_input>
+<sample_output><![CDATA[INNER
+INNER
+OUTER]]></sample_output>
+  <test_input><![CDATA[192.168.0.10
+255.255.255.0
+10
+192.168.0.11
+192.168.0.12
+192.168.0.2
+192.168.0.3
+192.168.0.26
+192.168.0.27
+192.168.0.255
+192.168.20.22
+198.183.11.254
+222.111.0.32
+]]></test_input>
+<test_output><![CDATA[INNER
+INNER
+INNER
+INNER
+INNER
+INNER
+INNER
+OUTER
+OUTER
+OUTER
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[基础题-2.模拟]]></source>
+		<solution language="C"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int sou[4],netMask[4],subNet[4],n,i;
+	for(i=0;i<4;i++)
+		scanf("%d%*c",&sou[i]);
+	for(i=0;i<4;i++)
+	{
+		scanf("%d%*c",&netMask[i]);
+		sou[i]&=netMask[i];
+	}
+	scanf("%d",&n);
+	while(n--)
+	{
+		for(i=0;i<4;i++)
+		{
+			scanf("%d%*c",&subNet[i]);
+			subNet[i]&=netMask[i];
+		}
+		for(i=0;i<4;i++)
+		{
+			if(sou[i]^subNet[i])
+				break;
+		}
+		if(i<4)
+			puts("OUTER");
+		else
+			puts("INNER");
+	}
+	return 0;
+}]]></solution>
+			<solution language="C++"><![CDATA[#include<stdio.h>
+
+int main()
+{
+	int sou[4],netMask[4],subNet[4],n,i;
+	for(i=0;i<4;i++)
+		scanf("%d%*c",&sou[i]);
+	for(i=0;i<4;i++)
+	{
+		scanf("%d%*c",&netMask[i]);
+		sou[i]&=netMask[i];
+	}
+	scanf("%d",&n);
+	while(n--)
+	{
+		for(i=0;i<4;i++)
+		{
+			scanf("%d%*c",&subNet[i]);
+			subNet[i]&=netMask[i];
+		}
+		for(i=0;i<4;i++)
+		{
+			if(sou[i]^subNet[i])
+				break;
+		}
+		if(i<4)
+			puts("OUTER");
+		else
+			puts("INNER");
+	}
+	return 0;
+}]]></solution>
+			<solution language="Pascal"><![CDATA[program p1033;
+type ztk=array[1..4] of longint;
+var n,i,s,p:longint;
+      my,tr,zi:ztk;
+	  x,o,d,che:string;
+procedure calm(a,b:ztk;q:longint);
+var i,k:longint;
+      c,c1,d1,d2:string;
+begin
+ d1:='';d2:='';d:='';
+ for i:=1 to 4 do begin
+  k:=a[i];
+  c1:='';
+  repeat 
+    str(k mod 2,c);
+    c1:=c+c1;
+    k:=k div 2;
+  until k=0;
+  while length(c1)<8 do c1:='0'+c1;
+  d1:=d1+c1+'.';
+ end;
+  for i:=1 to 4 do begin
+  k:=b[i];
+  c1:='';
+  repeat 
+    str(k mod 2,c);
+    c1:=c+c1;
+    k:=k div 2;
+  until k=0;
+  while length(c1)<8 do c1:='0'+c1;
+  d2:=d2+c1+'.';
+ end;
+ for i:=1 to 36 do 
+  if (d1[i]='.') and (d2[i]='.') then d:=d+'.'
+  else if (d1[i]='0') or (d2[i]='0') then d:=d+'0' else d:=d+'1';
+ if q=1 then che:=d;
+end;
+ 
+begin 
+ readln(x);
+ x:=x+'.';s:=0;
+ repeat
+  inc(s);
+  p:=pos('.',x);
+  val(copy(x,1,p-1),my[s]);
+  delete(x,1,p);
+ until x='';
+ readln(x);
+ x:=x+'.';s:=0;
+ repeat
+  inc(s);
+  p:=pos('.',x);
+  val(copy(x,1,p-1),zi[s]);
+  delete(x,1,p);
+ until x='';
+ calm(my,zi,1);
+ readln(n);
+ for i:=1 to n do begin
+  readln(o);
+   o:=o+'.';s:=0;
+ repeat
+  inc(s);
+  p:=pos('.',o);
+  val(copy(o,1,p-1),tr[s]);
+  delete(o,1,p);
+ until o='';
+ calm(tr,zi,0);
+ if che=d then writeln('INNER') else writeln('OUTER');
+end;
+end .]]></solution>
+			<solution language="Java"><![CDATA[import java.util.Scanner;
+
+public class Main {
+	
+	public static int doAnd(int ip, int net){
+		return ip & net;
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String locIp = in.nextLine();
+		String[] locIptem = locIp.split("\\.");
+		int[] locIps = new int[4];
+		for(int i=0;i<4;i++)locIps[i] = Integer.parseInt(locIptem[i]);
+		String sub = in.nextLine();
+		String[] subtem = sub.split("\\.");
+		int[] subs = new int[4];
+		for(int i=0;i<4;i++)subs[i] = Integer.parseInt(subtem[i]);
+		int[] and = new int[4];
+		for(int i=0;i<4;i++)and[i] = locIps[i]&subs[i];
+		int n = Integer.parseInt(in.nextLine());
+		String[] ss = new String[n];
+		for(int i=0;i<n;i++){
+			ss[i] = in.nextLine();
+			String[] iptem = ss[i].split("\\.");
+			int[] ips = new int[4];
+			for(int j=0;j<4;j++)ips[j] = Integer.parseInt(iptem[j]);
+			int[] andtem = new int[4];
+			for(int j=0;j<4;j++)andtem[j] = ips[j]&subs[j];
+			boolean out = true;
+			for(int j=0;j<4;j++){
+				if(and[j] != andtem[j]){
+					out = false;
+					break;
+				}
+			}
+			if(out)System.out.println("INNER");
+			else System.out.println("OUTER");
+		}
+		
+	}
+
+}
+]]></solution>
+			<solution language="Python"><![CDATA[import sys
+  
+dataip,datama = [],[]
+l = 1
+for line in sys.stdin:
+    a = line.split()[0]
+    if l == 1:
+       dataip.append(a)
+    elif l==2:
+       datama.append(a)
+    elif a.find('.')!=-1:
+       dataip.append(a)
+    l += 1
+
+datama=map(lambda x:x.split('.'),datama)
+dataip=map(lambda x:x.split('.'),dataip)
+new = []
+for i in xrange(len(dataip)):
+    b = []
+    for j in [0,1,2,3]:
+        a = int(dataip[i][j])&int(datama[0][j])
+        b.append(a)
+    new.append('.'.join([str(k) for k in b]))
+
+for i in xrange(1,len(new)):
+    if new[i]==new[0]:
+       print 'INNER'
+    else:
+       print 'OUTER'
+]]></solution>
+	</item>
+</fps>
