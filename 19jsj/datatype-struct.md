@@ -1,6 +1,6 @@
 ## 结构体
 
-- (2009年高考)下面程序运行结果是（        ）
+- 下面程序运行结果是（            ）
 
 ```c
 #include<stdio.h>
@@ -12,12 +12,11 @@ int main()
         int age;
         int sex;
     };
-    printf("%d", sizeof(struct stu));
+    struct stu zs = {"张三", 18,1};
+    printf("%d", sizeof(zs));
     return 0;
 }
 ```
-
-
 
 - 输入坐标平面上的一点 `(x,y)` ，求该点到原点`(0,0)`的距离。
 
@@ -25,7 +24,7 @@ int main()
 #include<stdio.h>
 #include<math.h>
 
-_____________ Node
+_____(1)________ Node
 {
     float x;
     float y;
@@ -35,7 +34,7 @@ int main()
     struct Node point;
     scanf("%f %f", &point.x, &point.y);
     float d;
-    d = sqrt(point.x * point.x + point.y * point.y);
+    d = sqrt(________(2)___________);
     printf("%f", d);
 }
 ```
