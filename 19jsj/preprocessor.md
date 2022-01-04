@@ -3,6 +3,9 @@
 - 宏定义：`#define PI 3.141592654`
 - 文件包含：`#include<stdio.h>`
 - 条件编译
+- 参考文档：https://wangdoc.com/clang/preprocessor.html
+
+<img src="images/image-20220103200053221.png" alt="image-20220103200053221" style="zoom: 25%;" />
 
 #####  练习题
 
