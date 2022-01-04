@@ -5,7 +5,7 @@
 ```c
 int a = 6;
 int *p = &a;//指针，是存放地址的变量。取地址运算 &
-*p = 999;//* 通过指针变量里存的地址值可以间接访问a变量
+*p = 999;// 通过指针变量里存的地址值可以间接访问a变量
 int a[2] = {1,2}, *p=a; 
 char c[]="hello", *q=c; 
 p=p+1; //p里面的地址值偏移一个int
@@ -151,10 +151,6 @@ int main()
     for (i = 0; i < 3; i++){
         for (j = 0; j < 3; j++)
             printf("%3d", *(*(p+i)+j) ); 
-  // p+i 表示第i行数组的首地址，也叫行指针，也就是一次偏移一行
-  // *(p+i)表示第i行数组内首元素的地址，也就是int*类型指针
-  // *(p+i)+j表示第i行数组下标为j的元素地址
-  // *(*(p+i)+j) 等价于  a[i][j]
         printf("\n");
     }
 }
@@ -193,10 +189,10 @@ main()
     char *longest = fun(str);
     printf("The longest string: %s\n", longest);
 }
-/*注意：如果改为指针数组，函数形参应改为指向指针的指针
-char *str[] = {"pingpong", "basketball", "field hockey", "softball"};
-char *fun(char *q[]){  // 不能写成 char (*q)[M]
-}*/
+//注意：如果改为指针数组，函数形参应改为指向指针的指针
+//char *str[] = {"pingpong", "basketball", "field hockey", "softball"};
+//char *fun(char *q[]){  // 不能写成 char (*q)[M]
+//}
 ```
 
 - （2019年高考题）若有定义语句`int a[3][5];` ，按内存中的数据存放顺序，a数组的第10个元素是（         ）
@@ -208,8 +204,9 @@ A. a[1][4]  B. a[1][3]   C. a[2][3]   D. a[2][4]
 - （2012高考）C语言中一个2行3列的矩阵M如下所示，得到数值5的表达式是（          ）
 
 ```c
-		3	8	9
-		2	5	6
+3	8	9
+2	5	6
+
 A. *(M+1)+1			B. *(*M+1)+1		
 C. *(*(M+1)+1)		D. **((*M+1)+1)
 ```
