@@ -1,0 +1,238 @@
+## 结构体
+
+- 下面程序运行结果是（            ）
+
+```c
+int main()
+{
+    struct stu{
+        char name[12];
+        int age;
+        int sex;
+    };
+    printf("%d", sizeof(struct stu));
+    return 0;
+}
+```
+
+- 输入坐标平面上的一点 `(x,y)` ，求该点到原点`(0,0)`的距离。
+
+```c
+_____(1)________ Node
+{
+    float x;
+    float y;
+};
+int main()
+{
+    struct Node point;
+    scanf("%f %f", &point.x, &point.y);
+    float d;
+    d = sqrt(________(2)___________);
+    printf("%f", d);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+int main()
+{
+    struct c{
+        int x, y;
+    }s[2] = {1,3,2,7};
+    printf("%d", s[0].x * s[1].x);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct KeyWord
+{
+    char Key[20];
+    int ID;
+} kw[] = {"void", 1, "char", 2, "int", 3, "float",4,"double",5};
+int main()
+{
+    printf("%c,%d",kw[3].Key[0], kw[3].ID);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct {
+    int num;
+    char name[10];
+}x[3]={1,"China",2,"USA",3,"England"};
+int main(){
+    printf("%d,%s", x[1].num, x[2].name);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct contry{
+    int num;
+    char name[20];
+}x[5]={1,"China",2,"USA",3,"France",4,"England",5,"Spanish"};
+int main()
+{
+    for (int i = 3; i < 5; i++){
+        printf("%d%c",x[i].num,x[i].name[0]);
+    }
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct date{
+    int year, month, day;
+};
+struct s{
+    struct date birthday;
+    char name[20];
+}x[4] = {{2008,1,"Guangzhou"},{2009,12,25,"Tianjin"}};
+int main(){
+    printf("%s,%d,%d,%d", x[0].name, x[1].birthday.year);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct s{
+    int x, y;
+}data[2] = {10,100,20,200};
+int main()
+{
+    struct s *p;
+    p = data;
+    printf("%d", ++(p->x));
+    printf("%d", (++p)->y);
+}
+```
+
+- 结构体成员的访问
+
+```c
+struct node{
+    int count;
+    char name[20];
+}a, *p;
+p = &a;
+a.count;  a.count;
+p->count; p->name;
+(*p).count; (*p).count;
+```
+
+- 给《我是歌手》大赛栏目设计计票程序。请填空。
+
+```c
+#include<stdio.h>
+struct node
+{
+    int count;
+    char name[20];
+};
+struct node a[3] = {0,"lilei", 0, "zhangsan", 0, "lisi"};
+int main()
+{
+    int i, j;
+    _______________;
+    for (i = 1; i <= 100; i++) // 100人参与投票
+    {
+        scanf("%s", name1);  // 输入姓名投票
+        for (j = 0; j < 3; j++){
+            if (_______________ ) // 与选手名字相通，对应票数加一
+            {
+                a[j].count++; break;
+            }
+        }
+    }
+    for (i = 0; i < 3; i++) //输出每个人的票数
+        printf("%s:%d\n",a[i].name, a[i].count);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct st{
+    int x;
+    int *y;
+};
+int dt[4] = {10,20,30,40};
+struct st aa[4] = {50,&dt[0],60,&dt[1],70,&dt[2],80,&dt[3]};
+int main()
+{
+    struct st *p = aa;
+    printf("%d\n", ++p->x);
+    printf("%d\n", (++p)->x);
+    printf("%d\n", ++(*p->y));
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct STU{
+    int num;
+    float score;
+};
+void f1(struct STU p)
+{
+    struct STU s[2] = {{20044,550}, {20045,537}};
+    p.num = s[0].num; p.score = s[0].score;
+}
+void f2(struct STU *p)
+{
+    struct STU s[2] = {{20044,550}, {20045,537}};
+    p->num = s[0].num; p->score = s[0].score;
+}
+main()
+{
+    struct STU s[2] = {{20044,550},{20045,537}};
+    f1(s[0]);  f2(&s[1]);
+    printf("%d,%3.0f\n", s[0].num, s[0].score);
+    printf("%d,%3.0f\n", s[1].num, s[1].score);
+}
+```
+
+- 下面程序输出结果是（        ）
+
+```c
+struct HAR{
+    int x, y;
+    struct HAR *p;
+}h[2];
+int main()
+{
+    h[0].x = 1; h[0].y = 2;
+    h[1].x = 3; h[1].y = 4;
+    h[0].p = &h[1];
+    h[1].p = &h[0];
+    printf("%d %d",(h[0].p)->x, (h[1].p)->y);
+}
+```
+
+- `typedef`
+
+```c
+typedef int i32;
+i32 a; // 等价于 int a;
+
+typedef struct STU{
+    char name[20];
+    char ID[20];
+}Student;
+
+Student zs; // 等价于  
+struct STU as;
+```
+
+- 参考文档：https://wangdoc.com/clang/struct.html
+
