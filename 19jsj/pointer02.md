@@ -1,6 +1,10 @@
 ## 指针与字符串
 
+<<<<<<< HEAD
+1. unsigned int strlen(char *s);
+=======
 1. `unsigned int strlen(char *s);`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 unsigned int strlen(char *s) 
@@ -17,7 +21,11 @@ unsigned int strlen(char *s)
 }
 ```
 
+<<<<<<< HEAD
+2. char \*strcpy(char\* dest, const char \*src);
+=======
 2. `char *strcpy(char* dest, const char *src);`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 char *strcpy(char *s, char *t) 
@@ -46,7 +54,11 @@ char *strcpy(char *s, char *t)
 }
 ```
 
+<<<<<<< HEAD
+3. char *strcat(char *dest, const char *src);
+=======
 3. `char *strcat(char *dest, const char *src);`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
  void strcat(char s[], char t[]) 
@@ -59,7 +71,11 @@ char *strcpy(char *s, char *t)
  }
 ```
 
+<<<<<<< HEAD
+4. int strcmp(const char *s1,const char *s2);
+=======
 4. `int strcmp(const char *s1,const char *s2);`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 /* strcmp: return <0 if s<t, 0 if s==t, >0 if s>t */ 
@@ -79,7 +95,11 @@ char *strcpy(char *s, char *t)
  }
 ```
 
+<<<<<<< HEAD
+5. reverse
+=======
 5. `reverse`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
  void reverse(char s[]) 
@@ -91,7 +111,11 @@ char *strcpy(char *s, char *t)
  }
 ```
 
+<<<<<<< HEAD
+6. squeeze
+=======
 6. `squeeze`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
  void squeeze(char s[], int c)  /* squeeze: delete all c from s */
@@ -104,7 +128,11 @@ char *strcpy(char *s, char *t)
  }
 ```
 
+<<<<<<< HEAD
+7. atoi
+=======
 7. `atoi`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 int atoi(char s[])   /* atoi: convert s to integer */ 
@@ -126,7 +154,11 @@ int atoi(char s[])   /* atoi: convert s to integer */
  }
 ```
 
+<<<<<<< HEAD
+8. itoa
+=======
 8. `itoa`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 void itoa(int n, char s[])   /* itoa: convert n to characters in s */ 
@@ -145,7 +177,11 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
  }
 ```
 
+<<<<<<< HEAD
+9. atof
+=======
 9. `atof`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
  double atof(char s[])  /* atof: convert string s to double */ 
@@ -192,7 +228,11 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
  }
 ```
 
+<<<<<<< HEAD
+11. trim
+=======
 11. `trim`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
 /* trim: remove trailing blanks, tabs, newlines */ 
@@ -206,7 +246,11 @@ void itoa(int n, char s[])   /* itoa: convert n to characters in s */
  }
 ```
 
+<<<<<<< HEAD
+12. strindex
+=======
 12. `strindex`
+>>>>>>> 6744dc1ef52e596fef0ffd83c8786183a33ac417
 
 ```c
  /* strindex: return index of t in s, -1 if none */ 
