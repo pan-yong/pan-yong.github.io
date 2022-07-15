@@ -4,11 +4,6 @@
 
 
 
-##### 训练计划
-
-1.  K&R 书中例题、课后习题，认真阅读并上机练习。每天一章，共八章。
-2. 
-
 ##### 英语练习
 
 中英字典：[剑桥英语词典](https://dictionary.cambridge.org/) 
@@ -26,6 +21,8 @@ https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html
 https://www.kernel.org/doc/html/latest/process/coding-style.html
 
 https://www.gnu.org/prep/standards/html_node/Formatting.html#Formatting
+
+学了Go后，感觉按照Go的规范就挺好。
 
 
 
