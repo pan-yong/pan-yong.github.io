@@ -1,3 +1,0 @@
-[submodule "wangdoc"]
-	path = wangdoc
-	url = git@github.com:wangdoc/clang-tutorial.git
