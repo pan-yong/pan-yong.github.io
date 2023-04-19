@@ -1,0 +1,23 @@
+2023-04-19 AM
+
+Nano is a good text editer, simple and useful, i like it.
+So i decided to write linux notes in nano every day. Aha, interesting.
+
+1) nano arguments
+eg. nano -mi notes.txt
+-m active mouse
+-i automatic indent, is convenient when writing code.
+
+2) nano configuration file
+~/.nanorc
+set autoindent
+set mouse       
+
+/etc/nanorc
+
+3) quick key
+Ctrl+ G  help
+Alt + M  active mouse
+Ctrl+ 6  Mark set, then use mouse 
+
+Other usful text editer: vi/vim, gedit...

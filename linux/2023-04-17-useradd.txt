@@ -1,0 +1,9 @@
+2023-04-17
+
+1)
+useradd thomas   
+passwd thomas    	# set a password for the new user.
+
+2)
+userdel thomas 
+usserdel -r thomas	 #-r means delete the user's home directory.

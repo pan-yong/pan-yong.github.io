@@ -1,0 +1,23 @@
+2023-04-20 AM
+
+1)locate 
+find the filename or directory. eg:
+locate hello.c		 #find hello.c from file database
+updatedb      		 #update the file database
+
+2)find 
+find -name "hello.c" 			#find in current directory.
+find /var/log -name "syslog"		#find in /var/log directory.
+find / -name "syslog*"			# * 
+
+find /var -size +10M
+
+find -name "*.txt" -atime -2		#find the txt file visited in the last two days.
+
+-type d  #only find directory
+-type f  #only find file
+
+find -name "*.txt" -atime -1 -printf "%p - %u\n"
+find -name "*.txt" -exec chmod 600 {} \;
+
+

@@ -1,0 +1,19 @@
+2023-04-19 PM
+
+1)set yum source
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mmirrors.aliyun.com/repo/Centos-7.repo
+
+2)yum command
+yum update
+yum install xxx
+yum remove xxx
+
+3)RTFM: Read The Fucking Manual
+man 3 rand
+man 3 strcpy
+man mkdir
+man cp
+
+4)
+apropos strcat
+whatis ls
