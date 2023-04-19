@@ -1,0 +1,62 @@
+2023-04-19 PM
+
+1)set yum source
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mmirrors.aliyun.com/repo/Centos-7.repo
+
+2)yum
+yum update
+yum install xxx
+yum remove xxx
+
+3)RTFM: Read The Fucking Manual
+man 3 rand
+man 3 strcpy
+man mkdir
+man cp
+
+apropos strcat
+whatis ls
+
+4)search file
+locate hello.c #find hello.c from file database
+updatedb       #update file database
+
+find -name "hello.c"
+find ~ -name "hello.c"
+
+
+
+======================================================================
+2023-04-19 AM
+
+Nano is a good text editer, simple and useful, i like it.
+So i decided to write linux notes in nano every day. Aha, interesting.
+
+Other usful text editer: vi/vim, gedit...
+
+1) nano arguments
+eg. nano -mi notes.txt
+-m active mouse
+-i automatic indent, is convenient when writing code.
+
+2) nano configuration file
+~/.nanorc
+set autoindent
+set mouse
+
+/etc/nanorc
+
+
+======================================================================
+2023-04-17
+
+1)
+useradd thomas   
+passwd thomas    	# set a password for the new user.
+
+2)
+userdel thomas 
+usserdel -r thomas	 #-r means delete the user's home directory.
+
+
+
