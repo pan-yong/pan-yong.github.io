@@ -1,0 +1,35 @@
+2023-04-20 AM
+
+1)[root@localhost ~]#
+root 			current username
+@localhost 		hostname
+~ 			current directory
+$	 		general user
+# 			root user
+
+2)date
+
+3)ls
+ls -a			list all files, including hidden files
+
+
+4)TAB
+Press the TAB key, auto-complete the commond.
+Press the TAB key twice, list all possible files. 
+
+5)history
+Upkey	
+Ctrl + R
+history			!50 run the history commond.
+
+6)shortcut keys
+Ctrl + L		clear
+Ctrl + D		EOF
+Ctrl + A		home
+Ctrl + E		end
+
+Ctrl + U		delete characters to the left of the cursor. 
+Ctrl + K		delete characters to the right of the cursor.
+Ctrl + W		delete a word to the left of the cursor.
+
+Ctrl + Y		paste

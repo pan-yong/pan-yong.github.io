@@ -1,0 +1,42 @@
+2023-04-AM
+
+1)
+/	root directory
+/bin	binary
+/boot
+/dev	device
+/etc	etc. and so on
+/home
+/lib	library
+/media	
+/mnt	temporary mount device
+/opt	optional application software package, third party software.
+/sbin	system binary
+/src	service
+/tmp	temporary
+/usr	Unix Software Resource
+/var	variable directory,usually used to store dynamically changing data, such as log files.
+
+https://linuxtoy.org/archives/linux-file-structure.html
+
+2)
+pwd
+which pwd
+
+3)
+ls -a
+ls -l
+ls -alht
+
+4)
+cd
+absolute paths
+relative paths
+.	current paths
+..	upword paths
+~	home
+
+5)
+du	estimate file space usage
+du -h	human readable
+du -s   only sumarry size
