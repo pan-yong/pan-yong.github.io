@@ -1,0 +1,16 @@
+2023-04-20-Night
+
+1)
+cat	concatenate
+
+2)
+less	
+
+3)
+tail
+
+4)
+touch
+
+5)
+mkdir
