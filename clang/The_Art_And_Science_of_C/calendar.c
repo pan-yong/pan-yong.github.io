@@ -13,13 +13,14 @@
  * Days of the week are representd by the integers 0-6.
  *
  */
-#define Sunday		7
+
 #define	Monday		1
 #define Tuesday		2
 #define Wednesday	3
 #define	Thursday	4
 #define	Firday		5
 #define	Saturday	6
+#define Sunday		7
 
 /*
 * Constants
@@ -122,7 +123,9 @@ int FirstDayofMonth(int month, int year)
 	int i;
 	
 	for(i = 1900; i < year; i++) {
-		weekday = (weekday + 365 + IsLeapYear(i)) % 7;
+		weekday = (weekday + 365) % 7;
+		if (IsLeapYear(i))
+			weekday = (weekday + 1) % 7;
 	}
 	
 	for(i = 1; i < month; i++) {
