@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightly-HTML-Project</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+    <p id = "result"> </p>
+    <script>
+        let names = [
+        "白小豪",
+        "陈好东",
+        "陈江涛",
+        "陈依莲",
+        "陈祖顺",
+        "邓  顺",
+        "丁  磊",
+        "段博文",
+        "韩慧琳",
+        "昊孟悦",
+        "何金凤",
+        "衡金龙",
+        "衡兰星",
+        "黎  志",
+        "李佳慧",
+        "李思怡",
+        "刘  欢",
+        "刘  娇",
+        "刘  威",
+        "刘诺熙",
+        "刘贤宇",
+        "刘孝凤",
+        "孟浩然",
+        "彭  佳",
+        "彭  进",
+        "彭俊曦",
+        "孙贝贝",
+        "孙东成",
+        "谭咏芳",
+        "谭媛依",
+        "汤  胜",
+        "汤  哲",
+        "涂胜龙",
+        "汪家琪",
+        "王  康",
+        "王子涵",
+        "魏  孝",
+        "吴丰畅",
+        "肖  杰",
+        "谢天宇",
+        "许  浩",
+        "严  帆",
+        "颜  芳",
+        "杨铭睿",
+        "易  康",
+        "袁雨欣",
+        "张  勇",
+        "张华卿",
+        "张梓杰",
+        "赵振光",
+        "周  鑫",
+        "周家博",
+        "周志远",
+        "周嘉元",
+        "刘旭阳",
+        "文锦宏"
+        ];
+        var randomNum = Math.random() * names.length;  
+        document.getElementById("result").innerHTML = names[~~randomNum];
+    </script>
+</body>
+</html>
