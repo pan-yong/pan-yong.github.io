@@ -26,8 +26,7 @@
                     <a class="bookmark" href="https://www.yuque.com/hrxzyzz/clang">C语言备课</a>
                     <a class="bookmark" href="./clang/onlinejudge/20240515.html">2024年5月C语言程序设计竞赛小结</a>
                	    <a class="bookmark" href="./clang/onlinejudge/20230510.html">2023年5月C语言程序设计竞赛小结</a>
-		     
-		        </div>
+		</div>
             </div>
         </div>
 	    
@@ -56,17 +55,17 @@
                 year  = date.getFullYear() ;
                 wk  = date.getDay();
 
-                str = year+"年"+month+"月"+day+"日 星期";
+                str = year+"-"+month+"-"+day+" ";
                 switch(wk){
-                        case 0: str += "天"; break;
-                        case 1: str += "一"; break;
-                        case 2: str += "二"; break;
-                        case 3: str += "三"; break;
-                        case 4: str += "四"; break;
-                        case 5: str += "五"; break;
-                        case 6: str += "六"; break;
+                        case 0: str += "Sunday"; break;
+                        case 1: str += "Monday"; break;
+                        case 2: str += "Tuesday"; break;
+                        case 3: str += "Wednesday"; break;
+                        case 4: str += "Thursday"; break;
+                        case 5: str += "Friday"; break;
+                        case 6: str += "Saturday"; break;
                 }
-                
+                /*
                 mdays = [0,31,28,31,30,31,30,31,31,30,31,30,31];
                 
                 if (month == 6){
@@ -84,7 +83,8 @@
                 
                 
                 str += "<br>" + "计算机班-高考倒计时 " + gaokao + " 天";
-
+		*/
+		str += "<br>" + "To Teach is To Learn Twice";
             return str;
         }
 
