@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<iframe src="https://panyong.notion.site/Year-9-Mandarin-Home-33b6c6b34014807181cef2efe024d98d?source=copy_link"></iframe>
+
+<script>
+  if (/MicroMessenger/i.test(navigator.userAgent)) {
+    document.body.style.zoom = "1.0";
+  }
+</script>
+
+</body>
+</html>
